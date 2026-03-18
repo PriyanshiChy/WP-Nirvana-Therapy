@@ -4,6 +4,8 @@
  *
  * @package Nirvana_Painted
  */
+
+$content = get_page_content("index")
 ?>
 <!DOCTYPE html>
 
@@ -35,6 +37,7 @@
 
 
 <body>
+  <script><?php echo($content["raw"]); ?></script>
   <?php echo file_get_contents( get_stylesheet_directory() . '/assets/images/icons.svg' ); ?>
   <?php get_template_part('parts/header'); ?>
   <main>
@@ -142,7 +145,7 @@
     </section>
 
     <section id="choose-us" class="px-16 py-18 space-y-16 min-h-screen">
-      <h3>Why Choose Nirvana Therapy?</h3>
+      <h3 class="text-center">Why Choose Nirvana Therapy?</h3>
       <div class="flex w-full items-stretch">
         <div class="space-y-4 px-9">
           <div class="flex flex-col items-center h-32 justify-between">
