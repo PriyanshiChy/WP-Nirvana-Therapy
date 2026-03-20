@@ -1,183 +1,260 @@
-
-  {"index": 
-  {
-  "nav-bar": ["logo.svg", "Home", "About", "Services", "Therapy", "FAQs",["button":["image":"whatsapp.svg","title":"Contact Us", "link":"https://wa.me/message/PCC72D4HITOIA1"]]],
- 
-  "hero": {
-    "bg.image": "hero.png",
-    "title": "A place where your feelings matter",
-    "button": {"title":"Book a Session", "link": "https://docs.google.com/forms/d/e/1FAIpQLSc5pTyJUupxKLEF0NInmYDFubrX50aBdAFOxdH26CtgLJsI8g/viewform?usp=sharing&ouid=101485698197199704423"}
-  },
-
-  "about-us": {
-    "bg.image": "about.png",
-    "title": "Welcome to Nirvana Therapy",
-    "description": ["Nirvana Therapy was created as a space where people can slow down and feel supported. The word Nirvana refers to liberation, a release from suffering and the patterns that keep us feeling stuck. In this context, it does not imply the absence of pain or difficulty, but the possibility of relating to our experiences with greater awareness and freedom. \n This practice was shaped around that idea: not forcing change, but creating space for understanding to emerge. Therapy can be helpful during many moments in life whether you're dealing with stress, emotional exhaustion, relationship struggles, grief, past experiences that still linger, or simply a feeling that something isn’t quite right. You don’t need to arrive with clear answers. Therapy here begins with listening and unfolds gently, guided by what feels most relevant to you. \n At Nirvana Therapy, sessions are collaborative, gentle, and grounded. Together, we explore your thoughts, emotions, and patterns at a pace that feels safe and manageable. The goal isn’t to “fix” you, but to help you understand yourself with greater clarity and self-compassion. \n At Nirvana Therapy, sessions are collaborative, gentle, and grounded. Together, we explore your thoughts, emotions, and patterns at a pace that feels safe and manageable. The goal isn’t to “fix” you, but to help you understand yourself with greater clarity and self-compassion. \n If you’re looking for a space to pause, reflect, and gradually find more freedom in how you relate to yourself and your life, Nirvana Therapy is here to support you. Let’s talk, explore, and make space for the life you deserve."]
-  },
-  
-  "meet-the-founder": {
-    "bg.image": "founder.png",
-    "title": "Meet the Founder",
-    "Description": ["title": "Hey,I am Shreya!", "title2": "Counselling Psychologist", "title3": "MSc in Psychology (Clinical), PGD Counselling Psychology",
-    "Description": "My journey into therapy was shaped by something I've often been called- “sensitive”. What once felt like something I needed to hide has become one of my greatest strengths. Feeling deeply allows me to understand people beyond their words, notice what remains unspoken, and hold space for emotions with care and compassion. \n In our sessions, I work with you, not on you. Together, we create a space that feels safe, reflective, and deeply human  where you can explore your emotions, understand your experiences, and move toward healing and growth. \n My approach to therapy is rooted in empathy, curiosity, and emotional attunement. I draw from Emotionally Focused Therapy (EFT), Cognitive Behavioral Therapy (CBT), Acceptance and Commitment Therapy (ACT), and trauma-informed practices, adapting my work to each person’s unique needs and pace.\n With two years of counselling experience and a strong passion for breaking the stigma around mental health, At Nirvana Therapy, our goal is to help you feel lighter, more in control and connected to yourself."],
-    "Description2": [["title": "2+","subtitle":"Years of Experience"],["title": "500+","subtitle": "Hours of Therapy"],["title": "60+","subtitle": "Clients"]], 
-    "image": "founder-picture.png",
-    "Card": "I believe therapy isn't just about fixing problems, it's about feeling seen, heard, and understood. At its core, therapy is a space where you can slow down, make sense of your experiences, and feel less alone in what you’re carrying.",
-    "button": {"title":"Book a Session", "link": "https://docs.google.com/forms/d/e/1FAIpQLSc5pTyJUupxKLEF0NInmYDFubrX50aBdAFOxdH26CtgLJsI8g/viewform?usp=sharing&ouid=101485698197199704423"}
-  },
-
-  "testimonials": {
-    "title": "What are perople saying",
-    "navigation":["button": "left-button.svg", "button2": "right-button.svg"],
-    "testimonials": [
+{
+  "index": {
+    "nav-bar": [
+      "image":"logo.svg",
+      "buttons":[
+        "Home",
+        "About",
+        "Services",
+        "Therapy",
+        "FAQs"
+      ],
       {
-        "feedback":["quote.svg", "I feel very safe and comfortable with my therapist. She listens to me with genuine empathy and understanding. I truly appreciate the supportive and non-judgmental space she creates for me."]
-      },
-      {
-        "feedback":["quote.svg", "I’m genuinely so glad I chose her as my therapist. This was my first session and I honestly couldn’t have asked for a better start. She was so warm, patient and deeply human  it instantly made me feel safe and understood. I know it’s a therapist’s job to be empathetic, but with her, it felt so genuine, like she truly cared about what I was feeling. I felt like someone who’s just taken a deep breath after being underwater for too long. I walked out of the session feeling lighter, hopeful and more in control of my own life. For the first time in a while, I feel like I can take care of myself again, make my own rules and find happiness and peace from within. I’m already looking forward to my next session. I’m starting to like this new version of me and I’m so grateful to her for helping me take that first step!"]
+        "button": {
+          "image": "whatsapp.svg",
+          "title": "Contact Us",
+          "link": "https://wa.me/message/PCC72D4HITOIA1"
+        }
       }
-      {
-        "feedback":["quote.svg", "Shreya is amazing with her work. I feel heard and secure about discussing my issues with her. Her approach has really helped me cope up with my mental health."]
-      }{
-        "feedback":["quote.svg", "The session was amazing. Shreya helped me understand my fear and patterns. It's easy for me to communicate with her without the fear of judgement. She has really helped me with coping up with situations which are out of my control"]
-      }{
-        "feedback":["quote.svg", "She is very thorough with her approaches and makes you feel seen and heard. Her techniques are very helpful as well."]
-      }{
-        "feedback":["quote.svg", "I’m really grateful for how easy she makes it to open up. She creates a space that feels comfortable, honest, and safe - which is something I didn’t expect to experience so quickly. Therapy feels lighter and more approachable with her."]
-      }{
-        "feedback":["quote.svg", "Shreya helped me cope with so much in a very short time. Through just a few sessions, she helped me unlearn years of negative thoughts and self-doubt. Today, I feel light, positive and genuinely happy every single day, and I owe it all to her! She truly is the best!"]
-      }{
-        "feedback":["quote.svg", "Finding Shreya as my first therapist was the biggest blessing. Being just a few weeks into therapy, I’ve found it to be so rewarding; because finally someone gets me. Since the beginning, Shreya has always made sure to ask how I’m doing. That alone makes me feel so seen. Every week it’s becoming easier for me to open up, easier for me to understand myself, and most of all, understand how I can be kinder to myself. I’m so grateful for having discovered Nirvana Therapy, because it’s completely changed my life for the better! "]
-      }{
-        "feedback":["quote.svg", "The session was amazing. Shreya helped me understand my fear and patterns. It's easy for me to communicate with her without the fear of judgement. She has really helped me with coping up with situations which are out of my control"]
-      },
-      "button": ["title":"Read more Reviews", "image":"external-link.svg","link":"https://share.google/XidnX5NEiDsjMEfF5"]
+    ],
+
+    "hero": {
+      "bg.image": "hero.png",
+      "title": "A place where your feelings matter",
+      "subtitle":"A safe, confidential space to explore your thoughts, emotions, and experiences without judgment.",
+      "button": {
+        "title": "Book a Session",
+        "link": "https://docs.google.com/forms/d/e/1FAIpQLSc5pTyJUupxKLEF0NInmYDFubrX50aBdAFOxdH26CtgLJsI8g/viewform?usp=sharing&ouid=101485698197199704423"
+      }
+    },
+
+    "about-us": {
+      "bg.image": "about.png",
+      "title": "Welcome to Nirvana Therapy",
+      "description": [
+        "Nirvana Therapy was created as a space where people can slow down and feel supported. The word Nirvana refers to liberation, a release from suffering and the patterns that keep us feeling stuck. In this context, it does not imply the absence of pain or difficulty, but the possibility of relating to our experiences with greater awareness and freedom. \n This practice was shaped around that idea: not forcing change, but creating space for understanding to emerge. Therapy can be helpful during many moments in life whether you're dealing with stress, emotional exhaustion, relationship struggles, grief, past experiences that still linger, or simply a feeling that something isn’t quite right. You don’t need to arrive with clear answers. Therapy here begins with listening and unfolds gently, guided by what feels most relevant to you. \n At Nirvana Therapy, sessions are collaborative, gentle, and grounded. Together, we explore your thoughts, emotions, and patterns at a pace that feels safe and manageable. The goal isn’t to “fix” you, but to help you understand yourself with greater clarity and self-compassion. \n At Nirvana Therapy, sessions are collaborative, gentle, and grounded. Together, we explore your thoughts, emotions, and patterns at a pace that feels safe and manageable. The goal isn’t to “fix” you, but to help you understand yourself with greater clarity and self-compassion. \n If you’re looking for a space to pause, reflect, and gradually find more freedom in how you relate to yourself and your life, Nirvana Therapy is here to support you. Let’s talk, explore, and make space for the life you deserve"
       ]
     },
 
-    "why-choose-us":{
-    "title": "Why Choose Nirvana Therapy",
-    "bg.image": "choose-us.png",
-    "description":[
-      ["title":"Trust & Emotional Safety", "icon": "trust.svg", "description": "Choosing a therapist requires trust and a sense of safety. Nirvana Therapy offers a calm, non-judgmental space where you can slow down, speak openly, and explore your experiences without feeling rushed or dismissed. \n Careful listening and clear professional boundaries create consistency and emotional safety throughout the process."],
-      ["title":"Trust & Emotional Safety", "icon": "care.svg", "description": "The work is grounded in evidence-based therapeutic practice and guided by a thoughtfully structured approach. \n Sessions focus not only on present challenges but also on the patterns influencing how you think, feel, and respond across different areas of life, helping develop deeper understanding and clarity."],
-      ["title":"Trust & Emotional Safety", "icon": "insight.svg", "description": "Clients often value the balance of reflection, insight, and practical tools offered in therapy. \n The approach remains professional, ethical, and human, focusing on developing self-awareness, emotional strength, and the ability to make choices that feel right for you rather than being told what to do."]
-    ]
+    "meet-the-founder": {
+      "bg.image": "founder.png",
+      "title": "Meet the Founder",
+      "headline": "Hey, I am Shreya!",
+      "role": "Counselling Psychologist",
+      "qualification": "MSc in Psychology (Clinical), PGD Counselling Psychology",
+      "description": "My journey into therapy was shaped by something I've often been called- “sensitive”. What once felt like something I needed to hide has become one of my greatest strengths. Feeling deeply allows me to understand people beyond their words, notice what remains unspoken, and hold space for emotions with care and compassion. \n In our sessions, I work with you, not on you. Together, we create a space that feels safe, reflective, and deeply human where you can explore your emotions, understand your experiences, and move toward healing and growth. \n My approach to therapy is rooted in empathy, curiosity, and emotional attunement. I draw from Emotionally Focused Therapy (EFT), Cognitive Behavioral Therapy (CBT), Acceptance and Commitment Therapy (ACT), and trauma-informed practices, adapting my work to each person’s unique needs and pace.\n With two years of counselling experience and a strong passion for breaking the stigma around mental health, At Nirvana Therapy, our goal is to help you feel lighter, more in control and connected to yourself.",
+      "stats": [
+        { "title": "2+", "subtitle": "Years of Experience" },
+        { "title": "500+", "subtitle": "Hours of Therapy" },
+        { "title": "60+", "subtitle": "Clients" }
+      ],
+      "image": "founder-picture.png",
+      "card": "I believe therapy isn't just about fixing problems, it's about feeling seen, heard, and understood. At its core, therapy is a space where you can slow down, make sense of your experiences, and feel less alone in what you’re carrying.",
+      "button": {
+        "title": "Book a Session",
+        "link": "https://docs.google.com/forms/d/e/1FAIpQLSc5pTyJUupxKLEF0NInmYDFubrX50aBdAFOxdH26CtgLJsI8g/viewform?usp=sharing&ouid=101485698197199704423"
+      }
+    },
+
+    "testimonials": {
+      "title": "What are people saying",
+      "navigation": {
+        "button": "left-button.svg",
+        "button2": "right-button.svg"
+      },
+      "testimonials": [
+        {
+          "feedback": [
+            "quote.svg",
+            "I feel very safe and comfortable with my therapist. She listens to me with genuine empathy and understanding. I truly appreciate the supportive and non-judgmental space she creates for me."
+          ]
+        },
+        {
+          "feedback": [
+            "quote.svg",
+            "I’m genuinely so glad I chose her as my therapist. This was my first session and I honestly couldn’t have asked for a better start. She was so warm, patient and deeply human it instantly made me feel safe and understood. I know it’s a therapist’s job to be empathetic, but with her, it felt so genuine, like she truly cared about what I was feeling. I felt like someone who’s just taken a deep breath after being underwater for too long. I walked out of the session feeling lighter, hopeful and more in control of my own life. For the first time in a while, I feel like I can take care of myself again, make my own rules and find happiness and peace from within. I’m already looking forward to my next session. I’m starting to like this new version of me and I’m so grateful to her for helping me take that first step!"
+          ]
+        },
+        {
+          "feedback": [
+            "quote.svg",
+            "Shreya is amazing with her work. I feel heard and secure about discussing my issues with her. Her approach has really helped me cope up with my mental health."
+          ]
+        },
+        {
+          "feedback": [
+            "quote.svg",
+            "The session was amazing. Shreya helped me understand my fear and patterns. It's easy for me to communicate with her without the fear of judgement. She has really helped me with coping up with situations which are out of my control"
+          ]
+        },
+        {
+          "feedback": [
+            "quote.svg",
+            "She is very thorough with her approaches and makes you feel seen and heard. Her techniques are very helpful as well."
+          ]
+        },
+        {
+          "feedback": [
+            "quote.svg",
+            "I’m really grateful for how easy she makes it to open up. She creates a space that feels comfortable, honest, and safe - which is something I didn’t expect to experience so quickly. Therapy feels lighter and more approachable with her."
+          ]
+        },
+        {
+          "feedback": [
+            "quote.svg",
+            "Shreya helped me cope with so much in a very short time. Through just a few sessions, she helped me unlearn years of negative thoughts and self-doubt. Today, I feel light, positive and genuinely happy every single day, and I owe it all to her! She truly is the best!"
+          ]
+        },
+        {
+          "feedback": [
+            "quote.svg",
+            "Finding Shreya as my first therapist was the biggest blessing. Being just a few weeks into therapy, I’ve found it to be so rewarding; because finally someone gets me. Since the beginning, Shreya has always made sure to ask how I’m doing. That alone makes me feel so seen. Every week it’s becoming easier for me to open up, easier for me to understand myself, and most of all, understand how I can be kinder to myself. I’m so grateful for having discovered Nirvana Therapy, because it’s completely changed my life for the better!"
+          ]
+        }
+      ],
+      "button": {
+        "title": "Read more Reviews",
+        "image": "external-link.svg",
+        "link": "https://share.google/XidnX5NEiDsjMEfF5"
+      }
+    },
+
+    "why-choose-us": {
+      "title": "Why Choose Nirvana Therapy",
+      "bg.image": "choose-us.png",
+      "description": [
+        {
+          "title": "Trust & Emotional Safety",
+          "icon": "trust.svg",
+          "description": "Choosing a therapist requires trust and a sense of safety. Nirvana Therapy offers a calm, non-judgmental space where you can slow down, speak openly, and explore your experiences without feeling rushed or dismissed. \n Careful listening and clear professional boundaries create consistency and emotional safety throughout the process."
+        },
+        {
+          "title": "Evidence-Based Practice",
+          "icon": "care.svg",
+          "description": "The work is grounded in evidence-based therapeutic practice and guided by a thoughtfully structured approach. \n Sessions focus not only on present challenges but also on the patterns influencing how you think, feel, and respond across different areas of life, helping develop deeper understanding and clarity."
+        },
+        {
+          "title": "Insight & Practical Tools",
+          "icon": "insight.svg",
+          "description": "Clients often value the balance of reflection, insight, and practical tools offered in therapy. \n The approach remains professional, ethical, and human, focusing on developing self-awareness, emotional strength, and the ability to make choices that feel right for you rather than being told what to do."
+        }
+      ]
     },
 
     "areas-of-expertise": {
       "title": "Areas of Expertise",
-      "description": {[
-        "1":[["image":"trauma.svg","title": "Trauma"], "description": "“I still feel affected by things that happened years ago.” \n “I get triggered easily and don’t always understand why.”"],
-        "2":[["image": "friendship&peer.svg","title": "Friendships and Peer Concerns"],"description": "“I feel left out or unsure where I stand with friends.”\n“My friendships feel draining or one-sided.”"],
-        "3":[["image": "emotional-regulation.svg","title": "Emotional Regulation"],"description": "“My emotions feel too intense or overwhelming。”\n“I either react strongly or shut down completely。”"],
-        "4":[["image": "identity-exploration.svg","title": "Identity Exploration"],"description": "“I don’t really know who I am anymore。”\n“I feel lost about what I want from my life。”"],
-        "5":[["image": "career.svg","title": "Career & Academic Stress"],"description": "“I’m constantly stressed about work or studies。”\n“I can’t concentrate or feel motivated anymore。”"],
-        "6":[["image": "sleep-somantic.svg","title": "Sleep & Somantic Complaints"],"description": "“I struggle to fall or stay asleep。”\n“My stress shows up as headaches, fatigue, or body pain。”"],
-        "7":[["image": "grief.svg","title": "Grief and Losss"],"description": "“I haven’t been the same since I lost someone or something important。”\n“I feel stuck in my grief and don’t know how to move forward。”"],
-        "8":[["image": "anxiety-overthinking.svg","title": "Anxiety & Overthinking"],"description": "“My mind doesn’t stop racing。”\n“I keep replaying conversations and worrying about the future。”"],
-        "9":[["image": "self-confidence.svg","title": "Self-Esteem & Confidence"],"description": "“I constantly doubt myself。”\n“I feel like I’m never good enough。”"],
-        "10":[["image": "sexuality-affirming.svg","title": "Sexuality-Affirming Support"],"description": "“I want a safe space to talk about my sexuality。”\n“I’m confused or questioning and don’t feel comfortable talking about it elsewhere。”"],
-        "11":[["image": "life-tranisition.svg","title": "Life Transitions"],"description": "“I’m struggling to adjust to a big change in my life.”\n“Everything feels uncertain right now.”"],
-        "12":[["image": "romantic-relationships.svg","title": "Romantic Relationships"],"description": "“I don’t feel seen or understood in my relationship.”\n“I keep repeating the same patterns in dating or relationships.”"],
-        "13":[["image": "depression.svg","title": "Depression & Low Mood"],"description": "“I don’t feel happy anymore.”\n“Things that used to matter don’t seem to affect me now.”"],
-        "14":[["image": "perfectionsism.svg","title": "Perfectionism"],"description": "“I put a lot of pressure on myself.”\n“I’m scared of making mistakes or failing.”"],
-        "15":[["image": "stress.svg","title": "Stress & Burnout"],"description": "“I feel exhausted all the time.”\n“I’m running on empty and don’t know how to rest.”"],
-        "16":[["image": "executive.svg","title": "Exectuive Functioning Difficulties"],"description": "“I can’t seem to get things done even when I want to.”\n“I procrastinate, feel disorganized, and fall behind.”"],
-        "17":[["image": "family.svg","title": "Familial Relationships"],"description": "“My family dynamics feel complicated or overwhelming.”\n“I struggle with boundaries or old family patterns.”"],
-        "18":[["image": "body-img.svg","title": "Body Image Concerns"],"description": "“I’m constantly unhappy with how I look.”\n“My relationship with my body feels difficult.”"]
-      ]},
-      "button": ["image":"whatsapp.svg","title":"Start a Conversation", "link":"https://wa.me/message/PCC72D4HITOIA1"]
+      "description": [
+        {"image":"trauma.svg","title":"Trauma","description":"“I still feel affected by things that happened years ago.” \n “I get triggered easily and don’t always understand why.”"},
+        {"image":"friendship&peer.svg","title":"Friendships and Peer Concerns","description":"“I feel left out or unsure where I stand with friends.”\n“My friendships feel draining or one-sided.”"},
+        {"image":"emotional-regulation.svg","title":"Emotional Regulation","description":"“My emotions feel too intense or overwhelming.”\n“I either react strongly or shut down completely.”"},
+        {"image":"identity-exploration.svg","title":"Identity Exploration","description":"“I don’t really know who I am anymore.”\n“I feel lost about what I want from my life.”"},
+        {"image":"career.svg","title":"Career & Academic Stress","description":"“I’m constantly stressed about work or studies.”\n“I can’t concentrate or feel motivated anymore.”"},
+        {"image":"sleep-somantic.svg","title":"Sleep & Somatic Complaints","description":"“I struggle to fall or stay asleep.”\n“My stress shows up as headaches, fatigue, or body pain.”"},
+        {"image":"grief.svg","title":"Grief and Loss","description":"“I haven’t been the same since I lost someone or something important.”\n“I feel stuck in my grief and don’t know how to move forward.”"},
+        {"image":"anxiety-overthinking.svg","title":"Anxiety & Overthinking","description":"“My mind doesn’t stop racing.”\n“I keep replaying conversations and worrying about the future.”"},
+        {"image":"self-confidence.svg","title":"Self-Esteem & Confidence","description":"“I constantly doubt myself.”\n“I feel like I’m never good enough.”"},
+        {"image":"sexuality-affirming.svg","title":"Sexuality-Affirming Support","description":"“I want a safe space to talk about my sexuality.”\n“I’m confused or questioning and don’t feel comfortable talking about it elsewhere.”"},
+        {"image":"life-transition.svg","title":"Life Transitions","description":"“I’m struggling to adjust to a big change in my life.”\n“Everything feels uncertain right now.”"},
+        {"image":"romantic-relationships.svg","title":"Romantic Relationships","description":"“I don’t feel seen or understood in my relationship.”\n“I keep repeating the same patterns in dating or relationships.”"},
+        {"image":"depression.svg","title":"Depression & Low Mood","description":"“I don’t feel happy anymore.”\n“Things that used to matter don’t seem to affect me now.”"},
+        {"image":"perfectionism.svg","title":"Perfectionism","description":"“I put a lot of pressure on myself.”\n“I’m scared of making mistakes or failing.”"},
+        {"image":"stress.svg","title":"Stress & Burnout","description":"“I feel exhausted all the time.”\n“I’m running on empty and don’t know how to rest.”"},
+        {"image":"executive.svg","title":"Executive Functioning Difficulties","description":"“I can’t seem to get things done even when I want to.”\n“I procrastinate, feel disorganized, and fall behind.”"},
+        {"image":"family.svg","title":"Familial Relationships","description":"“My family dynamics feel complicated or overwhelming.”\n“I struggle with boundaries or old family patterns.”"},
+        {"image":"body-img.svg","title":"Body Image Concerns","description":"“I’m constantly unhappy with how I look.”\n“My relationship with my body feels difficult.”"}
+      ],
+      "button": {
+        "image":"whatsapp.svg",
+        "title":"Start a Conversation",
+        "link":"https://wa.me/message/PCC72D4HITOIA1"
+      }
     },
 
-    "therapy-process" : {
+    "therapy-process": {
       "bg.image": "therapy.png",
       "title": "Start your journey with us",
-      "description": [["image": "offline.svg","title": "Offline Sessions", "description": "In Kolkata"],["image": "offline.svg","title": "Online Session", "description": "Private and Secured"]],
-      "description2": " Opening Hours - 12pm - 7pm, Monday to Saturday",
-      "title2": " How to Book a Consulatation",
-      "description3":[["image":"step-1.svg","title":"1",{"title2":"Register", "link":"https://wa.me/message/PCC72D4HITOIA1"}, "description":"Click the link “Register” and fill out the registration form with your basic details."],
-      ["image":"step-2.svg","title":"2","title2":"Initial Contact", "description":"After you submit the form, someone from the team will reach out to you to continue the process."],
-      ["image":"step-3.svg","title":"3","title2":"Schedule", "description":"You will be offered a time slot for your first consultation, which will be mutually decided by you and the therapist."],
-      ["image":"step-4.svg","title":"4","title2":"Confirmation", "description":" You will receive a payment link to complete the booking. Payment is requested only after the session slot is offered."]
+      "description": [
+        {"image": "offline.svg", "title": "Offline Sessions", "description": "In Kolkata"},
+        {"image": "offline.svg", "title": "Online Session", "description": "Private and Secured"}
+      ],
+      "description2": "Opening Hours - 12pm - 7pm, Monday to Saturday",
+      "title2": "How to Book a Consultation",
+      "description3": [
+        {"image": "step-1.svg", "title": "1", "title2": "Register", "link": "https://wa.me/message/PCC72D4HITOIA1", "description":"Click the link “Register” and fill out the registration form with your basic details."},
+        {"image": "step-2.svg", "title": "2", "title2": "Initial Contact", "description":"After you submit the form, someone from the team will reach out to you to continue the process."},
+        {"image": "step-3.svg", "title": "3", "title2": "Schedule", "description":"You will be offered a time slot for your first consultation, which will be mutually decided by you and the therapist."},
+        {"image": "step-4.svg", "title": "4", "title2": "Confirmation", "description":"You will receive a payment link to complete the booking. Payment is requested only after the session slot is offered."}
       ],
       "title3": "Voila! Your healing journey begins now."
     },
 
-    "faq"; {
-     "title":"We have got the answers",
-     "title2": "to Frequently Asked Questions",
+    "faq": {
+      "title": "We have got the answers",
+      "title2": "to Frequently Asked Questions",
       "description": [
-        [["title":"What actually happens in therapy?", "button":"see-less.svg"],"description":"Therapy is a conversation, but not a casual one. Sessions involve exploring your thoughts, emotions, patterns, and experiences in a structured yet flexible way. Sometimes this looks like reflection and insight-building; at other times it may involve learning tools, skills, or new ways of responding to situations. The process is guided, collaborative, and shaped around what you bring."],
-        [["title":"How do I know if I need therapy?","button":"see-less.svg"],"description":"You don’t always need a diagnosis, a crisis, or a clear reason to consider therapy. Many people reach out when they notice they’re feeling stuck in the same patterns, carrying emotions that don’t seem to settle, or feeling more drained than usual by everyday life. Sometimes it shows up as overthinking, irritability, emotional numbness, or a sense of disconnect from yourself or others. Often, it’s simply an inner nudge that something needs attention. Therapy can be a space to explore that gently, before things feel overwhelming."],
-        [["title":"Is everything I share in therapy confidential?","button":"see-less.svg"],"description":"Yes. Confidentiality is a core part of therapy. What you share remains private, except in rare situations where there is a risk of serious harm to you or others, or when disclosure is required by law. These limits are discussed transparently."],
-        [["title":"Do you offer online as well as in-person sessions?", "button":"see-less.svg"],"description":"Yes. Sessions are offered both online and in person (Kolkata). Online therapy provides flexibility and accessibility, while in-person sessions offer a quiet, private space for those who prefer meeting face-to-face."],
-        [["title":"How long is each therapy session?", "button":"see-less.svg"],"description":"Each session is about 50- 60 minutes long. The frequency of sessions is decided collaboratively, based on your needs and preferences."],
-        [["title":"How long does therapy usually last?", "button":"see-less.svg"],"description":"There is no fixed timeline. Some people come in for short-term support around a specific concern, while others choose to stay longer for deeper exploration. Therapy progresses at a pace that feels right for you."],
-        [["title":"Can I ask my queries before booking a paid session?", "button":"see-less.svg"],"description":"Yes. You’re welcome to reach out with basic questions about therapy, availability, or the process before booking a session. This helps you decide whether therapy feels like the right step for you."],
-        [["title":"How much does therapy cost?", "button":"see-less.svg"],"description":" We believe therapy should be accessible to everyone. Fees are discussed during the first point of contact so we can understand your needs and offer an appropriate sliding-scale option where possible."],
-        [["title":"Is this a crisis or emergency service?", "button":"see-less.svg"],"description": "No. Nirvana Therapy does not provide emergency or crisis support. If you are experiencing immediate distress or are at risk of harming yourself or others, please contact local emergency services or a crisis helpline listed below immediately.\n Vandrelavala Foundation 91-9999666555\n Fortis Stress Helpline 91-8376804102\n Jeevan Aastha Helpline 1800-2333330"]
+        {"question":"What actually happens in therapy?", "button":"see-less.svg", "answer":"Therapy is a conversation, but not a casual one ..."},
+        {"question":"How do I know if I need therapy?", "button":"see-less.svg", "answer":"You don’t always need a diagnosis, a crisis, or a clear reason to consider therapy ..."},
+        {"question":"Is everything I share in therapy confidential?", "button":"see-less.svg", "answer":"Yes. Confidentiality is a core part of therapy ..."},
+        {"question":"Do you offer online as well as in-person sessions?", "button":"see-less.svg", "answer":"Yes. Sessions are offered both online and in person (Kolkata). ..."},
+        {"question":"How long is each therapy session?", "button":"see-less.svg", "answer":"Each session is about 50-60 minutes long ..."},
+        {"question":"How long does therapy usually last?", "button":"see-less.svg", "answer":"There is no fixed timeline ..."},
+        {"question":"Can I ask my queries before booking a paid session?", "button":"see-less.svg", "answer":"Yes. You’re welcome to reach out ..."},
+        {"question":"How much does therapy cost?", "button":"see-less.svg", "answer":"We believe therapy should be accessible ..."},
+        {"question":"Is this a crisis or emergency service?", "button":"see-less.svg", "answer":"No. Nirvana Therapy does not provide emergency or crisis support ..."}
       ],
-      "title3":["Need More Information?","button": ["image":"whatsapp.svg","title":"Contact Us","link":"https://wa.me/message/PCC72D4HITOIA1"]]
+      "title3": {
+        "title":"Need More Information?",
+        "button": {
+          "image":"whatsapp.svg",
+          "title":"Contact Us",
+          "link":"https://wa.me/message/PCC72D4HITOIA1"
+        }
+      }
     },
 
-    "footer":{
-      "bg.image":"bg-footer.png",
-      "description" : ["title":"EXPLORE", "button"["Home","About","FAQ","Therapy"],"title":"ADDRESS","description":"Address- 616, Diamond Prestige, 41A, Acharya Jagadish Chandra Bose Road, Kolkata, West Bengal 700017 ","button":["title":"Find us on Maps","image":"external-link.svg","link":"https://maps.app.goo.gl/tERhD9HjmPYiMsCR7"]],
-      "description2":[["title":"LEGAL","button":"title":"Terms and Conditions"],["title":"FIND US","button1":{"image":"instagram.svg","linl":"https://www.instagram.com/nirvana_therapyigsh=dm1nZjQ5djFidnZx&utm_source=qr"}, "button2":{"image":"instagram.svg","link":"http://www.linkedin.com/in/shreya-agrawal-937652191"}],["title":"CONTACT INFORMATION","button":["image":"phone.svg","description":"+91 6291957761", "link":"tel:91 6291957761"],"button2":["image":"linkedin.svg","link":"http://www.linkedin.com/in/shreya-agrawal-937652191"]]],
-      "image":"logo.svg",
-      "description3":"Start your healing journey with us",
-      "button": {"title":"Book a Session", "link": "https://docs.google.com/forms/d/e/1FAIpQLSc5pTyJUupxKLEF0NInmYDFubrX50aBdAFOxdH26CtgLJsI8g/viewform?usp=sharing&ouid=101485698197199704423"},
-      "button":{"image":"whatsapp.svg","title":"Contact Us","link":"https://wa.me/message/PCC72D4HITOIA1"}
-    
-  },
-
-    "terms-and-conditions":{
-      "bg.image":"tnc.png",
-      "title":"Terms and Conditions",
-      "subtitle":"Last Updated- 12 March 2026",
-      "description":["By accessing this website or engaging with services offered by Nirvana Therapy, you agree to the following terms and conditions. Please read them carefully.",
-
-"title": "Nature of Services-" "Description" Nirvana Therapy provides professional counselling and psychotherapy services. Therapy is a collaborative process and outcomes may vary from person to person. Therapy does not guarantee specific results and is not a substitute for medical care, psychiatric treatment, or emergency services.
-
-Eligibility- Therapy services are offered to individuals 18 years and above. By reaching out or booking a session, you confirm that you meet this requirement.
-
-Mode of Therapy- Sessions are offered online and in person (Kolkata). Online sessions are conducted via secure video platforms. While care is taken to maintain privacy, Nirvana Therapy cannot be held responsible for technical issues such as internet disruptions or platform-related limitations beyond reasonable control.
-
-Appointments & Scheduling- Sessions are scheduled by mutual agreement after initial contact. Each session is 60 minutes long. Late arrivals may result in reduced session time.
-
-Fees & Payments-  Nirvana Therapy believes that mental health care should be accessible. Fees are discussed during the first point of contact, and a sliding scale may be offered based on individual circumstances. Once agreed upon, the fee remains consistent unless communicated otherwise.
-Payments are required in advance to confirm a session.
-
-Cancellation & No-Show Policy
-Cancellations or rescheduling more than 24 hours in advance are not charged.
-Cancellations within 24 hours may attract a partial or full session fee.
-No-shows without prior notice are chargeable in full.
-Exceptions may be considered in genuine emergencies and are handled on a case-by-case basis.
-
-Confidentiality
-All therapy sessions are confidential and conducted in line with professional ethical guidelines. Information shared during sessions will not be disclosed without consent, except in situations where:
-There is a risk of harm to self or others
-Abuse, neglect, or exploitation is suspected
-Disclosure is required by law
-
-Sessions may not be recorded by either party without explicit written consent.
-
-Communication Outside Sessions- Clients may reach out via email or WhatsApp for scheduling or important observations. These channels are not meant for ongoing therapeutic conversations. Responses outside sessions are not guaranteed, except in urgent situations.
-
-Emergency Situations - Nirvana Therapy does not provide crisis or emergency services. In case of immediate distress, suicidal thoughts, or risk of harm, clients are advised to contact local emergency services or crisis helplines.
-
-Scope of Practice & Referrals- If a concern falls outside the therapist’s scope of competence, or if a dual relationship arises, Nirvana Therapy reserves the right to ethically discontinue therapy and provide appropriate referrals.
-
-Limitation of Responsibility- While care is taken to provide ethical and professional support, Nirvana Therapy cannot be held responsible for events occurring outside therapy sessions, including emotional distress, lack of improvement, or crises. Clients are encouraged to maintain additional support systems.
-
-Website Use - All content on this website is for informational purposes only and may not be copied, reproduced, or used without permission.
-
-Updates to Terms- These terms may be updated periodically. Continued use of the website or services implies acceptance of any revised terms.
-"],
-
-"description2":"For any clarification connect with us on nirvanatherapy23@gmail.com"
+    "footer": {
+      "bg.image": "bg-footer.png",
+      "sections": [
+        {"title": "EXPLORE", "links":["Home","About","FAQ","Therapy"]},
+        {"title": "ADDRESS", "text": "Address- 616, Diamond Prestige, 41A, Acharya Jagadish Chandra Bose Road, Kolkata, West Bengal 700017", "button": {"title":"Find us on Maps","image":"external-link.svg","link":"https://maps.app.goo.gl/tERhD9HjmPYiMsCR7"}},
+        {"title": "LEGAL", "links":[{"title":"Terms and Conditions"}]},
+        {"title": "FIND US", "button1":{"image":"instagram.svg","link":"https://www.instagram.com/nirvana_therapy?igsh=dm1nZjQ5djFidnZx&utm_source=qr"}, "button2":{"image":"instagram.svg","link":"http://www.linkedin.com/in/shreya-agrawal-937652191"}},
+        {"title": "CONTACT INFORMATION", "button":{"image":"phone.svg","description":"+91 6291957761","link":"tel:91 6291957761"}, "button2":{"image":"linkedin.svg","link":"http://www.linkedin.com/in/shreya-agrawal-937652191"}}
+      ],
+      "image": "logo.svg",
+      "description3": "Start your healing journey with us",
+      "button1": {
+        "title": "Book a Session",
+        "link": "https://docs.google.com/forms/d/e/1FAIpQLSc5pTyJUupxKLEF0NInmYDFubrX50aBdAFOxdH26CtgLJsI8g/viewform?usp=sharing&ouid=101485698197199704423"
+      },
+      "button2": {
+        "image": "whatsapp.svg",
+        "title": "Contact Us",
+        "link": "https://wa.me/message/PCC72D4HITOIA1"
+      }
     },
 
-
+    "terms-and-conditions": {
+      "bg.image": "tnc.png",
+      "title": "Terms and Conditions",
+      "subtitle": "Last Updated- 12 March 2026",
+      "description": [
+        "By accessing this website or engaging with services offered by Nirvana Therapy, you agree to the following terms and conditions. Please read them carefully.",
+        "Nirvana Therapy provides professional counselling and psychotherapy services. Therapy is a collaborative process and outcomes may vary from person to person. Therapy does not guarantee specific results and is not a substitute for medical care, psychiatric treatment, or emergency services.",
+        "Eligibility- Therapy services are offered to individuals 18 years and above. By reaching out or booking a session, you confirm that you meet this requirement.",
+        "Mode of Therapy- Sessions are offered online and in person (Kolkata). Online sessions are conducted via secure video platforms. While care is taken to maintain privacy, Nirvana Therapy cannot be held responsible for technical issues such as internet disruptions or platform-related limitations beyond reasonable control.",
+        "Appointments & Scheduling- Sessions are scheduled by mutual agreement after initial contact. Each session is 60 minutes long. Late arrivals may result in reduced session time.",
+        "Fees & Payments- Nirvana Therapy believes that mental health care should be accessible. Fees are discussed during the first point of contact, and a sliding scale may be offered based on individual circumstances. Once agreed upon, the fee remains consistent unless communicated otherwise. Payments are required in advance to confirm a session.",
+        "Cancellation & No-Show Policy- Cancellations or rescheduling more than 24 hours in advance are not charged. Cancellations within 24 hours may attract a partial or full session fee. No-shows without prior notice are chargeable in full. Exceptions may be considered in genuine emergencies and are handled on a case-by-case basis.",
+        "Confidentiality- All therapy sessions are confidential and conducted in line with professional ethical guidelines. Information shared during sessions will not be disclosed without consent, except in situations where there is a risk of harm to self or others, abuse, neglect, or exploitation is suspected, or disclosure is required by law.",
+        "Communication Outside Sessions- Clients may reach out via email or WhatsApp for scheduling or important observations. These channels are not meant for ongoing therapeutic conversations. Responses outside sessions are not guaranteed, except in urgent situations.",
+        "Emergency Situations - Nirvana Therapy does not provide crisis or emergency services. In case of immediate distress, suicidal thoughts, or risk of harm, clients are advised to contact local emergency services or crisis helplines.",
+        "Scope of Practice & Referrals- If a concern falls outside the therapist’s scope of competence, or if a dual relationship arises, Nirvana Therapy reserves the right to ethically discontinue therapy and provide appropriate referrals.",
+        "Limitation of Responsibility- While care is taken to provide ethical and professional support, Nirvana Therapy cannot be held responsible for events occurring outside therapy sessions, including emotional distress, lack of improvement, or crises. Clients are encouraged to maintain additional support systems.",
+        "Website Use - All content on this website is for informational purposes only and may not be copied, reproduced, or used without permission.",
+        "Updates to Terms- These terms may be updated periodically. Continued use of the website or services implies acceptance of any revised terms."
+      ],
+      "description2": "For any clarification connect with us on nirvanatherapy23@gmail.com"
+    }
   }
+}
