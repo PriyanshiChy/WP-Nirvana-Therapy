@@ -29,7 +29,7 @@ $content = get_page_content("index")
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Reenie+Beanie&display=swap" rel="stylesheet">
 
   <!-- JS asset in head (rare; usually footer) -->
-  <script src="<?php echo get_template_directory_uri(); ?>/assets/js/head-script.js" defer></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js" defer></script>
 
   <!-- WordPress hook: VERY important for plugins & enqueued assets -->
   <!-- <?php wp_head(); ?> -->
@@ -47,11 +47,11 @@ $content = get_page_content("index")
           A place where your <span class="font-semibold italic">feelings</span> matter
         </h1>
         <p>A safe, confidential space to explore your thoughts, emotions, and experiences without judgment.</p>
-        <?php callComponent('book-session', ["variant"   => "glow"]); ?>
+        <?php callComponent('book-session', ["variant"  =>  "glow"]); ?>
       </div>
     </section>
 
-    <section id="about" class="px-16 mt-18 pb-16 text-center">
+    <section id="about" class="px-16 pt-18 pb-16 text-center">
       <h2>Welcome to Nirvana Therapy</h2>
       <div class="mt-14 max-w-5xl mx-auto text-lg leading-[150%]">
         <p>Nirvana Therapy was created as a space where people can slow down and feel supported. The word Nirvana refers to liberation, a release from suffering and the patterns that keep us feeling stuck. In this context, it does not imply the absence of pain or difficulty, but the possibility of relating to our experiences with greater awareness and freedom.</p>
@@ -192,10 +192,193 @@ $content = get_page_content("index")
     <section id="services">
     </section>
 
-    <section id="how-it-works">
+    <section id="how-it-works" class="p-16">
+      <h2>Start your journey with us</h1>
+      <div class="flex py-8 mt-4">
+        <div class="flex flex-1 flex-col items-center px-2.5 gap-4 border-r border-r-primary">
+          <div class="size-16 [&>svg]:h-full [&>svg]:w-full">
+            <!-- add svg -->
+          </div>
+          <div class="flex flex-col items-center gap-4">
+            <p class="font-serif font-semibold text-2xl">Offline Session</p>
+            <p class="font-sans text-base">In Kolkata</p>
+          </div>
+        </div>
+        <div class="flex flex-1 flex-col items-center px-2.5 gap-4">
+          <div class="size-16 [&>svg]:h-full [&>svg]:w-full">
+            <!-- add svg -->
+          </div>
+          <div class="flex flex-col items-center gap-4">
+            <p class="font-serif font-semibold text-2xl">Offline Session</p>
+            <p class="font-sans text-base">In Kolkata</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 py-2 text-center text-2xl font-sans">
+        <p>Opening Hours- 12pm - 7pm Monday to Saturday</p>
+      </div>
+      <div class="mt-4 flex flex-col items-center text-center gap-y-9">
+        <h3>How to Book a Consultation</h3>
+        <div class="w-full flex py-8">
+          <div class="flex flex-1 flex-col items-center text-center">
+            <div class="max-w-48 w-full space-y-4">
+              <div class="size-16 [&>svg]:h-full [&>svg]:w-full">
+                <!-- add svg -->
+              </div>
+              <p class="font-serif font-semibold text-2xl">
+                1.<br/>Register
+              </p>
+              <p class="font-sans">
+                Click the link “Register” and fill out the registration form with your basic details.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-1 flex-col items-center text-center">
+            <div class="max-w-48 w-full space-y-4">
+              <div class="size-16 [&>svg]:h-full [&>svg]:w-full">
+                <!-- add svg -->
+              </div>
+              <p class="font-serif font-semibold text-2xl">
+                1.<br/>Register
+              </p>
+              <p class="font-sans">
+                Click the link “Register” and fill out the registration form with your basic details.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-1 flex-col items-center text-center">
+            <div class="max-w-48 w-full space-y-4">
+              <div class="size-16 [&>svg]:h-full [&>svg]:w-full">
+                <!-- add svg -->
+              </div>
+              <p class="font-serif font-semibold text-2xl">
+                1.<br/>Register
+              </p>
+              <p class="font-sans">
+                Click the link “Register” and fill out the registration form with your basic details.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-1 flex-col items-center text-center">
+            <div class="max-w-48 w-full space-y-4">
+              <div class="size-16 [&>svg]:h-full [&>svg]:w-full">
+                <!-- add svg -->
+              </div>
+              <p class="font-serif font-semibold text-2xl">
+                1.<br/>Register
+              </p>
+              <p class="font-sans">
+                Click the link “Register” and fill out the registration form with your basic details.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h4 class="font-medium text-[1.625rem] mt-4 text-center">Voila! Your healing journey begins now </h4>
     </section>
 
-    <section id="faq">
+    <section id="faq" class="px-16 py-18">
+      <h3 class="text-center">We have got the <span class="italic font-semibold">answers</span></h3>
+      <p class="text-center font-serif text-2xl mt-3">To Frequently asked questions</p>
+
+      <div class="max-w-4xl mx-auto mt-14" id="faq-accordion">
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>What actually happens in therapy?</span>
+            <svg class="faq-icon" aria-hidden="true"><use href="#icon-chevron-down" /></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            <p>In a therapy session, you and your therapist talk openly about what's on your mind, your feelings, and your experiences. Sessions are guided by what feels most relevant to you. There's no fixed script — it's a collaborative conversation that unfolds at your pace.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>How do I know if I need therapy?</span>
+            <svg class="faq-icon" aria-hidden="true"><use href="#icon-chevron-down" /></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            <p>You don't need to be in a crisis to benefit from therapy. If you've been feeling stressed, emotionally exhausted, stuck in patterns, or simply feel that something isn't quite right, therapy can help. Reaching out early is often more effective than waiting until things feel unbearable.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Is everything I share in therapy confidential?</span>
+            <svg class="faq-icon" aria-hidden="true"><use href="#icon-chevron-down" /></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            <p>Yes. Confidentiality is a cornerstone of therapy. Everything you share stays between you and your therapist. There are only a few rare exceptions required by law — such as if there is a serious risk of harm to you or someone else — and these will always be discussed with you transparently.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Do you offer online as well as in-person sessions?</span>
+            <svg class="faq-icon" aria-hidden="true"><use href="#icon-chevron-down" /></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            <p>Yes, both options are available. In-person sessions are held in Kolkata, and online sessions are available via video call for those who prefer to connect from the comfort of their own space or are located elsewhere.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>How long is each therapy session?</span>
+            <svg class="faq-icon" aria-hidden="true"><use href="#icon-chevron-down" /></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            <p>Each session is typically 50 minutes long. This provides enough time to explore what's on your mind while keeping the conversation focused and intentional.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>How long does therapy usually last?</span>
+            <svg class="faq-icon" aria-hidden="true"><use href="#icon-chevron-down" /></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            <p>The duration varies from person to person depending on what you're working through. Some people find short-term therapy of 8–12 sessions helpful, while others benefit from longer ongoing work. This is something you'll explore together with your therapist based on your goals and progress.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Can I ask my queries before booking a paid session?</span>
+            <svg class="faq-icon" aria-hidden="true"><use href="#icon-chevron-down" /></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            <p>Absolutely. You're welcome to reach out with any questions before committing to a session. A brief introductory call can help clarify whether this feels like the right fit for you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>How much does therapy cost?</span>
+            <svg class="faq-icon" aria-hidden="true"><use href="#icon-chevron-down" /></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            <p>Session fees will be shared during your initial inquiry. Please reach out via the contact details below and we'll provide you with the current pricing and any available options.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Is this a crisis or emergency service?</span>
+            <svg class="faq-icon" aria-hidden="true"><use href="#icon-chevron-down" /></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            <p>No. Nirvana Therapy is not a crisis or emergency service. If you or someone you know is in immediate danger, please contact emergency services or a crisis helpline. Therapy here is intended for ongoing support, reflection, and personal growth.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="flex justify-center items-center gap-8 mt-14">
+        <p class="font-sans font-normal text-2xl">Need More Information?</p>
+        <?php callComponent('contact-us', ["variant" => "outlined"]); ?>
+      </div>
     </section>
   </main>
   <footer></footer>

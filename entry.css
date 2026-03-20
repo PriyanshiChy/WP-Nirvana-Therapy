@@ -22,6 +22,9 @@ Author URI: https://pchy.design
   h1,
   h2,
   h3,
+  h4,
+  h5,
+  h6,
   p,
   span,
   a,
@@ -73,6 +76,10 @@ Author URI: https://pchy.design
   flex-wrap: nowrap;
 }
 
+.link > div > svg {
+  color: inherit;
+}
+
 .link.primary {
   background-color: var(--color-primary);
   color: var(--color-foreground);
@@ -114,7 +121,9 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--color-foreground);
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   width: 100%;
   padding-inline: 2.25rem;
   padding-block: 1.5rem;
@@ -192,31 +201,24 @@ section {
 }
 
 section > h2 {
-  @apply font-serif font-medium text-6xl text-center;
+  @apply font-serif font-medium text-[3.5rem] text-center;
 }
 
 section h3 {
-  @apply font-serif font-medium text-5xl;
+  @apply font-serif font-medium text-[2.625rem];
 }
 
 #hero {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 60%,
-      rgba(255, 255, 255, 0.52) 70%,
-      rgba(255, 255, 255, 0.68) 80%,
-      rgba(255, 255, 255, 1) 100%
-    ),
-    url("./assets/images/bg/hero.png");
+  background: url("./assets/images/bg/hero.png");
   background-size: cover;
-  background-position: center;
+  background-position: bottom -50px center;
+  background-repeat: no-repeat;
   padding-inline: 2.25rem;
   min-height: 100vh;
 }
 
 #hero .content {
-  margin-top: 22vh;
+  margin-top: 24vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -244,37 +246,75 @@ section h3 {
 }
 
 #about {
-  background:
-    linear-gradient(
-      180deg,
-      #ffffff 0%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0) 80%,
-      #ffffff 100%
-    ),
-    url("./assets/images/bg/about.png");
-  background-position: top;
+  background: url("./assets/images/bg/about.png");
+  background-position: top -20px center;
+  background-size: top 80px cover;
+  background-repeat: no-repeat;
 }
 
 #about-founder {
   min-height: 100vh;
   padding: 4rem;
-  background:
-    linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
-    linear-gradient(
-      180deg,
-      #ffffff 0%,
-      rgba(255, 255, 255, 0) 35%,
-      #ffffff 72%
-    ),
-    url("./assets/images/bg/founder.png");
+  background: url("./assets/images/bg/founder.png");
 }
 
 #choose-us {
   min-height: 100vh;
-  background:
-    linear-gradient(180deg, #ffffff 17%, rgba(255, 255, 255, 0) 38%),
-    url("./assets/images/bg/choose-us.png");
+  background: url("./assets/images/bg/choose-us.png");
   background-position: center bottom -120px;
   background-repeat: no-repeat;
+}
+
+#how-it-works {
+  min-height: 100vh;
+  background: url("./assets/images/bg/services.png");
+  background-position: center bottom -120px;
+  background-repeat: no-repeat;
+}
+
+/* FAQ accordion */
+
+#faq h2 em {
+  font-style: italic;
+}
+
+.faq-item {
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--color-text) 20%, transparent);
+}
+
+.faq-trigger {
+  @apply font-serif text-2xl;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.faq-icon {
+  @apply size-8 text-primary;
+  flex-shrink: 0;
+  transition: transform 300ms ease;
+}
+
+.faq-trigger[aria-expanded="true"] .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  overflow: hidden;
+  font-family: "Golos Text", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  padding-bottom: 1.5rem;
+  padding-right: 2.5rem;
 }
