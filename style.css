@@ -23,8 +23,6 @@ Author URI: https://pchy.design
     --text-2xl--line-height: calc(2 / 1.5);
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
-    --text-6xl: 3.75rem;
-    --text-6xl--line-height: 1;
     --text-7xl: 4.5rem;
     --text-7xl--line-height: 1;
     --font-weight-normal: 400;
@@ -190,6 +188,9 @@ Author URI: https://pchy.design
   .absolute {
     position: absolute;
   }
+  .fixed {
+    position: fixed;
+  }
   .relative {
     position: relative;
   }
@@ -201,6 +202,9 @@ Author URI: https://pchy.design
   }
   .mx-auto {
     margin-inline: auto;
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
   }
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
@@ -214,11 +218,11 @@ Author URI: https://pchy.design
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
   }
-  .mt-18 {
-    margin-top: calc(var(--spacing) * 18);
-  }
   .flex {
     display: flex;
+  }
+  .hidden {
+    display: none;
   }
   .size-8 {
     width: calc(var(--spacing) * 8);
@@ -253,6 +257,9 @@ Author URI: https://pchy.design
   .max-w-5xl {
     max-width: var(--container-5xl);
   }
+  .max-w-48 {
+    max-width: calc(var(--spacing) * 48);
+  }
   .max-w-120 {
     max-width: calc(var(--spacing) * 120);
   }
@@ -275,6 +282,9 @@ Author URI: https://pchy.design
   }
   .rotate-180 {
     rotate: 180deg;
+  }
+  .transform {
+    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
   .flex-col {
     flex-direction: column;
@@ -300,6 +310,9 @@ Author URI: https://pchy.design
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
+  .gap-8 {
+    gap: calc(var(--spacing) * 8);
+  }
   .gap-12 {
     gap: calc(var(--spacing) * 12);
   }
@@ -320,12 +333,22 @@ Author URI: https://pchy.design
       margin-block-end: calc(calc(var(--spacing) * 16) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
+  .gap-y-9 {
+    row-gap: calc(var(--spacing) * 9);
+  }
   .border-x {
     border-inline-style: var(--tw-border-style);
     border-inline-width: 1px;
   }
+  .border-r {
+    border-right-style: var(--tw-border-style);
+    border-right-width: 1px;
+  }
   .border-primary {
     border-color: var(--color-primary);
+  }
+  .border-r-primary {
+    border-right-color: var(--color-primary);
   }
   .bg-\[\#CCC8EC\] {
     background-color: #CCC8EC;
@@ -338,6 +361,12 @@ Author URI: https://pchy.design
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
+  }
+  .p-16 {
+    padding: calc(var(--spacing) * 16);
+  }
+  .px-2\.5 {
+    padding-inline: calc(var(--spacing) * 2.5);
   }
   .px-2\.5\! {
     padding-inline: calc(var(--spacing) * 2.5) !important;
@@ -357,6 +386,9 @@ Author URI: https://pchy.design
   .px-16 {
     padding-inline: calc(var(--spacing) * 16);
   }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
   }
@@ -365,6 +397,9 @@ Author URI: https://pchy.design
   }
   .py-18 {
     padding-block: calc(var(--spacing) * 18);
+  }
+  .pt-18 {
+    padding-top: calc(var(--spacing) * 18);
   }
   .pb-16 {
     padding-bottom: calc(var(--spacing) * 16);
@@ -400,6 +435,9 @@ Author URI: https://pchy.design
   .text-lg {
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-\[1\.625rem\] {
+    font-size: 1.625rem;
   }
   .leading-6 {
     --tw-leading: calc(var(--spacing) * 6);
@@ -446,7 +484,7 @@ Author URI: https://pchy.design
   }
 }
 @layer base {
-  h1, h2, h3, p, span, a, button {
+  h1, h2, h3, h4, h5, h6, p, span, a, button {
     color: var(--color-text);
   }
 }
@@ -485,6 +523,9 @@ Author URI: https://pchy.design
   justify-content: center;
   flex-wrap: nowrap;
 }
+.link > div > svg {
+  color: inherit;
+}
 .link.primary {
   background-color: var(--color-primary);
   color: var(--color-foreground);
@@ -519,7 +560,9 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--color-foreground);
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   width: 100%;
   padding-inline: 2.25rem;
   padding-block: 1.5rem;
@@ -582,27 +625,26 @@ section {
 section > h2 {
   text-align: center;
   font-family: var(--font-serif);
-  font-size: var(--text-6xl);
-  line-height: var(--tw-leading, var(--text-6xl--line-height));
+  font-size: 3.5rem;
   --tw-font-weight: var(--font-weight-medium);
   font-weight: var(--font-weight-medium);
 }
 section h3 {
   font-family: var(--font-serif);
-  font-size: var(--text-5xl);
-  line-height: var(--tw-leading, var(--text-5xl--line-height));
+  font-size: 2.625rem;
   --tw-font-weight: var(--font-weight-medium);
   font-weight: var(--font-weight-medium);
 }
 #hero {
-  background: linear-gradient( 180deg, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.52) 70%, rgba(255, 255, 255, 0.68) 80%, rgba(255, 255, 255, 1) 100% ), url("./assets/images/bg/hero.png");
+  background: url("./assets/images/bg/hero.png");
   background-size: cover;
-  background-position: center;
+  background-position: bottom -50px center;
+  background-repeat: no-repeat;
   padding-inline: 2.25rem;
   min-height: 100vh;
 }
 #hero .content {
-  margin-top: 22vh;
+  margin-top: 24vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -626,19 +668,72 @@ section h3 {
   margin-top: 7.5rem;
 }
 #about {
-  background: linear-gradient( 180deg, #ffffff 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 80%, #ffffff 100% ), url("./assets/images/bg/about.png");
-  background-position: top;
+  background: url("./assets/images/bg/about.png");
+  background-position: top -20px center;
+  background-size: top 80px cover;
+  background-repeat: no-repeat;
 }
 #about-founder {
   min-height: 100vh;
   padding: 4rem;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), linear-gradient( 180deg, #ffffff 0%, rgba(255, 255, 255, 0) 35%, #ffffff 72% ), url("./assets/images/bg/founder.png");
+  background: url("./assets/images/bg/founder.png");
 }
 #choose-us {
   min-height: 100vh;
-  background: linear-gradient(180deg, #ffffff 17%, rgba(255, 255, 255, 0) 38%), url("./assets/images/bg/choose-us.png");
+  background: url("./assets/images/bg/choose-us.png");
   background-position: center bottom -120px;
   background-repeat: no-repeat;
+}
+#how-it-works {
+  min-height: 100vh;
+  background: url("./assets/images/bg/services.png");
+  background-position: center bottom -120px;
+  background-repeat: no-repeat;
+}
+#faq h2 em {
+  font-style: italic;
+}
+.faq-item {
+  border-bottom: 1px solid color-mix(in srgb, #032c4d 20%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    border-bottom: 1px solid color-mix(in srgb, var(--color-text) 20%, transparent);
+  }
+}
+.faq-trigger {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  line-height: var(--tw-leading, var(--text-2xl--line-height));
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 400;
+  color: var(--color-text);
+}
+.faq-icon {
+  width: calc(var(--spacing) * 8);
+  height: calc(var(--spacing) * 8);
+  color: var(--color-primary);
+  flex-shrink: 0;
+  transition: transform 300ms ease;
+}
+.faq-trigger[aria-expanded="true"] .faq-icon {
+  transform: rotate(180deg);
+}
+.faq-answer {
+  overflow: hidden;
+  font-family: "Golos Text", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  padding-bottom: 1.5rem;
+  padding-right: 2.5rem;
 }
 @property --tw-translate-x {
   syntax: "*";
@@ -654,6 +749,26 @@ section h3 {
   syntax: "*";
   inherits: false;
   initial-value: 0;
+}
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
 }
 @property --tw-space-y-reverse {
   syntax: "*";
@@ -679,6 +794,11 @@ section h3 {
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
       --tw-space-y-reverse: 0;
       --tw-border-style: solid;
       --tw-leading: initial;

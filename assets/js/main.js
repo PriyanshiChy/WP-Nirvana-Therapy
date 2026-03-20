@@ -4,19 +4,21 @@
  * Add lightweight interactivity here (e.g., FAQ accordion toggles).
  */
 
-(function () {
-  "use strict";
+// FAQ Accordion
+document.querySelectorAll('.faq-trigger').forEach((trigger) => {
+  trigger.addEventListener('click', () => {
+    const answer = trigger.nextElementSibling;
+    const isOpen = trigger.getAttribute('aria-expanded') === 'true';
 
-  const faqToggles = document.querySelectorAll(".nirvana-faq__question");
-  if (faqToggles.length) {
-    faqToggles.forEach((toggle) => {
-      toggle.addEventListener("click", () => {
-        const wrapper = toggle.closest(".nirvana-faq__item");
-        if (!wrapper) {
-          return;
-        }
-        wrapper.classList.toggle("is-open");
-      });
+    // Close all other open items
+    document.querySelectorAll('.faq-trigger[aria-expanded="true"]').forEach((openTrigger) => {
+      if (openTrigger !== trigger) {
+        openTrigger.setAttribute('aria-expanded', 'false');
+        openTrigger.nextElementSibling.hidden = true;
+      }
     });
-  }
-})();
+
+    trigger.setAttribute('aria-expanded', String(!isOpen));
+    answer.hidden = isOpen;
+  });
+});
