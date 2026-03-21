@@ -44,7 +44,7 @@
         <p class="font-serif font-semibold text-sm tracking-widest text-text"><?php echo $findus["title"]; ?></p>
         <div class="flex gap-3">
           <?php foreach($findus["socials"] as $social): ?>
-            <a href="<?php esc_url($social["href"]) ?>" class="flex items-center justify-center size-10 text-foreground bg-primary">
+            <a href="<?php echo esc_url($social["href"]) ?>" class="flex items-center justify-center size-10 text-foreground bg-primary">
               <?php echo get_asset("/images/icons/" . $social["icon"]) ?>
             </a>
           <?php endforeach; ?>
