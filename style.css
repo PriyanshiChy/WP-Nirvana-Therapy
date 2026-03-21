@@ -221,11 +221,17 @@ Author URI: https://pchy.design
   .mt-5 {
     margin-top: calc(var(--spacing) * 5);
   }
+  .mt-7 {
+    margin-top: calc(var(--spacing) * 7);
+  }
   .mt-14 {
     margin-top: calc(var(--spacing) * 14);
   }
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
+  }
+  .mt-64 {
+    margin-top: calc(var(--spacing) * 64);
   }
   .mb-48 {
     margin-bottom: calc(var(--spacing) * 48);
@@ -485,6 +491,9 @@ Author URI: https://pchy.design
   .py-18 {
     padding-block: calc(var(--spacing) * 18);
   }
+  .py-36 {
+    padding-block: calc(var(--spacing) * 36);
+  }
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
   }
@@ -542,6 +551,9 @@ Author URI: https://pchy.design
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
   }
+  .text-\[2\.625rem\] {
+    font-size: 2.625rem;
+  }
   .leading-6 {
     --tw-leading: calc(var(--spacing) * 6);
     line-height: calc(var(--spacing) * 6);
@@ -585,9 +597,6 @@ Author URI: https://pchy.design
   }
   .italic {
     font-style: italic;
-  }
-  .underline {
-    text-decoration-line: underline;
   }
   .opacity-0 {
     opacity: 0%;
@@ -945,6 +954,12 @@ section h3 {
   color: var(--color-text);
   padding-bottom: 1.5rem;
   padding-right: 2.5rem;
+}
+main.tnc {
+  background-image: url("./assets/images/bg/tnc.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 @property --tw-translate-x {
   syntax: "*";

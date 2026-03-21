@@ -83,6 +83,12 @@
     }
   },
   "index": {
+    "head": {
+      "title": "Nirvana Therapy | Online Therapy & Mental Wellness in India",
+      "description": "Affordable online therapy in India with certified psychologists. Get support for anxiety, stress, and emotional well-being. Book your first session today.",
+      "keywords": "mental health, therapy, affordable therapy, online, counselling, psychologist"
+    },
+
     "hero": {
       "title": "A place where your <semibold><i>feelings</i></semibold> matter",
       "subtitle": "A safe, confidential space to explore your thoughts, emotions, and experiences without judgment."
@@ -400,6 +406,12 @@
     }
   },
   "terms-and-conditions": {
+    "head": {
+      "title": "Therapy Services | Anxiety, Stress & Emotional Healing | Nirvana Therapy",
+      "description": "Explore professional therapy services for anxiety, depression, stress, and personal growth. Personalized sessions with certified therapists.",
+      "keywords": "anxiety therapy, depression counselling, stress management therapy, emotional healing therapy"
+    },
+
     "title": "Terms and Conditions",
     "subtitle": "Last Updated- 12 March 2026",
     "description": [
@@ -418,6 +430,6 @@
       "<semibold>Website Use -</semibold> All content on this website is for informational purposes only and may not be copied, reproduced, or used without permission.",
       "<semibold>Updates to Terms -</semibold> These terms may be updated periodically. Continued use of the website or services implies acceptance of any revised terms."
     ],
-    "closing": "For any clarification connect with us on <a class=\"underline\" href=\"mailto:nirvanatherapy23@gmail.com\">nirvanatherapy23@gmail.com</a>"
+    "closing": "For any clarification connect with us on <a href=\"mailto:nirvanatherapy23@gmail.com\"><u>nirvanatherapy23@gmail.com</u></a>"
   }
 }
