@@ -37,7 +37,7 @@ $buttons = get_component_content("buttons");
 
     <section id="meet-the-founder">
       <h2><?php echo($content["meet-the-founder"]["title"]); ?></h2>
-      <div class="flex gap-14 w-full mx-auto mt-16 items-start">
+      <div class="flex gap-14 w-full mx-auto mt-12 items-start">
         <div class="max-w-4xl flex-1 flex flex-col">
           <div class="px-5">
             <div class="py-8 space-y-4">
@@ -45,7 +45,7 @@ $buttons = get_component_content("buttons");
               <p class="font-sans font-medium text-2xl"><?php echo($content["meet-the-founder"]["role"]); ?></p>
               <p class="font-sans font-normal text-lg"><?php echo($content["meet-the-founder"]["qualification"]); ?></p>
             </div>
-            <div class="text-lg leading-6 font-sans mt-4">
+            <div class="text-lg leading-6 font-sans">
               <?php foreach($content["meet-the-founder"]["description"] as $item): ?>
                 <p><?php echo($item); ?></p><br />
               <?php endforeach; ?>
@@ -54,7 +54,14 @@ $buttons = get_component_content("buttons");
           <div class="px-4 py-8 flex mt-5">
             <?php foreach($content["meet-the-founder"]["stats"] as $item): ?>
               <div class="flex-1 flex flex-col items-center justify-center gap-2 font-serif">
-                <p class="text-7xl"><?php echo($item["title"]); ?></p>
+                <?php
+                  preg_match('/^(\d+)(.*)$/', $item["title"], $m);
+                  $num = $m[1] ?? '';
+                  $suffix = htmlspecialchars($m[2] ?? '');
+                ?>
+                <p class="text-7xl stat-count" data-target="<?php echo $num; ?>" data-suffix="<?php echo $suffix; ?>">
+                  <?php echo($item["title"]); ?>
+                </p>
                 <p class="font-medium text-base"><?php echo($item["subtitle"]); ?></p>
               </div>
             <?php endforeach; ?>
@@ -134,15 +141,17 @@ $buttons = get_component_content("buttons");
       <h3 class="text-center"><?php echo($content["areas-of-expertise"]["title"]); ?></h3>
       <div class="grid grid-cols-3 [&>*:not(:nth-last-child(-n+3))]:border-b-2 *:border-r-2 [&>*:nth-child(3n)]:border-r-0 *:border-primary">
         <?php foreach($content["areas-of-expertise"]["description"] as $item): ?>
-          <div class="h-40 group relative">
-            <div class="flex w-full items-center gap-4 px-9 py-8 duration-400 transition-opacity group-hover:opacity-0">
-              <?php echo(get_asset($item["image"])) ?>
-              <p class="text-2xl font-serif"><?php echo($item["title"]) ?></p>
-            </div>
-            <div class="px-9 absolute inset-0 space-y-4 flex flex-col justify-center duration-400 transition-opacity opacity-0 group-hover:opacity-100">
-              <?php foreach($item["description"] as $subitem): ?>
-                <p class="text-base font-sans leading-[150%]"><?php echo($subitem) ?></p>
-              <?php endforeach ?>
+          <div class="flip-card h-40">
+            <div class="flip-card-inner">
+              <div class="flip-card-front flex items-center gap-4 px-9 py-8">
+                <?php echo(get_asset($item["image"])) ?>
+                <p class="text-2xl font-serif"><?php echo($item["title"]) ?></p>
+              </div>
+              <div class="flip-card-back px-9 space-y-4 flex flex-col justify-center">
+                <?php foreach($item["description"] as $subitem): ?>
+                  <p class="text-base font-sans leading-[150%]"><?php echo($subitem) ?></p>
+                <?php endforeach ?>
+              </div>
             </div>
           </div>
         <?php endforeach ?>
@@ -200,7 +209,7 @@ $buttons = get_component_content("buttons");
             <span><?php echo $item["question"] ?></span>
             <svg class="faq-icon" aria-hidden="true"><use href="#icon-chevron-down" /></svg>
           </button>
-          <div class="faq-answer" hidden>
+          <div class="faq-answer">
             <p><?php echo $item["answer"] ?></p>
           </div>
         </div>

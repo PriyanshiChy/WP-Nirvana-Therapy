@@ -200,8 +200,8 @@ Author URI: https://pchy.design
   .relative {
     position: relative;
   }
-  .inset-0 {
-    inset: calc(var(--spacing) * 0);
+  .start {
+    inset-inline-start: var(--spacing);
   }
   .bottom-12 {
     bottom: calc(var(--spacing) * 12);
@@ -224,6 +224,9 @@ Author URI: https://pchy.design
   .mt-7 {
     margin-top: calc(var(--spacing) * 7);
   }
+  .mt-12 {
+    margin-top: calc(var(--spacing) * 12);
+  }
   .mt-14 {
     margin-top: calc(var(--spacing) * 14);
   }
@@ -244,9 +247,6 @@ Author URI: https://pchy.design
   }
   .grid {
     display: grid;
-  }
-  .hidden {
-    display: none;
   }
   .size-4 {
     width: calc(var(--spacing) * 4);
@@ -595,18 +595,6 @@ Author URI: https://pchy.design
   .italic {
     font-style: italic;
   }
-  .opacity-0 {
-    opacity: 0%;
-  }
-  .transition-opacity {
-    transition-property: opacity;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-  .duration-400 {
-    --tw-duration: 400ms;
-    transition-duration: 400ms;
-  }
   .\*\:border-r-2 {
     :is(& > *) {
       border-right-style: var(--tw-border-style);
@@ -616,20 +604,6 @@ Author URI: https://pchy.design
   .\*\:border-primary {
     :is(& > *) {
       border-color: var(--color-primary);
-    }
-  }
-  .group-hover\:opacity-0 {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        opacity: 0%;
-      }
-    }
-  }
-  .group-hover\:opacity-100 {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        opacity: 100%;
-      }
     }
   }
   .hover\:underline {
@@ -759,7 +733,7 @@ Author URI: https://pchy.design
   border-top-width: 0;
 }
 header {
-  position: fixed;
+  position: sticky;
   z-index: 99;
   top: 0;
   inset: 0;
@@ -905,6 +879,30 @@ section h3 {
 #faq h2 em {
   font-style: italic;
 }
+.flip-card {
+  perspective: 1000px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 600ms ease;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateX(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background-color: var(--color-foreground);
+}
+.flip-card-back {
+  transform: rotateX(180deg);
+  color: var(--color-text);
+}
 .faq-item {
   transition-property: all;
   transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -945,10 +943,14 @@ section h3 {
 }
 .faq-answer {
   overflow: hidden;
+  max-height: 0;
+  transition: max-height 400ms ease;
   font-family: "Golos Text", sans-serif;
   font-size: 1.1rem;
   line-height: 1.7;
   color: var(--color-text);
+}
+.faq-answer p {
   padding-bottom: 1.5rem;
   padding-right: 2.5rem;
 }
