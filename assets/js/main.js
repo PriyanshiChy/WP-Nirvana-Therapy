@@ -95,7 +95,7 @@ const registerCountUp = () => {
   const animate = (el) => {
     const target = parseInt(el.dataset.target, 10);
     const suffix = el.dataset.suffix || "";
-    const duration = 2000;
+    const duration = 1000;
     const start = performance.now();
 
     const step = (now) => {
@@ -117,13 +117,43 @@ const registerCountUp = () => {
         }
       });
     },
-    { threshold: 0.8 },
+    { threshold: 0.5 },
   );
 
   elements.forEach((el) => observer.observe(el));
+};
+
+const registerMobileMenu = () => {
+  const menu = document.querySelector(".mobile-menu");
+  const hamburger = document.querySelector(".header-hamburger");
+  const close = document.querySelector(".header-close");
+
+  if (!menu || !hamburger) return;
+
+  const open = () => {
+    menu.classList.add("is-open");
+    hamburger.setAttribute("aria-expanded", "true");
+    menu.removeAttribute("aria-hidden");
+    document.body.style.overflow = "hidden";
+  };
+
+  const dismiss = () => {
+    menu.classList.remove("is-open");
+    hamburger.setAttribute("aria-expanded", "false");
+    menu.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  };
+
+  hamburger.addEventListener("click", open);
+  close.addEventListener("click", dismiss);
+
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", dismiss);
+  });
 };
 
 registerCarousel();
 registerFAQ();
 registerSmoothScroll();
 registerCountUp();
+registerMobileMenu();

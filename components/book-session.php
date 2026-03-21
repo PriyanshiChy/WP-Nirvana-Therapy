@@ -6,6 +6,7 @@ if ( ! empty( $args["props"] ) ) {
     "children" => $content["label"],
     "variant"  => $args["props"]["variant"],
     "href"     => $content["href"],
+    "target"   => "_blank",
   ]);
 }
 ?>

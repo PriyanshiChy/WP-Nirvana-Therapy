@@ -315,8 +315,7 @@
             "“My relationship with my body feels difficult.”"
           ]
         }
-      ],
-      "closing": "Relate with any? Lets talk about it"
+      ]
     },
 
     "how-it-works": {
@@ -338,7 +337,7 @@
       "steps": [
         {
           "image": "/images/therapy/step-1.svg",
-          "title": "1<br />Register",
+          "title": "1<br /><a target=\"_blank\" href=\"https://docs.google.com/forms/d/e/1FAIpQLSc5pTyJUupxKLEF0NInmYDFubrX50aBdAFOxdH26CtgLJsI8g/viewform?usp=sharing&ouid=101485698197199704423\"><u>Register</u></a>",
           "link": "https://wa.me/message/PCC72D4HITOIA1",
           "description": "Click the link “Register” and fill out the registration form with your basic details."
         },

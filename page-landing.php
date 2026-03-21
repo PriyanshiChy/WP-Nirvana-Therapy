@@ -81,7 +81,7 @@ $buttons = get_component_content("buttons");
 
     <section id="testimonials" class="py-18 space-y-16">
       <div class="px-16 flex w-full justify-between">
-        <h3><?php echo $content["testimonials"]["title"]; ?></h3>
+        <h2><?php echo $content["testimonials"]["title"]; ?></h2>
         <div class="flex gap-4">
           <button class="testimonial-carousel-previous link outlined px-2.5!">
             <svg class="size-10 text-primary" aria-hidden="true">
@@ -116,7 +116,7 @@ $buttons = get_component_content("buttons");
     </section>
 
     <section id="choose-us" class="px-16 py-18 space-y-16 min-h-screen">
-      <h3 class="text-center"><?php echo $content["choose-us"]["title"]; ?></h3>
+      <h2 class="text-center"><?php echo $content["choose-us"]["title"]; ?></h2>
       <div class="flex w-full items-stretch divide-x-2 divide-primary">
         <?php foreach($content["choose-us"]["description"] as $item): ?>
           <div class="space-y-4 px-9">
@@ -138,7 +138,7 @@ $buttons = get_component_content("buttons");
     </section>
 
     <section id="area-of-expertise" class="px-16 py-18 space-y-16">
-      <h3 class="text-center"><?php echo($content["areas-of-expertise"]["title"]); ?></h3>
+      <h2 class="text-center"><?php echo($content["areas-of-expertise"]["title"]); ?></h2>
       <div class="grid grid-cols-3 [&>*:not(:nth-last-child(-n+3))]:border-b-2 *:border-r-2 [&>*:nth-child(3n)]:border-r-0 *:border-primary">
         <?php foreach($content["areas-of-expertise"]["description"] as $item): ?>
           <div class="flip-card h-40">
@@ -157,8 +157,8 @@ $buttons = get_component_content("buttons");
         <?php endforeach ?>
       </div>
       <div class="flex justify-center items-center gap-9 py-6">
-        <p class="font-sans text-2xl"><?php echo($content["areas-of-expertise"]["closing"]); ?></p>
-        <?php callComponent('book-session', ["variant" => "primary"]) ?>
+        <!-- <p class="font-sans text-2xl"><?php echo($content["areas-of-expertise"]["closing"]); ?></p> -->
+        <?php callComponent('contact-us', ["variant" => "primary", "label" => "Start a Conversation"]) ?>
       </div>
     </section>
 
@@ -198,7 +198,7 @@ $buttons = get_component_content("buttons");
     </section>
 
     <section id="faq" class="px-16 py-18">
-      <h3 class="text-center"><?php echo $content["faq"]["heading"] ?></h3>
+      <h2 class="text-center"><?php echo $content["faq"]["heading"] ?></h2>
       <p class="text-center font-serif text-2xl mt-3"><?php echo $content["faq"]["subheading"] ?></p>
 
       <div class="max-w-4xl mx-auto mt-14" id="faq-accordion">
