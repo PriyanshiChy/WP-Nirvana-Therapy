@@ -230,9 +230,6 @@ Author URI: https://pchy.design
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
   }
-  .mt-64 {
-    margin-top: calc(var(--spacing) * 64);
-  }
   .mb-48 {
     margin-bottom: calc(var(--spacing) * 48);
   }
@@ -825,7 +822,7 @@ header nav ul li > a:hover {
   opacity: 100%;
 }
 footer {
-  background-image: url("./assets/images/bg/bg-footer.png");
+  background-image: url("./assets/images/bg/bg-footer.webp");
   background-position: bottom;
   background-repeat: no-repeat;
 }
@@ -851,7 +848,7 @@ section h3 {
   font-weight: var(--font-weight-medium);
 }
 #hero {
-  background: linear-gradient( 180deg, transparent 0%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 1) 100% ), url("./assets/images/bg/hero.png");
+  background: linear-gradient( 180deg, transparent 0%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 1) 100% ), url("./assets/images/bg/hero.webp");
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
@@ -883,7 +880,7 @@ section h3 {
   margin-top: 7.5rem;
 }
 #about-us {
-  background: url("./assets/images/bg/about.png");
+  background: url("./assets/images/bg/about.webp");
   background-position: top -20px center;
   background-size: top 80px cover;
   background-repeat: no-repeat;
@@ -895,13 +892,13 @@ section h3 {
 }
 #choose-us {
   min-height: 100vh;
-  background: url("./assets/images/bg/choose-us.png");
+  background: url("./assets/images/bg/choose-us.webp");
   background-position: center bottom -120px;
   background-repeat: no-repeat;
 }
 #how-it-works {
   min-height: 100vh;
-  background: url("./assets/images/bg/services.png");
+  background: url("./assets/images/bg/services.webp");
   background-position: center bottom -120px;
   background-repeat: no-repeat;
 }
@@ -956,7 +953,7 @@ section h3 {
   padding-right: 2.5rem;
 }
 main.tnc {
-  background-image: url("./assets/images/bg/tnc.png");
+  background-image: url("./assets/images/bg/tnc.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
