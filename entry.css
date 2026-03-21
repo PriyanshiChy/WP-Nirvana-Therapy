@@ -19,6 +19,10 @@ Author URI: https://pchy.design
 }
 
 @layer base {
+  * {
+    @apply select-none;
+  }
+
   h1,
   h2,
   h3,
@@ -27,9 +31,39 @@ Author URI: https://pchy.design
   h6,
   p,
   span,
+  em,
+  b,
+  strong,
+  i,
+  u,
   a,
   button {
     @apply text-text;
+  }
+
+  medium {
+    @apply font-medium;
+  }
+
+  semibold {
+    @apply font-semibold;
+  }
+
+  b,
+  strong,
+  bold {
+    @apply font-bold;
+  }
+
+  i,
+  em,
+  italic {
+    @apply italic;
+  }
+
+  u,
+  underline {
+    @apply underline;
   }
 }
 
@@ -113,7 +147,7 @@ Author URI: https://pchy.design
 }
 
 header {
-  position: sticky;
+  position: fixed;
   z-index: 99;
   top: 0;
   inset: 0;
@@ -188,6 +222,12 @@ header nav ul li > a:hover {
 }
 /* ? Nav hover Option 2 --- */
 
+footer {
+  background-image: url("./assets/images/bg/bg-footer.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
 /* Page classes */
 
 main {
@@ -209,16 +249,23 @@ section h3 {
 }
 
 #hero {
-  background: url("./assets/images/bg/hero.png");
+  background:
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0) 90%,
+      rgba(255, 255, 255, 1) 100%
+    ),
+    url("./assets/images/bg/hero.png");
   background-size: cover;
-  background-position: bottom -50px center;
+  background-position: top;
   background-repeat: no-repeat;
   padding-inline: 2.25rem;
   min-height: 100vh;
 }
 
 #hero .content {
-  margin-top: 24vh;
+  margin-top: 32vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -245,14 +292,14 @@ section h3 {
   margin-top: 7.5rem;
 }
 
-#about {
+#about-us {
   background: url("./assets/images/bg/about.png");
   background-position: top -20px center;
   background-size: top 80px cover;
   background-repeat: no-repeat;
 }
 
-#about-founder {
+#meet-the-founder {
   min-height: 100vh;
   padding: 4rem;
   background: url("./assets/images/bg/founder.png");
@@ -279,6 +326,7 @@ section h3 {
 }
 
 .faq-item {
+  @apply transition-all duration-300;
   border-bottom: 1px solid
     color-mix(in srgb, var(--color-text) 20%, transparent);
 }
