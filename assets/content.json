@@ -109,7 +109,7 @@
       "heading": "Hey, I am Shreya!",
       "role": "Counselling Psychologist",
       "qualification": "MSc in Psychology (Clinical), PGD Counselling Psychology",
-      "image": "/images/founder-picture.png",
+      "image": "/images/founder-picture.webp",
       "description": [
         "My journey into therapy was shaped by something I've often been called- “sensitive”. What once felt like something I needed to hide has become one of my greatest strengths. Feeling deeply allows me to understand people beyond their words, notice what remains unspoken, and hold space for emotions with care and compassion.",
         "In our sessions, I work with you, not on you. Together, we create a space that feels safe, reflective, and deeply human where you can explore your emotions, understand your experiences, and move toward healing and growth.",
@@ -337,23 +337,23 @@
       "steps": [
         {
           "image": "/images/therapy/step-1.svg",
-          "title": "1<br /><a target=\"_blank\" href=\"https://docs.google.com/forms/d/e/1FAIpQLSc5pTyJUupxKLEF0NInmYDFubrX50aBdAFOxdH26CtgLJsI8g/viewform?usp=sharing&ouid=101485698197199704423\"><u>Register</u></a>",
+          "title": "1. <br /><a target=\"_blank\" href=\"https://docs.google.com/forms/d/e/1FAIpQLSc5pTyJUupxKLEF0NInmYDFubrX50aBdAFOxdH26CtgLJsI8g/viewform?usp=sharing&ouid=101485698197199704423\"><u>Register</u></a>",
           "link": "https://wa.me/message/PCC72D4HITOIA1",
           "description": "Click the link “Register” and fill out the registration form with your basic details."
         },
         {
           "image": "/images/therapy/step-2.svg",
-          "title": "2<br />Initial Contact",
+          "title": "2. <br />Initial Contact",
           "description": "After you submit the form, someone from the team will reach out to you to continue the process."
         },
         {
           "image": "/images/therapy/step-3.svg",
-          "title": "3<br/>Schedule",
+          "title": "3. <br/>Schedule",
           "description": "You will be offered a time slot for your first consultation, which will be mutually decided by you and the therapist."
         },
         {
           "image": "/images/therapy/step-4.svg",
-          "title": "4<br />Confirmation",
+          "title": "4. <br />Confirmation",
           "description": "You will receive a payment link to complete the booking. Payment is requested only after the session slot is offered."
         }
       ],

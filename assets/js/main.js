@@ -33,8 +33,10 @@ const registerFAQ = () => {
 
 const registerCarousel = () => {
   const carousel = document.querySelector(".testimonial-carousel");
-  const prevButton = document.querySelector(".testimonial-carousel-previous");
-  const nextButton = document.querySelector(".testimonial-carousel-next");
+  const prevButton = document.querySelectorAll(
+    ".testimonial-carousel-previous",
+  );
+  const nextButton = document.querySelectorAll(".testimonial-carousel-next");
 
   const card = document.querySelector(".testimonial-carousel > div");
   const gap = 48;
@@ -44,12 +46,16 @@ const registerCarousel = () => {
 
   // Add navigation buttons here
 
-  prevButton.addEventListener("click", () => {
-    carousel.scrollBy({ left: -offset, behavior: "smooth" });
+  prevButton.forEach((button) => {
+    button.addEventListener("click", () => {
+      carousel.scrollBy({ left: -offset, behavior: "smooth" });
+    });
   });
 
-  nextButton.addEventListener("click", () => {
-    carousel.scrollBy({ left: offset, behavior: "smooth" });
+  nextButton.forEach((button) => {
+    button.addEventListener("click", () => {
+      carousel.scrollBy({ left: offset, behavior: "smooth" });
+    });
   });
 };
 
@@ -124,31 +130,45 @@ const registerCountUp = () => {
 };
 
 const registerMobileMenu = () => {
-  const menu = document.querySelector(".mobile-menu");
-  const hamburger = document.querySelector(".header-hamburger");
-  const close = document.querySelector(".header-close");
+  const menu = document.querySelector("#mobile-menu");
+  const hamburger = document.querySelector("#header-hamburger");
 
   if (!menu || !hamburger) return;
 
   const open = () => {
-    menu.classList.add("is-open");
     hamburger.setAttribute("aria-expanded", "true");
     menu.removeAttribute("aria-hidden");
     document.body.style.overflow = "hidden";
   };
 
   const dismiss = () => {
-    menu.classList.remove("is-open");
     hamburger.setAttribute("aria-expanded", "false");
     menu.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
   };
 
-  hamburger.addEventListener("click", open);
-  close.addEventListener("click", dismiss);
+  const toggle = () => {
+    hamburger.getAttribute("aria-expanded") === "true" ? dismiss() : open();
+  };
 
-  menu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", dismiss);
+  hamburger.addEventListener("click", toggle);
+};
+
+const registerSectionFadeIn = () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll("section").forEach((section) => {
+    observer.observe(section);
   });
 };
 
@@ -157,3 +177,4 @@ registerFAQ();
 registerSmoothScroll();
 registerCountUp();
 registerMobileMenu();
+registerSectionFadeIn();

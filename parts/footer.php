@@ -1,24 +1,34 @@
 <?php $content = get_component_content("footer"); ?>
 <footer>
-  <div class="px-16 py-10 flex gap-16">
+  <div class="px-6 sm:px-16 py-9 sm:py-10 flex flex-col sm:flex-row gap-16">
     <!-- Left column: EXPLORE + ADDRESS -->
     <div class="flex-1 flex flex-col gap-10">
 
       <?php $explore = $content["sections"][0]; ?>
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col items-center sm:items-start gap-4">
         <p class="font-serif font-semibold text-sm tracking-widest text-text"><?php echo $explore["title"]; ?></p>
-        <ul class="flex flex-col gap-2">
+        <ul class="flex sm:flex-col gap-y-2 gap-x-6">
           <?php foreach($explore["links"] as $link): ?>
-            <li><a class="font-sans text-base text-text hover:underline" href="<?php echo esc_url($link["href"]); ?>"><?php echo $link["label"]; ?></a></li>
+            <li><a class="flex items-center font-sans text-base text-text hover:underline px-2 sm:px-0 h-11 sm:h-fit" href="<?php echo esc_url($link["href"]); ?>"><?php echo $link["label"]; ?></a></li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+
+      <?php $legal = $content["sections"][2]; ?>
+      <div class="flex sm:hidden flex-col items-center gap-4">
+        <p class="font-serif font-semibold text-sm tracking-widest text-text"><?php echo $legal["title"]; ?></p>
+        <ul class="flex flex-col gap-2">
+          <?php foreach($legal["links"] as $link): ?>
+            <li><a class="flex items-center font-sans text-base text-text hover:underline px-2 sm:px-0 h-11 sm:h-fit" href="<?php echo esc_url($link["href"]); ?>"><?php echo $link["label"]; ?></a></li>
           <?php endforeach; ?>
         </ul>
       </div>
 
       <?php $address = $content["sections"][1]; ?>
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col items-center sm:items-start gap-4">
         <p class="font-serif font-semibold text-sm tracking-widest text-text"><?php echo $address["title"]; ?></p>
-        <p class="font-sans text-base text-text leading-6"><?php echo $address["text"]; ?></p>
-        <a class="flex items-center gap-2 font-sans text-base text-text hover:underline" href="<?php echo esc_url($address["button"]["href"]); ?>" target="_blank" rel="noopener noreferrer">
+        <p class="font-sans text-base text-text leading-6 w-fit"><?php echo $address["text"]; ?></p>
+        <a class="flex items-center font-sans text-sm text-text hover:underline px-2 sm:px-0 h-11 sm:h-fit gap-2.5" href="<?php echo esc_url($address["button"]["href"]); ?>" target="_blank" rel="noopener noreferrer">
           <?php echo $address["button"]["title"]; ?>
           <span class="size-4 [&>svg]:h-full [&>svg]:w-full"><?php echo get_asset("/images/icons/" . $address["button"]["icon"]); ?></span>
         </a>
@@ -30,7 +40,7 @@
     <div class="flex-1 flex flex-col gap-10">
 
       <?php $legal = $content["sections"][2]; ?>
-      <div class="flex flex-col gap-4">
+      <div class="hidden sm:flex flex-col gap-4">
         <p class="font-serif font-semibold text-sm tracking-widest text-text"><?php echo $legal["title"]; ?></p>
         <ul class="flex flex-col gap-2">
           <?php foreach($legal["links"] as $link): ?>
@@ -40,9 +50,9 @@
       </div>
 
       <?php $findus = $content["sections"][3]; ?>
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col items-center sm:items-start gap-4">
         <p class="font-serif font-semibold text-sm tracking-widest text-text"><?php echo $findus["title"]; ?></p>
-        <div class="flex gap-3">
+        <div class="flex gap-2 sm:gap-3">
           <?php foreach($findus["socials"] as $social): ?>
             <a href="<?php echo esc_url($social["href"]) ?>" class="flex items-center justify-center size-10 text-foreground bg-primary">
               <?php echo get_asset("/images/icons/" . $social["icon"]) ?>
@@ -52,7 +62,7 @@
       </div>
 
       <?php $contact = $content["sections"][4]; ?>
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col items-center sm:items-start gap-4">
         <p class="font-serif font-semibold text-sm tracking-widest text-text"><?php echo $contact["title"]; ?></p>
         <ul class="flex flex-col gap-3">
           <?php foreach($contact["contacts"] as $item): ?>
@@ -75,7 +85,7 @@
       <?php echo file_get_contents( get_stylesheet_directory() . '/assets/images/logo.svg' ); ?>
     </a>
     <p class="font-sans text-base"><?php echo $content["closing"]; ?></p>
-    <div class="flex gap-6 items-center">
+    <div class="flex flex-col sm:flex-row gap-6 items-center justify-center w-full px-6">
       <?php callComponent('book-session', ["variant" => "primary"]); ?>
       <?php callComponent('contact-us', ["variant" => "outlined"]); ?>
     </div>
