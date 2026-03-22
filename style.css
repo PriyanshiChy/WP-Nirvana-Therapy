@@ -272,6 +272,10 @@ Author URI: https://pchy.design
     width: calc(var(--spacing) * 4);
     height: calc(var(--spacing) * 4);
   }
+  .size-4\! {
+    width: calc(var(--spacing) * 4) !important;
+    height: calc(var(--spacing) * 4) !important;
+  }
   .size-6 {
     width: calc(var(--spacing) * 6);
     height: calc(var(--spacing) * 6);
@@ -1267,6 +1271,18 @@ Author URI: https://pchy.design
       }
     }
   }
+  .\[\&\.icon-external-link\]\:size-4 {
+    &.icon-external-link {
+      width: calc(var(--spacing) * 4);
+      height: calc(var(--spacing) * 4);
+    }
+  }
+  .\[\&\.icon-external-link\]\:size-4\! {
+    &.icon-external-link {
+      width: calc(var(--spacing) * 4) !important;
+      height: calc(var(--spacing) * 4) !important;
+    }
+  }
   .\[\&\>\*\:not\(\:nth-last-child\(-n\+3\)\)\]\:border-b-2 {
     &>*:not(:nth-last-child(-n+3)) {
       border-bottom-style: var(--tw-border-style);
@@ -1287,6 +1303,18 @@ Author URI: https://pchy.design
   .\[\&\>svg\]\:w-full {
     &>svg {
       width: 100%;
+    }
+  }
+  .\[\&\>svg\.icon-external-link\]\:size-4\! {
+    &>svg.icon-external-link {
+      width: calc(var(--spacing) * 4) !important;
+      height: calc(var(--spacing) * 4) !important;
+    }
+  }
+  .\[\&\?svg\.icon-external-link\]\:size-4\! {
+    &?svg.icon-external-link {
+      width: calc(var(--spacing) * 4) !important;
+      height: calc(var(--spacing) * 4) !important;
     }
   }
 }

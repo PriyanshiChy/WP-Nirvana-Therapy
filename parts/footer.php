@@ -30,7 +30,7 @@
         <p class="font-sans text-base text-text leading-6 w-fit py-2 sm:py-0"><?php echo $address["text"]; ?></p>
         <a class="flex items-center font-sans text-sm text-text hover:underline px-2 sm:px-0 h-11 sm:h-fit gap-2.5" href="<?php echo esc_url($address["button"]["href"]); ?>" target="_blank" rel="noopener noreferrer">
           <?php echo $address["button"]["title"]; ?>
-          <span class="size-4 [&>svg]:h-full [&>svg]:w-full"><?php echo get_asset("/images/icons/" . $address["button"]["icon"]); ?></span>
+          <span class="[&>svg.icon-external-link]:size-4! [&>svg]:h-full [&>svg]:w-full"><?php echo get_asset("/images/icons/" . $address["button"]["icon"]); ?></span>
         </a>
       </div>
 
