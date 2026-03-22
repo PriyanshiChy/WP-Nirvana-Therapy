@@ -85,7 +85,7 @@ $buttons = get_component_content("buttons");
 
     <section id="testimonials" class="px-6 pt-26 pb-9 sm:py-16 sm:space-y-16">
       <div class="px-6 sm:px-16 flex w-full justify-between">
-        <h2><?php echo $content["testimonials"]["title"]; ?></h2>
+        <h2 class="text-left!"><?php echo $content["testimonials"]["title"]; ?></h2>
         <div class="hidden sm:flex gap-4">
           <button class="testimonial-carousel-previous link outlined px-2.5!">
             <svg class="size-10 text-primary" aria-hidden="true">

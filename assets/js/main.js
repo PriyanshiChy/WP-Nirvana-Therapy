@@ -4,6 +4,14 @@
  * Add lightweight interactivity here (e.g., FAQ accordion toggles).
  */
 
+const handled = (fn) => {
+  try {
+    fn();
+  } catch (error) {
+    console.error("Error in main.js:", error);
+  }
+};
+
 const closeAnswer = (trigger) => {
   trigger.setAttribute("aria-expanded", "false");
   trigger.nextElementSibling.style.maxHeight = "0";
@@ -75,8 +83,8 @@ const scrollToHash = (hash) => {
   const target = document.querySelector(hash);
   if (!target) return;
 
-  const header = document.querySelector("header");
-  const offset = header ? header.getBoundingClientRect().height : 120;
+  const headerBar = document.querySelector("#header-bar") ?? document.querySelector("header");
+  const offset = headerBar ? headerBar.getBoundingClientRect().height : 120;
   const top = target.getBoundingClientRect().top + window.scrollY - offset;
 
   window.scrollTo({ top, behavior: "smooth" });
@@ -164,6 +172,12 @@ const registerMobileMenu = () => {
   };
 
   hamburger.addEventListener("click", toggle);
+
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth < 1024) dismiss();
+    });
+  });
 };
 
 const registerSectionFadeIn = () => {
@@ -184,9 +198,9 @@ const registerSectionFadeIn = () => {
   });
 };
 
-registerCarousel();
-registerFAQ();
-registerSmoothScroll();
-registerCountUp();
-registerMobileMenu();
-registerSectionFadeIn();
+handled(registerCarousel);
+handled(registerFAQ);
+handled(registerSmoothScroll);
+handled(registerCountUp);
+handled(registerMobileMenu);
+handled(registerSectionFadeIn);

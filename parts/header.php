@@ -4,7 +4,7 @@ $buttons = get_component_content("buttons");
 $whatsappHref = $buttons["contact-us"]["href"];
 ?>
 <header>
-  <div class="flex items-center justify-between">
+  <div id="header-bar" class="flex items-center justify-between">
     <a class="[&_svg]:h-12 lg:[&_svg]:h-16" href="<?php echo esc_url( home_url( '/' ) ); ?>">
       <?php echo file_get_contents( get_stylesheet_directory() . '/assets/images/logo.svg' ); ?>
     </a>
