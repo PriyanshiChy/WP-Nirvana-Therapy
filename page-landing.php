@@ -20,7 +20,7 @@ $buttons = get_component_content("buttons");
   <main>
     <section id="hero">
       <div class="content [&_a]:w-full! sm:[&_a]:w-fit!">
-        <div class="flex flex-col items-center gap-4">
+        <div class="flex flex-col items-center gap-6 md:gap-8">
           <h1><?php echo($content["hero"]["title"]); ?></h1>
           <p><?php echo($content["hero"]["subtitle"]); ?></p>
         </div>
@@ -28,18 +28,19 @@ $buttons = get_component_content("buttons");
       </div>
     </section>
 
-    <section id="about-us" class="px-6 sm:px-16 pt-18 pb-16 sm:text-center">
+    <section id="about-us" class="px-6 pt-26 pb-9 sm:p-16 sm:text-center">
       <h2><?php echo($content["about-us"]["title"]); ?></h2>
       <div class="mt-9 sm:mt-14 max-w-5xl mx-auto text-base sm:text-lg leading-[150%]">
-        <?php foreach($content["about-us"]["description"] as $item): ?>
-          <p><?php echo($item); ?></p><br />
+        <?php $desc = $content["about-us"]["description"]; $last = array_key_last($desc); ?>
+        <?php foreach($desc as $k => $item): ?>
+          <p><?php echo($item); ?></p><?php if($k !== $last): ?><br /><?php endif; ?>
         <?php endforeach; ?>
       </div>
     </section>
 
-    <section id="meet-the-founder" class="px-6 sm:px-16 py-16">
+    <section id="meet-the-founder" class="px-6 pt-26 pb-9 sm:p-16">
       <h2><?php echo($content["meet-the-founder"]["title"]); ?></h2>
-      <div class="flex flex-col-reverse sm:flex-row gap-8 sm:gap-14 w-full mx-auto mt-9 sm:mt-12 items-start">
+      <div class="flex flex-col-reverse lg:flex-row gap-8 lg:gap-14 w-full mx-auto mt-9 sm:mt-12 items-start">
         <div class="max-w-4xl flex-1 flex flex-col">
           <div class="sm:px-5">
             <div class="sm:pb-8 space-y-4">
@@ -48,40 +49,41 @@ $buttons = get_component_content("buttons");
               <p class="font-sans font-normal text-base sm:text-lg"><?php echo($content["meet-the-founder"]["qualification"]); ?></p>
             </div>
             <div class="text-base sm:text-lg leading-6 font-sans">
-              <?php foreach($content["meet-the-founder"]["description"] as $item): ?>
-                <p><?php echo($item); ?></p><br />
+              <?php $founder_desc = $content["meet-the-founder"]["description"]; $founder_last = array_key_last($founder_desc); ?>
+              <?php foreach($founder_desc as $k => $item): ?>
+                <p><?php echo($item); ?></p><?php if($k !== $founder_last): ?><br /><?php endif; ?>
               <?php endforeach; ?>
             </div>
           </div>
-          <div class="sm:px-4 flex mt-5">
+          <div class="sm:px-4 grid grid-cols-3 mt-5 sm:mt-9 gap-x-2">
             <?php foreach($content["meet-the-founder"]["stats"] as $item): ?>
-              <div class="flex-1 flex flex-col items-center justify-center gap-2 font-serif">
+              <div class="flex flex-col items-center justify-center gap-2 font-serif">
                 <?php
                   preg_match('/^(\d+)(.*)$/', $item["title"], $m);
                   $num = $m[1] ?? '';
                   $suffix = htmlspecialchars($m[2] ?? '');
                 ?>
-                <p class="text-3xl sm:text-7xl stat-count text-wrap" data-target="<?php echo $num; ?>" data-suffix="<?php echo $suffix; ?>">
+                <p class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl stat-count text-wrap" data-target="<?php echo $num; ?>" data-suffix="<?php echo $suffix; ?>">
                   <?php echo($item["title"]); ?>
                 </p>
-                <p class="font-medium text-sm sm:text-base h-10 sm:h-fit text-center"><?php echo($item["subtitle"]); ?></p>
+                <p class="font-medium text-xs sm:text-sm md:text-base h-10 text-center"><?php echo($item["subtitle"]); ?></p>
               </div>
             <?php endforeach; ?>
           </div>
         </div>
-        <div class="px-10 mb-36 mx-auto flex flex-col relative max-w-1/2">
-          <img class="max-h-4/5 h-fit object-contain mx-5" src="<?php echo get_asset_uri($content["meet-the-founder"]["image"]); ?>" alt="Founder - Nirvana Therapy" />
-          <div class="absolute bottom-12 left-1/2 -translate-x-1/2 p-3 sm:p-6 -rotate-4 translate-y-full max-w-120 w-10/12 sm:w-full bg-[#CCC8EC]">
+        <div class="px-6 md:px-18 mb-4 flex flex-col justify-center items-center relative w-full max-w-4/5 sm:max-w-2/3 lg:max-w-2/5 mx-auto flex-1">
+          <img class="h-fit object-contain md:mx-5" src="<?php echo get_asset_uri($content["meet-the-founder"]["image"]); ?>" alt="Founder - Nirvana Therapy" />
+          <div class="-mt-9 p-3 sm:p-6 -rotate-4 w-[110%] bg-[#CCC8EC]">
             <p class="font-cursive text-lg sm:text-2xl leading-7 py-2 sm:py-4"><?php echo $content["meet-the-founder"]["card"]; ?></p>
           </div>
         </div>
       </div>
-      <div class="py-2.5 sm:px-2.5 flex justify-center w-full mt-16">
+      <div class="sm:py-2.5 sm:px-2.5 flex justify-center w-full mt-9 sm:mt-16">
         <?php callComponent('book-session', ["variant" => 'primary']); ?>
       </div>
     </section>
 
-    <section id="testimonials" class="py-18 sm:space-y-16">
+    <section id="testimonials" class="px-6 pt-26 pb-9 sm:py-16 sm:space-y-16">
       <div class="px-6 sm:px-16 flex w-full justify-between">
         <h2><?php echo $content["testimonials"]["title"]; ?></h2>
         <div class="hidden sm:flex gap-4">
@@ -97,9 +99,9 @@ $buttons = get_component_content("buttons");
           </button>
         </div>
       </div>
-      <div class="testimonial-carousel flex w-full gap-12 items-center overflow-hidden px-6 sm:px-16 mt-9">
+      <div class="testimonial-carousel flex w-full gap-12 items-center overflow-hidden sm:px-16 mt-9">
         <?php foreach($content["testimonials"]["testimonials"] as $item): ?>
-        <div class="h-96 max-w-screen w-90 shrink-0 bg-[#DDE8FE] px-9 pb-10 pt-5 space-y-4 flex flex-col">
+        <div class="h-96 max-w-full w-90 shrink-0 bg-[#DDE8FE] px-9 pb-10 pt-5 space-y-4 flex flex-col">
           <?php echo(get_asset("/images/icons/quote.svg")); ?>
           <p class="flex-1 line-clamp-10 h-full font-serif overflow-clip text-lg leading-7"><?php echo($item); ?></p>
         </div>
@@ -117,7 +119,7 @@ $buttons = get_component_content("buttons");
           </svg>
         </button>
       </div>
-      <div class="flex w-full justify-center [&_.link_svg]:size-8 px-6 mt-9">
+      <div class="flex w-full justify-center [&_.link_svg]:size-8 sm:px-6 mt-9">
         <?php
           callComponent('link-button', [
             "children" => [$buttons["read-reviews"]["title"], get_asset("/images/icons/external-link.svg")],
@@ -129,21 +131,21 @@ $buttons = get_component_content("buttons");
       </div>
     </section>
 
-    <section id="choose-us" class="px-6 sm:px-16 py-18 space-y-16 min-h-screen">
+    <section id="choose-us" class="px-6 py-26 sm:p-16 space-y-16 min-h-screen">
       <h2><?php echo $content["choose-us"]["title"]; ?></h2>
       <div class="flex flex-col lg:flex-row w-full items-stretch lg:divide-x-2 divide-primary space-y-9">
         <?php foreach($content["choose-us"]["description"] as $item): ?>
           <div class="space-y-4 sm:px-9">
-            <div class="flex flex-col items-start sm:items-center h-32 justify-between">
-              <h4 class="font-serif text-2xl font-medium"><?php echo $item["title"]; ?></h4>
+            <div class="flex flex-col-reverse items-start sm:items-center h-32 justify-between">
+              <h4 class="font-serif text-xl md:text-2xl font-medium"><?php echo $item["title"]; ?></h4>
               <div class="size-16 [&>svg]:h-full [&>svg]:w-full">
                 <?php echo get_asset($item["icon"]); ?>
               </div>
             </div>
-            <div class="font-sans text-lg leading-6">
-              <?php foreach($item["description"] as $subitem): ?>
-                <p><?php echo $subitem ?></p>
-                <br />
+            <div class="font-sans text-base md:text-lg leading-6">
+              <?php $choose_last = array_key_last($item["description"]); ?>
+              <?php foreach($item["description"] as $k => $subitem): ?>
+                <p><?php echo $subitem ?></p><?php if($k !== $choose_last): ?><br /><?php endif; ?>
               <?php endforeach ?>
             </div>
           </div>
@@ -151,7 +153,7 @@ $buttons = get_component_content("buttons");
       </div>
     </section>
 
-    <section id="area-of-expertise" class="px-6 sm:px-16 py-18 space-y-16">
+    <section id="area-of-expertise" class="px-6 pt-26 pb-9 sm:p-16 space-y-9 sm:space-y-16">
       <h2><?php echo($content["areas-of-expertise"]["title"]); ?></h2>
       <div class="hidden lg:grid grid-cols-3 [&>*:not(:nth-last-child(-n+3))]:border-b-2 *:border-r-2 [&>*:nth-child(3n)]:border-r-0 *:border-primary">
         <?php foreach($content["areas-of-expertise"]["description"] as $item): ?>
@@ -173,29 +175,29 @@ $buttons = get_component_content("buttons");
       <div class="lg:hidden max-w-md mx-auto">
         <?php foreach($content["areas-of-expertise"]["description"] as $item): ?>
           <div class="flex gap-4 py-4 px-5 items-center w-fit">
-            <div class="size-16 [&>svg]:h-full [&>svg]:w-full shrink-0">
+            <div class="size-24 [&>svg]:h-full [&>svg]:w-full shrink-0">
               <?php echo(get_asset($item["image"])) ?>
             </div>
             <div class="flex flex-col gap-4">
               <p class="text-xl font-serif font-medium"><?php echo($item["title"]) ?></p>
               <div class="font-sans text-sm leading-[120%]">
-                <?php foreach($item["description"] as $subitem): ?>
-                  <p><?php echo($subitem) ?></p><br />
+                <?php $mobile_last = array_key_last($item["description"]); ?>
+                <?php foreach($item["description"] as $k => $subitem): ?>
+                  <p><?php echo($subitem) ?></p><?php if($k !== $mobile_last): ?><br /><?php endif; ?>
                 <?php endforeach ?>
               </div>
             </div>
           </div>
         <?php endforeach ?>
       </div>
-      <div class="flex justify-center items-center gap-9 py-6">
-        <!-- <p class="font-sans text-2xl"><?php echo($content["areas-of-expertise"]["closing"]); ?></p> -->
+      <div class="flex justify-center items-center gap-9 sm:py-6">
         <?php callComponent('contact-us', ["variant" => "primary", "label" => "Start a Conversation"]) ?>
       </div>
     </section>
 
-    <section id="how-it-works" class="px-6 sm:px-16 py-16">
+    <section id="how-it-works" class="px-6 pt-26 pb-9 sm:p-16 space-y-9">
       <h2><?php echo $content["how-it-works"]["title"]; ?></h1>
-      <div class="flex py-8 mt-4 divide-x-2 divide-primary">
+      <div class="flex md:py-8 md:mt-4 divide-x-2 divide-primary">
         <?php foreach($content["how-it-works"]["description"] as $item): ?>
           <div class="flex flex-1 flex-col items-center text-center justify-center px-2.5 gap-4">
             <div class="size-16 [&>svg]:h-full [&>svg]:w-full"><?php echo get_asset($item["image"]) ?></div>
@@ -206,16 +208,16 @@ $buttons = get_component_content("buttons");
           </div>
         <?php endforeach ?>
       </div>
-      <div class="mt-4 py-2 text-center text-base md:text-2xl font-sans">
+      <div class="md:mt-4 md:py-2 text-center text-base md:text-2xl font-sans">
         <p><?php echo $content["how-it-works"]["opening_hours"]; ?></p>
       </div>
-      <div class="mt-4 flex flex-col items-center text-center gap-y-9">
+      <div class="md:mt-4 flex flex-col md:items-center md:text-center gap-y-9">
         <h3 class="leading-[100%]"><?php echo $content["how-it-works"]["heading"]; ?></h3>
-        <div class="w-full flex flex-col md:flex-row py-8 space-y-9">
+        <div class="w-full flex flex-col md:flex-row md:py-8 space-y-9">
           <?php foreach($content["how-it-works"]["steps"] as $item): ?>
             <div class="flex flex-1 md:flex-col items-center text-center">
               <div class="md:max-w-48 w-full md:space-y-4 space-x-4 flex md:block items-center">
-                <div class="space-y-4 max-w-30 w-full shrink-0">
+                <div class="space-y-4 max-w-30 md:max-w-full w-full shrink-0">
                   <div class="size-12 md:size-16 [&>svg]:h-full [&>svg]:w-full mx-auto">
                     <?php echo get_asset($item["image"]) ?>
                   </div>
@@ -227,14 +229,14 @@ $buttons = get_component_content("buttons");
           <?php endforeach ?>
         </div>
       </div>
-      <h4 class="font-medium text-lg md:text-2xl mt-4 text-center"><?php echo $content["how-it-works"]["closing"] ?></h4>
+      <h4 class="font-medium text-lg md:text-2xl md:mt-4 text-center"><?php echo $content["how-it-works"]["closing"] ?></h4>
     </section>
 
-    <section id="faq" class="px-6 sm:px-16 py-18">
+    <section id="faq" class="px-6 pt-26 pb-9 sm:p-16">
       <h2><?php echo $content["faq"]["heading"] ?></h2>
-      <p class="font-serif text-base sm:text-2xl mt-3"><?php echo $content["faq"]["subheading"] ?></p>
+      <p class="font-serif text-base sm:text-2xl mt-3 sm:text-center"><?php echo $content["faq"]["subheading"] ?></p>
 
-      <div class="max-w-4xl mx-auto mt-14" id="faq-accordion">
+      <div class="max-w-4xl mx-auto mt-9 sm:mt-14" id="faq-accordion">
 
       <?php foreach($content["faq"]["description"] as $item): ?>
         <div class="faq-item">

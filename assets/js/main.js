@@ -42,18 +42,30 @@ const registerCarousel = () => {
   const gap = 48;
   const offset = card.clientWidth + gap;
 
-  carousel.scrollLeft = 0; // Start at the beginning
+  carousel.scrollLeft = 0;
 
-  // Add navigation buttons here
+  let scrolling = false;
+
+  carousel.addEventListener("scrollend", () => {
+    scrolling = false;
+  });
 
   prevButton.forEach((button) => {
     button.addEventListener("click", () => {
+      if (scrolling || carousel.scrollLeft === 0) return;
+      scrolling = true;
       carousel.scrollBy({ left: -offset, behavior: "smooth" });
     });
   });
 
   nextButton.forEach((button) => {
     button.addEventListener("click", () => {
+      if (
+        scrolling ||
+        carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth
+      )
+        return;
+      scrolling = true;
       carousel.scrollBy({ left: offset, behavior: "smooth" });
     });
   });
@@ -164,7 +176,7 @@ const registerSectionFadeIn = () => {
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.1 },
   );
 
   document.querySelectorAll("section").forEach((section) => {

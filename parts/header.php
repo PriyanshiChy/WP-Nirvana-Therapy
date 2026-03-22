@@ -17,8 +17,12 @@ $whatsappHref = $buttons["contact-us"]["href"];
       </ul>
     </nav>
 
-    <div class="lg:block hidden">
+    <div class="xl:block hidden">
       <?php callComponent('contact-us', ["variant" => "primary"]); ?>
+    </div>
+
+    <div class="xl:hidden lg:block hidden">
+      <?php callComponent('contact-us', ["variant" => "primary", "icon" => true]); ?>
     </div>
 
     <div class="lg:hidden flex items-center gap-2 sm:gap-4">

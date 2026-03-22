@@ -74,11 +74,10 @@ Author URI: https://pchy.design
 /* Component classes */
 
 .link {
-  @apply w-full sm:w-fit;
+  @apply w-full sm:w-fit h-12 sm:h-16;
   cursor: pointer;
   display: flex;
   align-items: center;
-  height: 4rem;
   font-family: "Golos Text", sans-serif;
   padding-inline: 2.25rem;
   border-width: 2px;
@@ -88,16 +87,14 @@ Author URI: https://pchy.design
 }
 
 .link.icon {
-  @apply [&>div_p]:hidden;
+  @apply [&>div_p]:hidden w-12 sm:w-16;
   padding-inline: 0;
-  width: 4rem;
 }
 
 .link > div {
-  @apply *:text-inherit;
+  @apply *:text-inherit text-lg sm:text-2xl;
   display: flex;
   font-weight: 500;
-  font-size: 1.5rem;
   line-height: 100%;
   height: 2rem;
   color: inherit;
@@ -113,6 +110,7 @@ Author URI: https://pchy.design
 }
 
 .icon-external-link {
+  @apply size-6 sm:size-8;
   transition: transform 250ms ease;
 }
 
@@ -131,13 +129,9 @@ Author URI: https://pchy.design
 }
 
 .link.outlined {
-  @apply transition-colors;
+  @apply transition-colors hover:bg-primary/20 active:bg-primary/20;
   background-color: var(--color-foreground);
   color: var(--color-primary);
-}
-
-.link.outlined:hover {
-  @apply bg-primary/20;
 }
 
 .link.glow {
@@ -163,8 +157,7 @@ Author URI: https://pchy.design
 }
 
 header {
-  @apply lg:px-9 p-6;
-  position: sticky;
+  @apply lg:px-9 p-6 fixed lg:sticky;
   z-index: 99;
   top: 0;
   inset: 0;
@@ -233,10 +226,10 @@ header nav ul li > a:hover {
 }
 
 footer {
-  @apply bg-contain xl:bg-cover;
+  @apply bg-cover;
   width: 100%;
   background-image: url("./assets/images/bg/bg-footer.webp");
-  background-position: bottom;
+  background-position: bottom right;
   background-repeat: no-repeat;
 }
 
@@ -252,10 +245,16 @@ section {
   width: 100%;
 }
 
-section h1, section h2, section h3, section h4, section p {
+section h1,
+section h2,
+section h3,
+section h4,
+section p {
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 600ms ease, transform 600ms ease;
+  transition:
+    opacity 600ms ease,
+    transform 600ms ease;
 }
 
 section.visible h1,
@@ -288,13 +287,18 @@ section h3 {
   background-size: cover;
   background-position:
     bottom,
-    top -5.75rem center;
+    top center;
+  @media (width >= 64rem) {
+    background-position:
+      bottom,
+      top -5.75rem center;
+  }
   background-repeat: no-repeat;
   min-height: 100vh;
 }
 
 #hero .content {
-  @apply flex-1 mb-[20vh] mt-20 sm:mt-64 lg:mt-[26vh] justify-between lg:justify-start sm:text-center;
+  @apply flex-1 mb-36 mt-36 sm:mt-64 lg:mt-[26vh] justify-between lg:justify-start sm:text-center;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -310,10 +314,10 @@ section h3 {
 }
 
 #hero .content p {
-  @apply text-base sm:text-lg md:text-xl lg:text-2xl;
+  @apply text-lg md:text-xl lg:text-2xl leading-[150%];
   font-family: "Golos Text", sans-serif;
   font-weight: 400;
-  line-height: 125%;
+  /* line-height: 125%; */
 }
 
 #hero .content .link {
@@ -335,9 +339,13 @@ section h3 {
 }
 
 #choose-us {
+  /* @apply bg-bottom md:bg-position-[center_bottom_-120px]; */
   min-height: 100vh;
   background: url("./assets/images/bg/choose-us.webp");
-  background-position: center bottom -120px;
+  background-position: bottom;
+  @media (width >= 48rem) {
+    background-position: center bottom -120px;
+  }
   background-size: contain;
   background-repeat: no-repeat;
 }
