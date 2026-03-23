@@ -47,5 +47,5 @@
   <script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js" defer></script>
 
   <!-- WordPress hook: VERY important for plugins & enqueued assets -->
-  <!-- <?php wp_head(); ?> -->
+  <?php wp_head(); ?>
 </head>

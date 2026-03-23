@@ -206,29 +206,17 @@ Author URI: https://pchy.design
   .visible {
     visibility: visible;
   }
-  .absolute {
-    position: absolute;
-  }
   .fixed {
     position: fixed;
   }
   .relative {
     position: relative;
   }
-  .sticky {
-    position: sticky;
-  }
   .start {
     inset-inline-start: var(--spacing);
   }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
-  }
-  .left-4 {
-    left: calc(var(--spacing) * 4);
-  }
-  .left-6 {
-    left: calc(var(--spacing) * 6);
   }
   .left-10 {
     left: calc(var(--spacing) * 10);
@@ -257,23 +245,14 @@ Author URI: https://pchy.design
   .mt-9 {
     margin-top: calc(var(--spacing) * 9);
   }
-  .-mb-9 {
-    margin-bottom: calc(var(--spacing) * -9);
-  }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
-  }
-  .mb-9 {
-    margin-bottom: calc(var(--spacing) * 9);
   }
   .line-clamp-10 {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 10;
-  }
-  .block {
-    display: block;
   }
   .flex {
     display: flex;
@@ -379,6 +358,15 @@ Author URI: https://pchy.design
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+  .snap-x {
+    scroll-snap-type: x var(--tw-scroll-snap-strictness);
+  }
+  .snap-mandatory {
+    --tw-scroll-snap-strictness: mandatory;
+  }
+  .snap-center {
+    scroll-snap-align: center;
   }
   .grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -497,13 +485,8 @@ Author URI: https://pchy.design
   .overflow-hidden {
     overflow: hidden;
   }
-  .rounded-t {
-    border-top-left-radius: 0.25rem;
-    border-top-right-radius: 0.25rem;
-  }
-  .rounded-t-full {
-    border-top-left-radius: calc(infinity * 1px);
-    border-top-right-radius: calc(infinity * 1px);
+  .overflow-x-scroll {
+    overflow-x: scroll;
   }
   .rounded-t-xl {
     border-top-left-radius: var(--radius-xl);
@@ -514,9 +497,6 @@ Author URI: https://pchy.design
   }
   .bg-\[\#DDE8FE\] {
     background-color: #DDE8FE;
-  }
-  .bg-foreground {
-    background-color: var(--color-foreground);
   }
   .bg-primary {
     background-color: var(--color-primary);
@@ -693,11 +673,11 @@ Author URI: https://pchy.design
   .italic {
     font-style: italic;
   }
-  .underline {
-    text-decoration-line: underline;
+  .\[-ms-overflow-style\:none\] {
+    -ms-overflow-style: none;
   }
-  .decoration-wavy {
-    text-decoration-style: wavy;
+  .\[scrollbar-width\:none\] {
+    scrollbar-width: none;
   }
   .\*\:border-r-2 {
     :is(& > *) {
@@ -1285,6 +1265,11 @@ Author URI: https://pchy.design
       }
     }
   }
+  .\[\&\:\:-webkit-scrollbar\]\:hidden {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
   .\[\&\>\*\:not\(\:nth-last-child\(-n\+3\)\)\]\:border-b-2 {
     &>*:not(:nth-last-child(-n+3)) {
       border-bottom-style: var(--tw-border-style);
@@ -1787,6 +1772,11 @@ main.tnc {
   syntax: "*";
   inherits: false;
 }
+@property --tw-scroll-snap-strictness {
+  syntax: "*";
+  inherits: false;
+  initial-value: proximity;
+}
 @property --tw-space-y-reverse {
   syntax: "*";
   inherits: false;
@@ -1851,6 +1841,7 @@ main.tnc {
       --tw-rotate-z: initial;
       --tw-skew-x: initial;
       --tw-skew-y: initial;
+      --tw-scroll-snap-strictness: proximity;
       --tw-space-y-reverse: 0;
       --tw-space-x-reverse: 0;
       --tw-divide-x-reverse: 0;

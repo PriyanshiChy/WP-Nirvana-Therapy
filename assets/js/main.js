@@ -41,40 +41,55 @@ const registerFAQ = () => {
 
 const registerCarousel = () => {
   const carousel = document.querySelector(".testimonial-carousel");
-  const prevButton = document.querySelectorAll(
-    ".testimonial-carousel-previous",
-  );
-  const nextButton = document.querySelectorAll(".testimonial-carousel-next");
+  const prevButtons = document.querySelectorAll(".testimonial-carousel-previous");
+  const nextButtons = document.querySelectorAll(".testimonial-carousel-next");
+  const cards = Array.from(carousel.querySelectorAll(":scope > div"));
 
-  const card = document.querySelector(".testimonial-carousel > div");
-  const gap = 48;
-  const offset = card.clientWidth + gap;
+  if (!cards.length) return;
 
-  carousel.scrollLeft = 0;
-
+  let currentIndex = 0;
   let scrolling = false;
 
-  carousel.addEventListener("scrollend", () => {
-    scrolling = false;
-  });
+  // Calculate step once after layout settles.
+  const getStep = () => {
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    const gap = cards.length > 1
+      ? cards[1].getBoundingClientRect().left - cards[0].getBoundingClientRect().right
+      : 0;
+    return cardWidth + gap;
+  };
 
-  prevButton.forEach((button) => {
+  const centerCard = (card) => {
+    const carouselRect = carousel.getBoundingClientRect();
+    const cardRect = card.getBoundingClientRect();
+    const targetLeft = carousel.scrollLeft + cardRect.left - carouselRect.left
+      - (carousel.clientWidth - card.clientWidth) / 2;
+    carousel.scrollTo({ left: Math.max(0, targetLeft), behavior: "smooth" });
+  };
+
+  const lock = () => {
+    scrolling = true;
+    setTimeout(() => { scrolling = false; }, 500);
+  };
+
+  // Center first card on load.
+  centerCard(cards[0]);
+
+  prevButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      if (scrolling || carousel.scrollLeft === 0) return;
-      scrolling = true;
-      carousel.scrollBy({ left: -offset, behavior: "smooth" });
+      if (scrolling || currentIndex === 0) return;
+      currentIndex--;
+      carousel.scrollBy({ left: -getStep(), behavior: "smooth" });
+      lock();
     });
   });
 
-  nextButton.forEach((button) => {
+  nextButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      if (
-        scrolling ||
-        carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth
-      )
-        return;
-      scrolling = true;
-      carousel.scrollBy({ left: offset, behavior: "smooth" });
+      if (scrolling || currentIndex === cards.length - 1) return;
+      currentIndex++;
+      carousel.scrollBy({ left: getStep(), behavior: "smooth" });
+      lock();
     });
   });
 };

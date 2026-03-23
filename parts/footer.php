@@ -97,3 +97,4 @@
     <p class="font-sans text-sm text-foreground font-semibold"><?php echo $content["copyright"]; ?></p>
   </div>
 </footer>
+<?php wp_footer(); ?>
