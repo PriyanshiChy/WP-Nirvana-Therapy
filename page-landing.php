@@ -17,6 +17,7 @@ $buttons = get_component_content("buttons");
 <body>
   <?php echo file_get_contents( get_stylesheet_directory() . '/assets/images/icons.svg' ); ?>
   <?php get_template_part('parts/header'); ?>
+
   <main>
     <section id="hero">
       <div class="content [&_a]:w-full! sm:[&_a]:w-fit!">
@@ -28,7 +29,7 @@ $buttons = get_component_content("buttons");
       </div>
     </section>
 
-    <section id="about-us" class="px-6 pt-26 pb-9 sm:p-16 sm:text-center">
+    <section id="about-us" class="px-6 pt-9 pb-9 sm:p-16 sm:text-center">
       <h2><?php echo($content["about-us"]["title"]); ?></h2>
       <div class="mt-9 sm:mt-14 max-w-5xl mx-auto text-base sm:text-lg leading-[150%]">
         <?php $desc = $content["about-us"]["description"]; $last = array_key_last($desc); ?>
@@ -38,15 +39,15 @@ $buttons = get_component_content("buttons");
       </div>
     </section>
 
-    <section id="meet-the-founder" class="px-6 pt-26 pb-9 sm:p-16">
+    <section id="meet-the-founder" class="px-6 pt-0 pb-9 sm:p-16">
       <h2><?php echo($content["meet-the-founder"]["title"]); ?></h2>
       <div class="flex flex-col-reverse lg:flex-row gap-8 lg:gap-14 w-full mx-auto mt-9 sm:mt-12 items-start">
         <div class="max-w-4xl flex-1 flex flex-col">
           <div class="sm:px-5">
-            <div class="sm:pb-8 space-y-4">
+            <div class="pb-6 sm:pb-8 space-y-2 sm:space-y-4">
               <h3 class="font-serif font-medium italic"><?php echo($content["meet-the-founder"]["heading"]); ?></h3>
               <p class="font-sans font-medium text-lg sm:text-2xl"><?php echo($content["meet-the-founder"]["role"]); ?></p>
-              <p class="font-sans font-normal text-base sm:text-lg"><?php echo($content["meet-the-founder"]["qualification"]); ?></p>
+              <p class="font-sans font-medium text-base sm:text-lg"><?php echo($content["meet-the-founder"]["qualification"]); ?></p>
             </div>
             <div class="text-base sm:text-lg leading-6 font-sans">
               <?php $founder_desc = $content["meet-the-founder"]["description"]; $founder_last = array_key_last($founder_desc); ?>
@@ -83,8 +84,8 @@ $buttons = get_component_content("buttons");
       </div>
     </section>
 
-    <section id="testimonials" class="px-6 pt-26 pb-9 sm:py-16 sm:space-y-16">
-      <div class="px-6 sm:px-16 flex w-full justify-between">
+    <section id="testimonials" class="px-6 pt-6 pb-9 sm:py-16 sm:space-y-16">
+      <div class="sm:px-16 flex w-full justify-between">
         <h2 class="text-left!"><?php echo $content["testimonials"]["title"]; ?></h2>
         <div class="hidden sm:flex gap-4">
           <button class="testimonial-carousel-previous link outlined px-2.5!">
@@ -131,7 +132,7 @@ $buttons = get_component_content("buttons");
       </div>
     </section>
 
-    <section id="choose-us" class="px-6 py-26 sm:p-16 space-y-16 min-h-screen">
+    <section id="choose-us" class="px-6 pb-26 pt-9 sm:p-16 space-y-9 sm:space-y-16 min-h-screen">
       <h2><?php echo $content["choose-us"]["title"]; ?></h2>
       <div class="flex flex-col lg:flex-row w-full items-stretch lg:divide-x-2 divide-primary space-y-9">
         <?php foreach($content["choose-us"]["description"] as $item): ?>
@@ -153,7 +154,7 @@ $buttons = get_component_content("buttons");
       </div>
     </section>
 
-    <section id="area-of-expertise" class="px-6 pt-26 pb-9 sm:p-16 space-y-9 sm:space-y-16">
+    <section id="area-of-expertise" class="px-6 pt-9 pb-9 sm:p-16 space-y-9 sm:space-y-16">
       <h2><?php echo($content["areas-of-expertise"]["title"]); ?></h2>
       <div class="hidden lg:grid grid-cols-3 [&>*:not(:nth-last-child(-n+3))]:border-b-2 *:border-r-2 [&>*:nth-child(3n)]:border-r-0 *:border-primary">
         <?php foreach($content["areas-of-expertise"]["description"] as $item): ?>
@@ -195,7 +196,7 @@ $buttons = get_component_content("buttons");
       </div>
     </section>
 
-    <section id="how-it-works" class="px-6 pt-26 pb-9 sm:p-16 space-y-9">
+    <section id="how-it-works" class="px-6 pt-9 pb-9 sm:p-16 space-y-9">
       <h2><?php echo $content["how-it-works"]["title"]; ?></h1>
       <div class="flex md:py-8 md:mt-4 divide-x-2 divide-primary">
         <?php foreach($content["how-it-works"]["description"] as $item): ?>
@@ -232,11 +233,11 @@ $buttons = get_component_content("buttons");
       <h4 class="font-medium text-lg md:text-2xl md:mt-4 text-center"><?php echo $content["how-it-works"]["closing"] ?></h4>
     </section>
 
-    <section id="faq" class="px-6 pt-26 pb-9 sm:p-16">
+    <section id="faq" class="px-6 pt-9 pb-9 sm:p-16">
       <h2><?php echo $content["faq"]["heading"] ?></h2>
       <p class="font-serif text-base sm:text-2xl mt-3 sm:text-center"><?php echo $content["faq"]["subheading"] ?></p>
 
-      <div class="max-w-4xl mx-auto mt-9 sm:mt-14" id="faq-accordion">
+      <div class="max-w-4xl mx-auto mt-6 sm:mt-14" id="faq-accordion">
 
       <?php foreach($content["faq"]["description"] as $item): ?>
         <div class="faq-item">
@@ -252,12 +253,13 @@ $buttons = get_component_content("buttons");
 
       </div>
 
-      <div class="flex flex-col sm:flex-row justify-center items-center gap-8 mt-14">
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-8 mt-9 sm:mt-14">
         <p class="font-sans font-normal text-lg sm:text-2xl"><?php echo $content["faq"]["closing"] ?></p>
         <?php callComponent('contact-us', ["variant" => "outlined"]); ?>
       </div>
     </section>
   </main>
+
   <?php get_template_part('parts/footer'); ?>
 </body>
 

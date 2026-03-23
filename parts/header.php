@@ -5,9 +5,11 @@ $whatsappHref = $buttons["contact-us"]["href"];
 ?>
 <header>
   <div id="header-bar" class="flex items-center justify-between">
-    <a class="[&_svg]:h-12 lg:[&_svg]:h-16" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-      <?php echo file_get_contents( get_stylesheet_directory() . '/assets/images/logo.svg' ); ?>
-    </a>
+    <div class="w-fit xl:w-60">
+      <a class="[&_svg]:h-12 lg:[&_svg]:h-16" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+        <?php echo file_get_contents( get_stylesheet_directory() . '/assets/images/logo.svg' ); ?>
+      </a>
+    </div>
 
     <nav class="lg:block hidden">
       <ul class="flex">

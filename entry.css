@@ -24,7 +24,7 @@ Author URI: https://pchy.design
   }
 
   * {
-    @apply select-none;
+    @apply select-none touch-manipulation;
   }
 
   h1,
@@ -157,7 +157,7 @@ Author URI: https://pchy.design
 }
 
 header {
-  @apply lg:px-9 p-6 fixed lg:sticky;
+  @apply lg:px-9 p-4 fixed lg:sticky;
   z-index: 99;
   top: 0;
   inset: 0;
