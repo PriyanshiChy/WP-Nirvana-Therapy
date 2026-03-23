@@ -83,7 +83,8 @@ const scrollToHash = (hash) => {
   const target = document.querySelector(hash);
   if (!target) return;
 
-  const headerBar = document.querySelector("#header-bar") ?? document.querySelector("header");
+  const headerBar =
+    document.querySelector("#header-bar") ?? document.querySelector("header");
   const offset = headerBar ? headerBar.getBoundingClientRect().height : 120;
   const top = target.getBoundingClientRect().top + window.scrollY - offset;
 
@@ -197,6 +198,14 @@ const registerSectionFadeIn = () => {
     observer.observe(section);
   });
 };
+
+const showWatermark = () => {
+  console.log(
+    `---- Watermark ----\nNirvana Painted Theme\nDesigned by ✨ Pchy Designs ✨ \n(Priyanshi Choudhury)\nhttps://pchy.design\nReach out for custom Websites, design work, or just to say hi at priyanshichoudhury.work@gmail.com\n-------------------`,
+  );
+};
+
+showWatermark();
 
 handled(registerCarousel);
 handled(registerFAQ);

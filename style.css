@@ -43,6 +43,7 @@ Author URI: https://pchy.design
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --tracking-widest: 0.1em;
+    --radius-xl: 0.75rem;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -205,14 +206,32 @@ Author URI: https://pchy.design
   .visible {
     visibility: visible;
   }
+  .absolute {
+    position: absolute;
+  }
   .fixed {
     position: fixed;
   }
   .relative {
     position: relative;
   }
+  .sticky {
+    position: sticky;
+  }
   .start {
     inset-inline-start: var(--spacing);
+  }
+  .bottom-0 {
+    bottom: calc(var(--spacing) * 0);
+  }
+  .left-4 {
+    left: calc(var(--spacing) * 4);
+  }
+  .left-6 {
+    left: calc(var(--spacing) * 6);
+  }
+  .left-10 {
+    left: calc(var(--spacing) * 10);
   }
   .mx-auto {
     margin-inline: auto;
@@ -238,14 +257,23 @@ Author URI: https://pchy.design
   .mt-9 {
     margin-top: calc(var(--spacing) * 9);
   }
+  .-mb-9 {
+    margin-bottom: calc(var(--spacing) * -9);
+  }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-9 {
+    margin-bottom: calc(var(--spacing) * 9);
   }
   .line-clamp-10 {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 10;
+  }
+  .block {
+    display: block;
   }
   .flex {
     display: flex;
@@ -376,6 +404,9 @@ Author URI: https://pchy.design
   .justify-center {
     justify-content: center;
   }
+  .justify-end {
+    justify-content: flex-end;
+  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
@@ -466,11 +497,26 @@ Author URI: https://pchy.design
   .overflow-hidden {
     overflow: hidden;
   }
+  .rounded-t {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+  .rounded-t-full {
+    border-top-left-radius: calc(infinity * 1px);
+    border-top-right-radius: calc(infinity * 1px);
+  }
+  .rounded-t-xl {
+    border-top-left-radius: var(--radius-xl);
+    border-top-right-radius: var(--radius-xl);
+  }
   .bg-\[\#CCC8EC\] {
     background-color: #CCC8EC;
   }
   .bg-\[\#DDE8FE\] {
     background-color: #DDE8FE;
+  }
+  .bg-foreground {
+    background-color: var(--color-foreground);
   }
   .bg-primary {
     background-color: var(--color-primary);
@@ -495,6 +541,9 @@ Author URI: https://pchy.design
   }
   .px-2\.5\! {
     padding-inline: calc(var(--spacing) * 2.5) !important;
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
@@ -644,6 +693,12 @@ Author URI: https://pchy.design
   .italic {
     font-style: italic;
   }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .decoration-wavy {
+    text-decoration-style: wavy;
+  }
   .\*\:border-r-2 {
     :is(& > *) {
       border-right-style: var(--tw-border-style);
@@ -726,6 +781,11 @@ Author URI: https://pchy.design
       display: none;
     }
   }
+  .sm\:absolute {
+    @media (width >= 40rem) {
+      position: absolute;
+    }
+  }
   .sm\:mt-9 {
     @media (width >= 40rem) {
       margin-top: calc(var(--spacing) * 9);
@@ -744,6 +804,11 @@ Author URI: https://pchy.design
   .sm\:mt-16 {
     @media (width >= 40rem) {
       margin-top: calc(var(--spacing) * 16);
+    }
+  }
+  .sm\:block {
+    @media (width >= 40rem) {
+      display: block;
     }
   }
   .sm\:flex {
@@ -828,6 +893,11 @@ Author URI: https://pchy.design
         margin-block-start: calc(calc(var(--spacing) * 16) * var(--tw-space-y-reverse));
         margin-block-end: calc(calc(var(--spacing) * 16) * calc(1 - var(--tw-space-y-reverse)));
       }
+    }
+  }
+  .sm\:bg-foreground {
+    @media (width >= 40rem) {
+      background-color: var(--color-foreground);
     }
   }
   .sm\:p-0 {
@@ -953,6 +1023,11 @@ Author URI: https://pchy.design
   .sm\:text-\[2\.625rem\] {
     @media (width >= 40rem) {
       font-size: 2.625rem;
+    }
+  }
+  .sm\:text-primary {
+    @media (width >= 40rem) {
+      color: var(--color-primary);
     }
   }
   .md\:mx-5 {

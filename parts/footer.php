@@ -92,7 +92,8 @@
   </div>
 
   <!-- Copyright -->
-  <div class="sm:px-16 px-4 pt-6 pb-9 md:pb-4 text-center md:text-right">
+  <div class="relative flex flex-col-reverse sm:flex-row justify-end sm:px-16 px-4 pt-6 pb-9 md:pb-4 text-center md:text-right">
+    <a href="https://pchy.design" class="sm:absolute left-10 bottom-0 font-sans text-sm font-semibold sm:block py-2 px-3 sm:bg-foreground text-foreground sm:text-primary rounded-t-xl" target="_blank" rel="noopener noreferrer">Website by • <span class="text-foreground sm:text-primary">pchy</span></a>
     <p class="font-sans text-sm text-foreground font-semibold"><?php echo $content["copyright"]; ?></p>
   </div>
 </footer>
