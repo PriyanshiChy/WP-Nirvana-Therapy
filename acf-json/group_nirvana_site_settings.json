@@ -220,6 +220,28 @@
             "library": "all",
             "instructions": "Used on a therapist's profile when they have no Banner image of their own. Empty: the theme's default background.",
             "key": "field_nv_therapist_background"
+        },
+        {
+            "key": "field_nv_currency",
+            "name": "currency",
+            "label": "Currency symbol",
+            "type": "text",
+            "placeholder": "₹",
+            "instructions": "Shown before every therapist fee. Empty: ₹",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_nv_starting_from_label",
+            "name": "starting_from_label",
+            "label": "Card price text",
+            "type": "text",
+            "placeholder": "Starting from",
+            "instructions": "On each therapist card, before their lowest fee. Empty: \"Starting from\"",
+            "wrapper": {
+                "width": "50"
+            }
         }
     ],
     "location": [
@@ -238,5 +260,5 @@
     "instruction_placement": "label",
     "active": true,
     "show_in_rest": 0,
-    "modified": 1763596800
+    "modified": 1794846160
 }

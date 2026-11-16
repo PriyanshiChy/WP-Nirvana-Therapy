@@ -33,6 +33,15 @@ $expertise = nirvana_therapist_expertise( $therapist );
       <?php if ( '' !== $expertise ) : ?>
       <p class="font-sans text-sm leading-[1.2]"><?php echo esc_html( $expertise ); ?></p>
       <?php endif; ?>
+
+      <?php $starting = nirvana_therapist_starting_fee( $therapist ); // Lowest fee in their Fees box. ?>
+      <?php if ( $starting ) : ?>
+      <p class="font-sans text-sm sm:text-base text-text/70!">
+        <?php echo esc_html( (string) nirvana_setting( 'starting_from_label', __( 'Starting from', 'nirvana-therapy' ) ) ); ?>
+        <span class="font-semibold text-text!"><?php echo esc_html( nirvana_format_price( $starting['price'] ) ); ?></span>
+        <?php echo esc_html( $starting['unit'] ); ?>
+      </p>
+      <?php endif; ?>
     </div>
   </div>
 

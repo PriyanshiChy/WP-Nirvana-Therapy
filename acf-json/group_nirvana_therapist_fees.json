@@ -1,0 +1,102 @@
+{
+    "key": "group_nirvana_therapist_fees",
+    "title": "Fees",
+    "fields": [
+        {
+            "key": "field_nv_fees_label",
+            "name": "fees_label",
+            "label": "Heading",
+            "type": "text",
+            "placeholder": "Charges/Fees:",
+            "instructions": "Empty: \"Charges/Fees:\""
+        },
+        {
+            "key": "field_nv_fee_groups",
+            "name": "fee_groups",
+            "label": "Fee groups",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add group",
+            "collapsed": "field_nv_fee_group_title",
+            "min": 0,
+            "instructions": "Shown on the profile, above the Book button. The lowest price here is the \"Starting from\" price on the therapist's card. No fees: both are hidden.",
+            "sub_fields": [
+                {
+                    "key": "field_nv_fee_group_title",
+                    "name": "title",
+                    "label": "Group",
+                    "type": "text",
+                    "placeholder": "e.g. For Online:",
+                    "parent_repeater": "field_nv_fee_groups"
+                },
+                {
+                    "key": "field_nv_fee_items",
+                    "name": "fees",
+                    "label": "Fees",
+                    "type": "repeater",
+                    "layout": "table",
+                    "button_label": "Add fee",
+                    "min": 0,
+                    "parent_repeater": "field_nv_fee_groups",
+                    "sub_fields": [
+                        {
+                            "key": "field_nv_fee_item_label",
+                            "name": "label",
+                            "label": "For",
+                            "type": "text",
+                            "placeholder": "e.g. Individual Therapy",
+                            "required": 1,
+                            "parent_repeater": "field_nv_fee_items",
+                            "wrapper": {
+                                "width": "45"
+                            }
+                        },
+                        {
+                            "key": "field_nv_fee_item_price",
+                            "name": "price",
+                            "label": "Price",
+                            "type": "number",
+                            "min": 0,
+                            "step": "any",
+                            "placeholder": "e.g. 1500",
+                            "required": 1,
+                            "parent_repeater": "field_nv_fee_items",
+                            "wrapper": {
+                                "width": "20"
+                            }
+                        },
+                        {
+                            "key": "field_nv_fee_item_unit",
+                            "name": "unit",
+                            "label": "Per",
+                            "type": "text",
+                            "placeholder": "per session",
+                            "instructions": "Empty: \"per session\"",
+                            "parent_repeater": "field_nv_fee_items",
+                            "wrapper": {
+                                "width": "35"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "therapist"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1794846160
+}

@@ -464,7 +464,7 @@
         "closing": "For any clarification connect with us on <a href=\"mailto:nirvanatherapy23@gmail.com\"><u>nirvanatherapy23@gmail.com</u></a>"
     },
     "wordpress": {
-        "exported": "2026-11-16T13:55:52+00:00",
+        "exported": "2026-11-16T17:08:12+00:00",
         "site_url": "http://nirvana-therapy.local/",
         "note": "Backup of the content edited in wp-admin (tools/export-content.php). Field values are raw: image fields are IDs from \"media\".",
         "site": {
@@ -476,9 +476,36 @@
             "permalinks": "/%postname%/"
         },
         "settings": {
-            "address": "Address- 616, Diamond Prestige, 41A, Acharya Jagadish Chandra Bose Road, Kolkata, West Bengal 700017",
-            "booking_action": "link",
             "booking_label": "Book a session",
+            "booking_url": "https://nirvanatherapy.co/therapists/",
+            "whatsapp_label": "Contact Us",
+            "whatsapp_url": "https://wa.me/message/PCC72D4HITOIA1",
+            "reviews_label": "Read more Reviews",
+            "reviews_url": "https://share.google/XidnX5NEiDsjMEfF5",
+            "phone": "+91 6291957761",
+            "email": "nirvanatherapy23@gmail.com",
+            "address": "Address- 616, Diamond Prestige, 41A, Acharya Jagadish Chandra Bose Road, Kolkata, West Bengal 700017",
+            "maps_label": "Find us on Maps",
+            "maps_url": "https://maps.app.goo.gl/tERhD9HjmPYiMsCR7",
+            "socials": [
+                {
+                    "field_nv_social_network": "instagram",
+                    "field_nv_social_url": "https://www.instagram.com/nirvana_therapy?igsh=dm1nZjQ5djFidnZx&utm_source=qr"
+                },
+                {
+                    "field_nv_social_network": "linkedin",
+                    "field_nv_social_url": "http://www.linkedin.com/in/shreya-agrawal-937652191"
+                }
+            ],
+            "footer_closing": "Start your healing journey with us",
+            "copyright": "© {year} Nirvana Therapy — All rights reserved.",
+            "booking_action": "link",
+            "footer_heading_explore": "EXPLORE",
+            "footer_heading_legal": "LEGAL",
+            "footer_heading_address": "ADDRESS",
+            "footer_heading_find_us": "FIND US",
+            "footer_heading_contact": "CONTACT INFORMATION",
+            "therapist_background": "",
             "booking_steps": [
                 {
                     "field_nv_bp_step_id": "who",
@@ -543,7 +570,7 @@
                 {
                     "field_nv_bp_step_id": "plan",
                     "field_nv_bp_step_title": "Choose your session plan",
-                    "field_nv_bp_step_description": "Make the most of your therapy journey with a session package.",
+                    "field_nv_bp_step_description": "Make the most of your therapy journey with a discounted session package.",
                     "field_nv_bp_step_style": "list",
                     "field_nv_bp_options": [
                         {
@@ -579,34 +606,7 @@
                     "field_nv_bp_step_footer_then": "link",
                     "field_nv_bp_step_footer_url": ""
                 }
-            ],
-            "booking_url": "https://nirvanatherapy.co/therapists/",
-            "copyright": "© {year} Nirvana Therapy — All rights reserved.",
-            "email": "nirvanatherapy23@gmail.com",
-            "footer_closing": "Start your healing journey with us",
-            "footer_heading_address": "ADDRESS",
-            "footer_heading_contact": "CONTACT INFORMATION",
-            "footer_heading_explore": "EXPLORE",
-            "footer_heading_find_us": "FIND US",
-            "footer_heading_legal": "LEGAL",
-            "maps_label": "Find us on Maps",
-            "maps_url": "https://maps.app.goo.gl/tERhD9HjmPYiMsCR7",
-            "phone": "+91 6291957761",
-            "reviews_label": "Read more Reviews",
-            "reviews_url": "https://share.google/XidnX5NEiDsjMEfF5",
-            "socials": [
-                {
-                    "field_nv_social_network": "instagram",
-                    "field_nv_social_url": "https://www.instagram.com/nirvana_therapy?igsh=dm1nZjQ5djFidnZx&utm_source=qr"
-                },
-                {
-                    "field_nv_social_network": "linkedin",
-                    "field_nv_social_url": "http://www.linkedin.com/in/shreya-agrawal-937652191"
-                }
-            ],
-            "therapist_background": "",
-            "whatsapp_label": "Contact Us",
-            "whatsapp_url": "https://wa.me/message/PCC72D4HITOIA1"
+            ]
         },
         "pages": [
             {
@@ -666,8 +666,8 @@
                 "menu_order": 1,
                 "template": "",
                 "excerpt": "",
-                "featured_image": 87,
-                "modified": "2026-11-16 13:32:27",
+                "featured_image": 118,
+                "modified": "2026-11-16 16:35:06",
                 "content": "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">About me</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>My journey into therapy was shaped by something I’ve often been called- “sensitive”. What once felt like something I needed to hide has become one of my greatest strengths. Feeling deeply allows me to understand people beyond their words, notice what remains unspoken, and hold space for emotions with care and compassion.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>In our sessions, I work with you, not on you. Together, we create a space that feels safe, reflective, and deeply human&nbsp; where you can explore your emotions, understand your experiences, and move toward healing and growth.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Approach</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>My approach to therapy is rooted in empathy, curiosity, and emotional attunement. I draw from Emotionally Focused Therapy (EFT), Cognitive Behavioral Therapy (CBT), Acceptance and Commitment Therapy (ACT), and trauma-informed practices, adapting my work to each person’s unique needs and pace.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>I work with individuals navigating a range of concerns, including anxiety, depression, stress, trauma, grief and loss, relationship difficulties, self-esteem, emotional regulation, family dynamics, loneliness, emotional disconnection and major life transitions. My focus is on understanding the experiences and patterns underlying these concerns and supporting healthier ways of relating to oneself and others.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>In couples therapy, I focus on understanding emotional needs and the dynamics that influence how partners connect with each other. I draw primarily from Emotionally Focused Therapy (EFT), Cognitive Behavioural Therapy (CBT), and Acceptance and Commitment Therapy (ACT), integrating elements of the Gottman Method and Bowenianian perspectives. I aim to create a safe space where both partners feel heard and understood.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>I work with couples navigating communication difficulties, recurring conflicts, emotional disconnection, trust issues, infidelity, intimacy and sexual concerns, and differences in values, expectations, finances, lifestyle, and career priorities. I also support couples through premarital counseling, family and in-law conflicts, transitions into parenthood, pregnancy and fertility-related concerns, separation, divorce, post-breakup challenges, and grief and loss.</p>\n<!-- /wp:paragraph -->",
                 "fields": {
                     "role": "Counselling Psychologist",
@@ -719,7 +719,7 @@
                             "field_nv_tbp_options": [
                                 {
                                     "field_nv_tbp_option_label": "I am new here",
-                                    "field_nv_tbp_option_icon": "",
+                                    "field_nv_tbp_option_icon": "areas-of-expertise/anxiety-overthinking.svg",
                                     "field_nv_tbp_option_caption": "",
                                     "field_nv_tbp_option_hide_for": "",
                                     "field_nv_tbp_option_then": "step",
@@ -728,7 +728,7 @@
                                 },
                                 {
                                     "field_nv_tbp_option_label": "I am a returning client",
-                                    "field_nv_tbp_option_icon": "",
+                                    "field_nv_tbp_option_icon": "areas-of-expertise/anxiety-overthinking.svg",
                                     "field_nv_tbp_option_caption": "",
                                     "field_nv_tbp_option_hide_for": "",
                                     "field_nv_tbp_option_then": "step",
@@ -749,7 +749,7 @@
                             "field_nv_tbp_options": [
                                 {
                                     "field_nv_tbp_option_label": "I am new here",
-                                    "field_nv_tbp_option_icon": "",
+                                    "field_nv_tbp_option_icon": "areas-of-expertise/anxiety-overthinking.svg",
                                     "field_nv_tbp_option_caption": "",
                                     "field_nv_tbp_option_hide_for": "",
                                     "field_nv_tbp_option_then": "step",
@@ -758,7 +758,7 @@
                                 },
                                 {
                                     "field_nv_tbp_option_label": "I am a returning client",
-                                    "field_nv_tbp_option_icon": "",
+                                    "field_nv_tbp_option_icon": "areas-of-expertise/anxiety-overthinking.svg",
                                     "field_nv_tbp_option_caption": "",
                                     "field_nv_tbp_option_hide_for": "",
                                     "field_nv_tbp_option_then": "step",
@@ -774,12 +774,12 @@
                         {
                             "field_nv_tbp_step_id": "plan-individual-new",
                             "field_nv_tbp_step_title": "Choose your session plan",
-                            "field_nv_tbp_step_description": "Make the most of your therapy journey with a session package.",
+                            "field_nv_tbp_step_description": "Make the most of your therapy journey with a discounted session package.",
                             "field_nv_tbp_step_style": "list",
                             "field_nv_tbp_options": [
                                 {
                                     "field_nv_tbp_option_label": "Book three sessions",
-                                    "field_nv_tbp_option_icon": "",
+                                    "field_nv_tbp_option_icon": "areas-of-expertise/anxiety-overthinking.svg",
                                     "field_nv_tbp_option_caption": "",
                                     "field_nv_tbp_option_hide_for": "",
                                     "field_nv_tbp_option_then": "link",
@@ -788,7 +788,7 @@
                                 },
                                 {
                                     "field_nv_tbp_option_label": "Book six sessions",
-                                    "field_nv_tbp_option_icon": "",
+                                    "field_nv_tbp_option_icon": "areas-of-expertise/anxiety-overthinking.svg",
                                     "field_nv_tbp_option_caption": "",
                                     "field_nv_tbp_option_hide_for": "",
                                     "field_nv_tbp_option_then": "link",
@@ -804,12 +804,12 @@
                         {
                             "field_nv_tbp_step_id": "plan-individual-returning",
                             "field_nv_tbp_step_title": "Choose your session plan",
-                            "field_nv_tbp_step_description": "Make the most of your therapy journey with a session package.",
+                            "field_nv_tbp_step_description": "Make the most of your therapy journey with a discounted session package.",
                             "field_nv_tbp_step_style": "list",
                             "field_nv_tbp_options": [
                                 {
                                     "field_nv_tbp_option_label": "Book three sessions",
-                                    "field_nv_tbp_option_icon": "",
+                                    "field_nv_tbp_option_icon": "areas-of-expertise/anxiety-overthinking.svg",
                                     "field_nv_tbp_option_caption": "",
                                     "field_nv_tbp_option_hide_for": "",
                                     "field_nv_tbp_option_then": "link",
@@ -818,7 +818,7 @@
                                 },
                                 {
                                     "field_nv_tbp_option_label": "Book six sessions",
-                                    "field_nv_tbp_option_icon": "",
+                                    "field_nv_tbp_option_icon": "areas-of-expertise/anxiety-overthinking.svg",
                                     "field_nv_tbp_option_caption": "",
                                     "field_nv_tbp_option_hide_for": "",
                                     "field_nv_tbp_option_then": "link",
@@ -834,12 +834,12 @@
                         {
                             "field_nv_tbp_step_id": "plan-couple-new",
                             "field_nv_tbp_step_title": "Choose your session plan",
-                            "field_nv_tbp_step_description": "Make the most of your therapy journey with a session package.",
+                            "field_nv_tbp_step_description": "Make the most of your therapy journey with a discounted session package.",
                             "field_nv_tbp_step_style": "list",
                             "field_nv_tbp_options": [
                                 {
                                     "field_nv_tbp_option_label": "Couple + Individual sessions",
-                                    "field_nv_tbp_option_icon": "",
+                                    "field_nv_tbp_option_icon": "areas-of-expertise/anxiety-overthinking.svg",
                                     "field_nv_tbp_option_caption": "A combination of couple and 2 individual sessions",
                                     "field_nv_tbp_option_hide_for": "",
                                     "field_nv_tbp_option_then": "link",
@@ -855,12 +855,12 @@
                         {
                             "field_nv_tbp_step_id": "plan-couple-returning",
                             "field_nv_tbp_step_title": "Choose your session plan",
-                            "field_nv_tbp_step_description": "Make the most of your therapy journey with a session package.",
+                            "field_nv_tbp_step_description": "Make the most of your therapy journey with a discounted session package.",
                             "field_nv_tbp_step_style": "list",
                             "field_nv_tbp_options": [
                                 {
                                     "field_nv_tbp_option_label": "Couple + Individual sessions",
-                                    "field_nv_tbp_option_icon": "",
+                                    "field_nv_tbp_option_icon": "areas-of-expertise/anxiety-overthinking.svg",
                                     "field_nv_tbp_option_caption": "A combination of couple and 2 individual sessions",
                                     "field_nv_tbp_option_hide_for": "",
                                     "field_nv_tbp_option_then": "link",
@@ -873,7 +873,42 @@
                             "field_nv_tbp_step_footer_then": "link",
                             "field_nv_tbp_step_footer_url": "https://www.tealfeed.com/nirvana_therapy/connect/call?callType=6af4d557850277b489166cc0"
                         }
-                    ]
+                    ],
+                    "fee_groups": [
+                        {
+                            "field_nv_fee_group_title": "For Online:",
+                            "field_nv_fee_items": [
+                                {
+                                    "field_nv_fee_item_label": "Individual Therapy",
+                                    "field_nv_fee_item_price": "1500",
+                                    "field_nv_fee_item_unit": ""
+                                },
+                                {
+                                    "field_nv_fee_item_label": "Couples Therapy",
+                                    "field_nv_fee_item_price": "3500",
+                                    "field_nv_fee_item_unit": ""
+                                }
+                            ]
+                        },
+                        {
+                            "field_nv_fee_group_title": "For International Fees:",
+                            "field_nv_fee_items": [
+                                {
+                                    "field_nv_fee_item_label": "Individual Therapy",
+                                    "field_nv_fee_item_price": "2500",
+                                    "field_nv_fee_item_unit": ""
+                                },
+                                {
+                                    "field_nv_fee_item_label": "Couples Therapy",
+                                    "field_nv_fee_item_price": "5500",
+                                    "field_nv_fee_item_unit": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "waitlist_text": "",
+                    "waitlist_label": "",
+                    "fees_label": ""
                 },
                 "languages": [
                     "English",
@@ -897,16 +932,16 @@
                 "template": "",
                 "excerpt": "",
                 "featured_image": 88,
-                "modified": "2026-11-16 06:08:55",
-                "content": "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">About me</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Growing up, I often heard my friends call me an “emotional healer.” I was the person they turned to for a listening ear, a calm presence, and a space where they could simply be themselves. Over time, I began to recognise my inclination towards healing and spirituality. It was evident that this was more than just a role I played, it was one of my greatest strengths.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>I have always felt deeply and been drawn to understanding what lies beneath the words people speak: the emotions that remain unexpressed, the experiences that shape us, and the things we may not yet know how to put into words. I believe in holding these emotions with care, curiosity, and compassion.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>In our sessions, we work together to create a safe, reflective and judgement-free space that allows you to feel, express and explore your emotions and experiences, all while moving forward at a pace that feels comfortable to you.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Approach</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>My approach to therapy is empathetic, curiosity-driven, collaborative, non-judgemental and integrative. I draw elements from Cognitive-Behaviour Therapy (CBT), Acceptance and Commitment Therapy (ACT), Compassion-Focused Therapy, Somatic Healing, emotion focused work, trauma informed approaches and skills drawn from Dialectical Behaviour Therapy (DBT), tailored to each client or couple’s needs and goals.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>In couples therapy, I focus on understanding emotional and relational needs and dynamics that influence how a couple connects. I draw from Bowen Family Systems Theory and the Gottman Method to explore family influences, strengthen trust, improve communication, navigate conflict and build healthier relationships.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>I work towards helping clients navigate anxiety, relationship difficulties, emotional overwhelm, self-doubt, trauma, life transitions, and the feeling of being stuck. At the heart of my work is the hope that you feel heard and supported, just as you are.</p>\n<!-- /wp:paragraph -->",
+                "modified": "2026-11-16 14:08:12",
+                "content": "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">About me</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Growing up, I often heard my friends call me an “emotional healer.” I was the person they turned to for a listening ear, a calm presence, and a space where they could simply be themselves. Over time, I began to recognise my inclination towards healing and spirituality. It was evident that this was more than just a role I played, it was one of my greatest strengths.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>I have always felt deeply and been drawn to understanding what lies beneath the words people speak: the emotions that remain unexpressed, the experiences that shape us, and the things we may not yet know how to put into words. I believe in holding these emotions with care, curiosity, and compassion.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>In our sessions, we work together to create a safe, reflective and judgement-free space that allows you to feel, express and explore your emotions and experiences, all while moving forward at a pace that feels comfortable to you.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Approach</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>My approach to therapy is empathetic, curiosity-driven, collaborative, non-judgemental and integrative. I draw elements from Cognitive-Behaviour Therapy (CBT), Acceptance and Commitment Therapy (ACT), Compassion-Focused Therapy, Somatic Healing, emotion focused work, trauma informed approaches and skills drawn from Dialectical Behaviour Therapy (DBT), tailored to each client or couple’s needs and goals.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>I work towards helping clients navigate anxiety, relationship difficulties, emotional overwhelm, self-doubt, trauma, life transitions, and the feeling of being stuck. At the heart of my work is the hope that you feel heard and supported, just as you are.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>In couples therapy, I focus on understanding emotional and relational needs and dynamics that influence how a couple connects. I draw from Emotionally Focused&nbsp; Couple’s Therapy, Bowen Family Systems Theory and the Gottman Method to explore family influences, strengthen trust, improve communication, navigate conflict and build healthier relationships.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>I work with couples navigating a range of relationship concerns, including emotional disconnection, trust and infidelity, communication gaps, recurring conflicts, intimacy-related difficulties, and differences in values, expectations, and life priorities. I also support couples dealing with family and in-law dynamics, premarital concerns, transitions into parenthood, pregnancy and fertility-related challenges, separation, divorce, and grief and loss.&nbsp;</p>\n<!-- /wp:paragraph -->",
                 "fields": {
                     "role": "Counselling Psychologist",
                     "booking_action": "booking-popup",
-                    "experience": "",
-                    "education": "",
+                    "experience": "5+ years ",
+                    "education": "MSc in Psychological Counselling; Certification courses in CВТ, ACT, Trauma Informed Therapy, and Couples Therapy",
                     "timings": "",
                     "mode_of_work": "",
-                    "booking_prompt": "",
+                    "booking_prompt": "Book a session with Advika",
                     "banner": "95",
                     "booking_url": "",
                     "booking_steps": [
@@ -940,6 +975,54 @@
                             "field_nv_tbp_step_footer_then": "link",
                             "field_nv_tbp_step_footer_url": ""
                         }
+                    ],
+                    "waitlist_url": "",
+                    "fee_groups": [
+                        {
+                            "field_nv_fee_group_title": "For Online:",
+                            "field_nv_fee_items": [
+                                {
+                                    "field_nv_fee_item_label": "Individual Therapy",
+                                    "field_nv_fee_item_price": "1500",
+                                    "field_nv_fee_item_unit": ""
+                                },
+                                {
+                                    "field_nv_fee_item_label": "Couples Therapy",
+                                    "field_nv_fee_item_price": "3800",
+                                    "field_nv_fee_item_unit": ""
+                                }
+                            ]
+                        },
+                        {
+                            "field_nv_fee_group_title": "For Offline:",
+                            "field_nv_fee_items": [
+                                {
+                                    "field_nv_fee_item_label": "Individual Therapy",
+                                    "field_nv_fee_item_price": "1900",
+                                    "field_nv_fee_item_unit": ""
+                                },
+                                {
+                                    "field_nv_fee_item_label": "Couples Therapy",
+                                    "field_nv_fee_item_price": "4500",
+                                    "field_nv_fee_item_unit": ""
+                                }
+                            ]
+                        },
+                        {
+                            "field_nv_fee_group_title": "For International Fees:",
+                            "field_nv_fee_items": [
+                                {
+                                    "field_nv_fee_item_label": "Individual Therapy",
+                                    "field_nv_fee_item_price": "3300",
+                                    "field_nv_fee_item_unit": ""
+                                },
+                                {
+                                    "field_nv_fee_item_label": "Couples Therapy",
+                                    "field_nv_fee_item_price": "5200",
+                                    "field_nv_fee_item_unit": ""
+                                }
+                            ]
+                        }
                     ]
                 },
                 "languages": [
@@ -963,18 +1046,33 @@
                 "template": "",
                 "excerpt": "",
                 "featured_image": 91,
-                "modified": "2026-11-16 06:09:20",
-                "content": "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">About me</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Growing up, I often heard my friends call me an “emotional healer.” I was the person they turned to for a listening ear, a calm presence, and a space where they could simply be themselves. Over time, I began to recognise my inclination towards healing and spirituality. It was evident that this was more than just a role I played, it was one of my greatest strengths.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>I have always felt deeply and been drawn to understanding what lies beneath the words people speak: the emotions that remain unexpressed, the experiences that shape us, and the things we may not yet know how to put into words. I believe in holding these emotions with care, curiosity, and compassion.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>In our sessions, we work together to create a safe, reflective and judgement-free space that allows you to feel, express and explore your emotions and experiences, all while moving forward at a pace that feels comfortable to you.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Approach</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>My approach to therapy is empathetic, curiosity-driven, collaborative, non-judgemental and integrative. I draw elements from Cognitive-Behaviour Therapy (CBT), Acceptance and Commitment Therapy (ACT), Compassion-Focused Therapy, Somatic Healing, emotion focused work, trauma informed approaches and skills drawn from Dialectical Behaviour Therapy (DBT), tailored to each client or couple’s needs and goals.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>In couples therapy, I focus on understanding emotional and relational needs and dynamics that influence how a couple connects. I draw from Bowen Family Systems Theory and the Gottman Method to explore family influences, strengthen trust, improve communication, navigate conflict and build healthier relationships.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>I work towards helping clients navigate anxiety, relationship difficulties, emotional overwhelm, self-doubt, trauma, life transitions, and the feeling of being stuck. At the heart of my work is the hope that you feel heard and supported, just as you are.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p></p>\n<!-- /wp:paragraph -->",
+                "modified": "2026-11-16 16:47:25",
+                "content": "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">About me</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>I see therapy as a space to slow down, turn towards ourselves and make sense of the experiences we often find difficult to put into words.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>As a counselling psychologist, I value understanding each individual beyond what brings them to therapy. I believe that everyone has a different way of experiencing, processing and making sense of the world, and that there is no single way to navigate these experiences.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>In our sessions, I hope to create a space where you can show up as you are, without the pressure to have everything figured out. A space where you feel heard, understood and comfortable enough to explore yourself at your own pace.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Approach</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>My therapeutic orientation is primarily Person-Centred (PCT), complemented by principles of Acceptance and Commitment Therapy (ACT), Cognitive Behavioural Therapy (CBT) and Rational Emotive Behaviour Therapy (REBT). I recognise that our thoughts, emotions, beliefs and behaviours are interconnected, and that our past and present experiences influence how we understand ourselves and respond to the world around us.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>My areas of work include relationship concerns, anxiety, overthinking, low self-worth, self-criticism, emotional overwhelm, interpersonal disagreements, academic and performance-related pressure, burnout and difficulties with motivation. I also work with concerns arising from personal and professional changes, particularly when these bring uncertainty or emotional distress. The broader aim is to help individuals gain a deeper understanding of themselves and develop more adaptive ways of responding to life's challenges.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p></p>\n<!-- /wp:paragraph -->",
                 "fields": {
                     "role": "Counselling Psychologist",
                     "booking_action": "link",
-                    "experience": "",
-                    "education": "",
-                    "timings": "",
-                    "mode_of_work": "",
-                    "booking_prompt": "",
+                    "experience": "Fresher",
+                    "education": "Msc. in Psychology (Clinical), Level 1 Certification courses in CBT & REBT",
+                    "timings": "Monday to Saturday: 12pm - 8pm",
+                    "mode_of_work": "Online",
+                    "booking_prompt": "Book a session with Janhavi",
                     "banner": "97",
-                    "booking_url": "https://forms.gle/rS29NMhSRwqXti4m8"
+                    "booking_url": "https://forms.gle/rS29NMhSRwqXti4m8",
+                    "waitlist_url": "",
+                    "booking_steps": false,
+                    "fees_label": "",
+                    "fee_groups": [
+                        {
+                            "field_nv_fee_group_title": "",
+                            "field_nv_fee_items": [
+                                {
+                                    "field_nv_fee_item_label": "Starting form",
+                                    "field_nv_fee_item_price": "650",
+                                    "field_nv_fee_item_unit": "per session"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 "languages": [
                     "English",
@@ -987,8 +1085,7 @@
                     "Emotional Regulation",
                     "Overthinking",
                     "Relationship Concerns",
-                    "Self-esteem",
-                    "Stress Management"
+                    "Self-esteem"
                 ]
             },
             {
@@ -1000,19 +1097,34 @@
                 "menu_order": 4,
                 "template": "",
                 "excerpt": "",
-                "featured_image": 93,
-                "modified": "2026-11-16 06:09:30",
-                "content": "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">About me</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Growing up, I often heard my friends call me an “emotional healer.” I was the person they turned to for a listening ear, a calm presence, and a space where they could simply be themselves. Over time, I began to recognise my inclination towards healing and spirituality. It was evident that this was more than just a role I played, it was one of my greatest strengths.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>I have always felt deeply and been drawn to understanding what lies beneath the words people speak: the emotions that remain unexpressed, the experiences that shape us, and the things we may not yet know how to put into words. I believe in holding these emotions with care, curiosity, and compassion.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>In our sessions, we work together to create a safe, reflective and judgement-free space that allows you to feel, express and explore your emotions and experiences, all while moving forward at a pace that feels comfortable to you.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Approach</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>My approach to therapy is empathetic, curiosity-driven, collaborative, non-judgemental and integrative. I draw elements from Cognitive-Behaviour Therapy (CBT), Acceptance and Commitment Therapy (ACT), Compassion-Focused Therapy, Somatic Healing, emotion focused work, trauma informed approaches and skills drawn from Dialectical Behaviour Therapy (DBT), tailored to each client or couple’s needs and goals.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>In couples therapy, I focus on understanding emotional and relational needs and dynamics that influence how a couple connects. I draw from Bowen Family Systems Theory and the Gottman Method to explore family influences, strengthen trust, improve communication, navigate conflict and build healthier relationships.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>I work towards helping clients navigate anxiety, relationship difficulties, emotional overwhelm, self-doubt, trauma, life transitions, and the feeling of being stuck. At the heart of my work is the hope that you feel heard and supported, just as you are.</p>\n<!-- /wp:paragraph -->",
+                "featured_image": 119,
+                "modified": "2026-11-16 16:45:02",
+                "content": "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">About me</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>There was a time in my life when I needed a guiding hand, and that person turned out to be my therapist. Having experienced what it means to feel supported, understood, and never judged, I knew I wanted to offer the same to others. The thought of helping people through their hardest moments is what pushed me into this field.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>I bring deep empathy and genuine concern to every person I work with. Our sessions are a space to be yourself, without fear of judgement. Whether you are a young person dealing with stress, anxiety or self-esteem, or someone working through family and relationship challenges, we move at your pace and build practical ways to cope and grow.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Approach</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>My approach to therapy is eclectic, with techniques from CBT, REBT and DBT used where helpful. Rather than fitting every person into a single method, I adapt my work to each individual’s personality, needs, and pace. The focus is on building self-awareness, healthy coping skills, and confidence.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Common concerns I work with include stress, anxiety, self-esteem, interpersonal relationships, academic pressure, overthinking, body image, friendships, family dynamics, and communication challenges. My focus is on understanding the experiences and patterns behind these concerns and supporting healthier ways of relating to oneself and others.</p>\n<!-- /wp:paragraph -->",
                 "fields": {
                     "role": "Counselling Psychologist",
                     "booking_action": "link",
-                    "experience": "",
-                    "education": "",
-                    "timings": "",
-                    "mode_of_work": "",
+                    "experience": "Fresher",
+                    "education": " MA in Clinical Psychology",
+                    "timings": "Tuesday, Thursday and Saturday- 12-5pm",
+                    "mode_of_work": "Online",
                     "booking_prompt": "",
                     "banner": "100",
-                    "booking_url": "https://forms.gle/rS29NMhSRwqXti4m8"
+                    "booking_url": "https://forms.gle/rS29NMhSRwqXti4m8",
+                    "waitlist_url": "",
+                    "booking_steps": false,
+                    "fees_label": "",
+                    "fee_groups": [
+                        {
+                            "field_nv_fee_group_title": "",
+                            "field_nv_fee_items": [
+                                {
+                                    "field_nv_fee_item_label": "Starting from",
+                                    "field_nv_fee_item_price": "650",
+                                    "field_nv_fee_item_unit": "per session"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 "languages": [
                     "English",
@@ -1274,6 +1386,20 @@
             }
         ],
         "media": {
+            "119": {
+                "file": "Ayushi-profile.jpg",
+                "url": "http://nirvana-therapy.local/wp-content/uploads/2026/11/Ayushi-profile.jpg",
+                "title": "Ayushi (profile crop)",
+                "alt": "Ayushi Bhansali",
+                "caption": ""
+            },
+            "118": {
+                "file": "IMG_4095_Original-profile.jpg",
+                "url": "http://nirvana-therapy.local/wp-content/uploads/2026/11/IMG_4095_Original-profile.jpg",
+                "title": "shreya_Original (profile crop)",
+                "alt": "shreya_arawal_profile_photo",
+                "caption": ""
+            },
             "102": {
                 "file": "Pinterest-Image-scaled.jpg",
                 "url": "http://nirvana-therapy.local/wp-content/uploads/2026/11/Pinterest-Image-scaled.jpg",

@@ -63,7 +63,7 @@ $popup_id = (string) ( $args['id'] ?? 'booking-popup' );
       <?php if ( $footer ) : ?>
       <div class="booking-footer">
         <?php if ( '' !== $step['footer_text'] ) : ?>
-        <p class="text-sm leading-normal text-text/70!"><?php echo esc_html( $step['footer_text'] ); ?></p>
+        <p class="font-serif font-medium text-base sm:text-lg leading-[1.35] text-text"><?php echo esc_html( $step['footer_text'] ); ?></p>
         <?php endif; ?>
         <?php if ( '' !== $step['footer_label'] ) : ?>
           <?php $target = nirvana_booking_popup_target( $step['footer_then'], '', $step['footer_url'] ); ?>

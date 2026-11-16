@@ -276,6 +276,10 @@ Styling reuses the theme's colours (`text`, `primary`, `foreground`; the role's 
 
 Sample data on Local: `wp eval-file wp-content/themes/nirvana-therapy/tools/seed-therapists.php [photo-id]`.
 
+### Fees
+
+Each therapist has a "Fees" box (`acf-json/group_nirvana_therapist_fees.json`): a heading ("Charges/Fees:") and groups ("For Online:") of rows: for, price (a number), per ("per session"). The profile lists them above the Book button; the card shows "Starting from" + the lowest price, with that row's "per". No fees: both are hidden. The currency symbol (₹) and the "Starting from" text are in Site Settings → Therapists. Helpers: `nirvana_therapist_fees()`, `nirvana_therapist_starting_fee()`, `nirvana_format_price()`.
+
 ### Book button actions (decision)
 
 A Book button does one of two things, nothing else lives in the theme:

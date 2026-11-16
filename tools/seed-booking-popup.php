@@ -51,7 +51,7 @@ $steps = array(
 	array(
 		'field_nv_bp_step_id'           => 'plan',
 		'field_nv_bp_step_title'        => 'Choose your session plan',
-		'field_nv_bp_step_description'  => 'Make the most of your therapy journey with a session package.',
+		'field_nv_bp_step_description'  => 'Make the most of your therapy journey with a discounted session package.',
 		'field_nv_bp_step_style'        => 'list',
 		'field_nv_bp_options'           => array(
 			$choice( 'Book three sessions', 'link' ),

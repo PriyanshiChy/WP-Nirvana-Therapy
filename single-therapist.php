@@ -74,6 +74,29 @@ get_header();
           </div>
           <?php endif; ?>
 
+          <?php $fees = nirvana_therapist_fees( $therapist ); ?>
+          <?php if ( $fees['groups'] ) : ?>
+          <div class="therapist-fees flex flex-col items-center gap-4 w-full text-center">
+            <p class="therapist-label"><?php echo esc_html( $fees['label'] ); ?></p>
+            <?php foreach ( $fees['groups'] as $group ) : ?>
+            <div class="flex flex-col items-center gap-1.5">
+              <?php if ( '' !== $group['title'] ) : ?>
+              <p class="therapist-value"><?php echo esc_html( $group['title'] ); ?></p>
+              <?php endif; ?>
+              <ul class="flex flex-col gap-1">
+                <?php foreach ( $group['fees'] as $fee ) : ?>
+                <li class="font-sans text-[0.9375rem] leading-normal">
+                  <?php echo esc_html( $fee['label'] ); ?> -
+                  <span class="text-base font-medium"><?php echo esc_html( nirvana_format_price( $fee['price'] ) ); ?></span>
+                  <span class="text-sm text-text/70!"><?php echo esc_html( $fee['unit'] ); ?></span>
+                </li>
+                <?php endforeach; ?>
+              </ul>
+            </div>
+            <?php endforeach; ?>
+          </div>
+          <?php endif; ?>
+
           <div class="therapist-book flex flex-col gap-2 w-full">
             <p class="font-sans text-base text-center leading-[1.2] py-[0.3rem]"><?php echo esc_html( nirvana_therapist_booking_prompt( $therapist ) ); ?></p>
             <?php echo nirvana_therapist_book_button( $therapist ); // Escaped inside. ?>

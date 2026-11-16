@@ -134,6 +134,74 @@ function nirvana_therapist_booking_prompt( WP_Post $therapist ): string {
 }
 
 /**
+ * The therapist's fees (the "Fees" box): heading and groups, each with rows
+ * of { label, price (float), unit }. Rows without a label or price are left
+ * out, and so are groups left empty.
+ *
+ * @return array{label: string, groups: array<int, array{title: string, fees: array}>}
+ */
+function nirvana_therapist_fees( WP_Post $therapist ): array {
+	$groups = array();
+	$rows   = function_exists( 'get_field' ) ? get_field( 'fee_groups', $therapist->ID ) : array();
+
+	foreach ( is_array( $rows ) ? $rows : array() as $row ) {
+		$fees = array();
+		foreach ( is_array( $row['fees'] ?? null ) ? $row['fees'] : array() as $fee ) {
+			$label = trim( (string) ( $fee['label'] ?? '' ) );
+			$price = $fee['price'] ?? '';
+			if ( '' === $label || '' === $price || ! is_numeric( $price ) ) {
+				continue;
+			}
+			$fees[] = array(
+				'label' => $label,
+				'price' => (float) $price,
+				'unit'  => trim( (string) ( $fee['unit'] ?? '' ) ) ?: __( 'per session', 'nirvana-therapy' ),
+			);
+		}
+
+		if ( $fees ) {
+			$groups[] = array(
+				'title' => trim( (string) ( $row['title'] ?? '' ) ),
+				'fees'  => $fees,
+			);
+		}
+	}
+
+	return array(
+		'label'  => nirvana_therapist_field( $therapist, 'fees_label' ) ?: __( 'Charges/Fees:', 'nirvana-therapy' ),
+		'groups' => $groups,
+	);
+}
+
+/**
+ * The lowest of the therapist's fees, for "Starting from" on their card.
+ *
+ * @return array{label: string, price: float, unit: string}|null
+ */
+function nirvana_therapist_starting_fee( WP_Post $therapist ): ?array {
+	$lowest = null;
+	foreach ( nirvana_therapist_fees( $therapist )['groups'] as $group ) {
+		foreach ( $group['fees'] as $fee ) {
+			if ( null === $lowest || $fee['price'] < $lowest['price'] ) {
+				$lowest = $fee;
+			}
+		}
+	}
+
+	return $lowest;
+}
+
+/**
+ * "₹1500" (currency from Site Settings → Therapists). Whole amounts print
+ * without decimals, as in the design.
+ */
+function nirvana_format_price( float $price ): string {
+	$amount = floor( $price ) === $price ? (string) (int) $price : number_format( $price, 2, '.', '' );
+
+	return (string) nirvana_setting( 'currency', '₹' ) . $amount;
+}
+
+/**
  * "No slots available? Join the waitlist" under the profile's Book button:
  * the therapist's Waitlist fields (Booking box). Empty array when there's
  * no waitlist link.
