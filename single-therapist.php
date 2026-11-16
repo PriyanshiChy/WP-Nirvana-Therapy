@@ -77,16 +77,29 @@ get_header();
           <div class="therapist-book flex flex-col gap-2 w-full">
             <p class="font-sans text-base text-center leading-[1.2] py-[0.3rem]"><?php echo esc_html( nirvana_therapist_booking_prompt( $therapist ) ); ?></p>
             <?php echo nirvana_therapist_book_button( $therapist ); // Escaped inside. ?>
+            <?php $waitlist = nirvana_therapist_waitlist( $therapist ); ?>
+            <?php if ( $waitlist ) : ?>
+            <p class="mt-4 font-sans text-sm sm:text-base text-center text-text/70!">
+              <?php echo esc_html( $waitlist['text'] ); ?>
+              <a class="ml-1 font-medium text-base sm:text-lg text-primary! underline underline-offset-4 hover:no-underline" href="<?php echo esc_url( $waitlist['url'] ); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html( $waitlist['label'] ); ?></a>
+            </p>
+            <?php endif; ?>
           </div>
         </aside>
 
         <?php if ( '' !== trim( get_the_content() ) ) : ?>
-        <div class="therapist-bio flex-1 min-w-0 lg:pt-27 lg:pr-9 font-sans text-base sm:text-lg">
+        <div class="therapist-bio flex-1 min-w-0 lg:pt-27 lg:pr-9 font-sans">
           <?php the_content(); ?>
         </div>
         <?php endif; ?>
       </article>
     <?php endwhile; ?>
   </main>
+
+  <?php // Appears once the Book button is scrolled past (assets/js/back-to-top.js). ?>
+  <button type="button" class="back-to-top" data-back-to-top>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    <span><?php esc_html_e( 'Back to top', 'nirvana-therapy' ); ?></span>
+  </button>
 <?php
 get_footer();

@@ -52,6 +52,20 @@ function nirvana_enqueue_assets(): void {
 			'strategy'  => 'defer',
 		)
 	);
+
+	// Therapist profiles: the floating "Back to top" button.
+	if ( is_singular( 'therapist' ) ) {
+		wp_enqueue_script(
+			'nirvana-back-to-top',
+			$uri . '/assets/js/back-to-top.js',
+			array(),
+			nirvana_asset_version( '/assets/js/back-to-top.js' ),
+			array(
+				'in_footer' => true,
+				'strategy'  => 'defer',
+			)
+		);
+	}
 }
 
 add_filter( 'wp_resource_hints', 'nirvana_resource_hints', 10, 2 );

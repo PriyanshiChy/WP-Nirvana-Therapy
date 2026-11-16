@@ -34,7 +34,7 @@ $items = (array) get_field( 'items' );
         </div>
         <div class="flex flex-col gap-4">
           <p class="text-xl font-serif font-medium"><?php echo esc_html( $item['title'] ?? '' ); ?></p>
-          <div class="font-sans text-sm leading-[120%]">
+          <div class="font-sans text-[0.9375rem] leading-[1.5] text-pretty">
             <?php $lines = nirvana_lines( $item['body'] ?? '' ); ?>
             <?php foreach ( $lines as $k => $line ) : ?>
               <p><?php echo esc_html( $line ); ?></p><?php if ( array_key_last( $lines ) !== $k ) : ?><br /><?php endif; ?>

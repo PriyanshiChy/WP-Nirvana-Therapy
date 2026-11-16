@@ -28,7 +28,7 @@ $closing       = (string) get_field( 'closing' );
   </div>
   <?php endif; ?>
   <div class="md:mt-4 flex flex-col md:items-center md:text-center gap-y-9">
-    <h3 class="leading-[100%]"><?php echo nirvana_kses_inline( $steps_heading ); ?></h3>
+    <h3 class="leading-[1.3] md:leading-[100%]"><?php echo nirvana_kses_inline( $steps_heading ); ?></h3>
     <div class="w-full flex flex-col md:flex-row md:py-8 space-y-9">
       <?php foreach ( (array) get_field( 'steps' ) as $item ) : ?>
         <div class="flex flex-1 md:flex-col items-center text-center">
@@ -39,7 +39,7 @@ $closing       = (string) get_field( 'closing' );
               </div>
               <p class="font-serif font-semibold text-xl md:text-2xl [&_br]:hidden md:[&_br]:block"><?php echo nirvana_kses_inline( $item['title'] ?? '' ); ?></p>
             </div>
-            <p class="font-sans"><?php echo esc_html( $item['text'] ?? '' ); ?></p>
+            <p class="font-sans text-left md:text-center leading-[1.6] md:leading-normal text-pretty"><?php echo esc_html( $item['text'] ?? '' ); ?></p>
           </div>
         </div>
       <?php endforeach; ?>

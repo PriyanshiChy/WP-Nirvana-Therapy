@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
             <?php echo nirvana_icon( (string) ( $item['icon'] ?? '' ) ); ?>
           </div>
         </div>
-        <div class="font-sans text-base md:text-lg leading-6 [&>p+p]:mt-[1lh]">
+        <div class="font-sans text-[1.0625rem] md:text-lg leading-[1.65] md:leading-6 [&>p+p]:mt-5 md:[&>p+p]:mt-[1lh] text-pretty">
           <?php echo nirvana_kses( $item['body'] ?? '' ); ?>
         </div>
       </div>

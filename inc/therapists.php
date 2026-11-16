@@ -134,6 +134,26 @@ function nirvana_therapist_booking_prompt( WP_Post $therapist ): string {
 }
 
 /**
+ * "No slots available? Join the waitlist" under the profile's Book button:
+ * the therapist's Waitlist fields (Booking box). Empty array when there's
+ * no waitlist link.
+ *
+ * @return array{url: string, text: string, label: string}|array{}
+ */
+function nirvana_therapist_waitlist( WP_Post $therapist ): array {
+	$url = nirvana_therapist_field( $therapist, 'waitlist_url' );
+	if ( '' === $url ) {
+		return array();
+	}
+
+	return array(
+		'url'   => $url,
+		'text'  => nirvana_therapist_field( $therapist, 'waitlist_text' ) ?: __( 'No slots available?', 'nirvana-therapy' ),
+		'label' => nirvana_therapist_field( $therapist, 'waitlist_label' ) ?: __( 'Join the waitlist', 'nirvana-therapy' ),
+	);
+}
+
+/**
  * Profile page banner: the therapist's Banner image, else the default in
  * Site Settings → Therapists, else the theme's background.
  */

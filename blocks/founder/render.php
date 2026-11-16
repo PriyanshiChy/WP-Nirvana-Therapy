@@ -8,7 +8,19 @@ defined( 'ABSPATH' ) || exit;
 $photo = (int) get_field( 'photo' );
 $name  = (string) get_field( 'name' );
 $alt   = __( 'Founder - Nirvana Therapy', 'nirvana-therapy' ); // Overridden by the photo's alt text in the Media Library.
-$stats = array_slice( (array) get_field( 'stats' ), 0, 3 );
+// Only stats with a number or a label; with none, the stats row is hidden.
+// (An empty repeater comes back as false or "", so don't cast it to an array.)
+$stats = get_field( 'stats' );
+$stats = array_slice(
+	array_values(
+		array_filter(
+			is_array( $stats ) ? $stats : array(),
+			static fn( $stat ): bool => is_array( $stat ) && ( absint( $stat['number'] ?? 0 ) > 0 || '' !== trim( (string) ( $stat['label'] ?? '' ) ) )
+		)
+	),
+	0,
+	3
+);
 ?>
 <section id="meet-the-founder" class="px-6 pt-0 pb-9 sm:p-16">
   <h2><?php echo nirvana_kses_inline( get_field( 'title' ) ); ?></h2>
@@ -20,7 +32,7 @@ $stats = array_slice( (array) get_field( 'stats' ), 0, 3 );
           <p class="font-sans font-medium text-lg sm:text-2xl"><?php echo esc_html( get_field( 'role' ) ); ?></p>
           <p class="font-sans font-medium text-base sm:text-lg"><?php echo esc_html( get_field( 'qualification' ) ); ?></p>
         </div>
-        <div class="text-base sm:text-lg leading-6 font-sans [&>p+p]:mt-[1lh]">
+        <div class="text-[1.0625rem] sm:text-lg leading-[1.65] sm:leading-6 font-sans [&>p+p]:mt-5 sm:[&>p+p]:mt-[1lh] text-pretty">
           <?php echo nirvana_kses( get_field( 'bio' ) ); ?>
         </div>
       </div>
@@ -60,7 +72,7 @@ $stats = array_slice( (array) get_field( 'stats' ), 0, 3 );
         <img class="h-fit object-contain md:mx-5" src="<?php echo esc_url( nirvana_asset_uri( '/images/founder-picture.webp' ) ); ?>" alt="<?php echo esc_attr( $alt ); ?>" />
       <?php endif; ?>
       <div class="-mt-9 p-3 sm:p-6 -rotate-4 w-[110%] bg-[#CCC8EC]">
-        <p class="font-cursive text-lg sm:text-2xl leading-7 py-2 sm:py-4"><?php echo nirvana_kses_inline( get_field( 'card' ) ); ?></p>
+        <p class="font-cursive text-[1.375rem] sm:text-2xl leading-[1.35] sm:leading-7 py-2 sm:py-4"><?php echo nirvana_kses_inline( get_field( 'card' ) ); ?></p>
       </div>
     </div>
   </div>

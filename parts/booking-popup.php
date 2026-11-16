@@ -3,14 +3,16 @@
  * The booking popup's markup (see inc/booking-popup.php). One .booking-step per
  * step; assets/js/actions/booking-popup.js shows one at a time.
  *
+ * $args['id']:    the dialog's id ("booking-popup" or "booking-popup-<therapist ID>").
  * $args['steps']: nirvana_booking_popup_steps().
  */
 
 defined( 'ABSPATH' ) || exit;
 
-$steps = $args['steps'] ?? array();
+$steps    = $args['steps'] ?? array();
+$popup_id = (string) ( $args['id'] ?? 'booking-popup' );
 ?>
-<dialog id="booking-popup" class="booking-popup" aria-labelledby="booking-popup-title-0">
+<dialog id="<?php echo esc_attr( $popup_id ); ?>" class="booking-popup" aria-labelledby="<?php echo esc_attr( $popup_id ); ?>-title-0">
   <div class="booking-card">
     <div class="booking-progress" aria-hidden="true"><span></span></div>
 
@@ -29,7 +31,7 @@ $steps = $args['steps'] ?? array();
       ?>
     <div class="booking-step <?php echo '' !== $step['description'] ? 'gap-6' : 'gap-12'; ?>" data-step-id="<?php echo esc_attr( $step['id'] ); ?>"<?php echo 0 === $i ? '' : ' hidden'; ?>>
       <div class="flex flex-col items-center gap-2">
-        <h2 id="booking-popup-title-<?php echo (int) $i; ?>" class="font-serif font-semibold text-xl sm:text-2xl leading-[1.3]" tabindex="-1"><?php echo esc_html( $step['title'] ); ?></h2>
+        <h2 id="<?php echo esc_attr( $popup_id . '-title-' . $i ); ?>" class="font-serif font-semibold text-xl sm:text-2xl leading-[1.3]" tabindex="-1"><?php echo esc_html( $step['title'] ); ?></h2>
         <?php if ( '' !== $step['description'] ) : ?>
         <p class="text-sm leading-normal text-text/70!"><?php echo nl2br( esc_html( $step['description'] ) ); ?></p>
         <?php endif; ?>

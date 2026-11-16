@@ -7,6 +7,11 @@
  * "Script: Booking Popup". Its steps are edited in wp-admin under
  * Site Settings → Booking Popup (acf-json/group_nirvana_booking_popup.json).
  *
+ * Each therapist can have their own steps (the "Booking popup" box on the
+ * therapist, the same fields generated from the Site Settings group); left
+ * empty, they use Site Settings → Booking Popup. Each Book button opens its
+ * own therapist's popup: one <dialog> is printed per set of steps in use.
+ *
  * Each choice either goes to another step, opens a link, or runs a script
  * from assets/js/actions/. A choice can be hidden when the visitor picked
  * certain answers earlier ("Hide when the visitor picked": e.g. Couple). Scripts get the Book button's context plus
@@ -33,13 +38,44 @@ function nirvana_register_booking_popup_page(): void {
 }
 
 /**
+ * The therapist's own "Booking popup" box: the Site Settings popup fields,
+ * re-keyed (field_nv_bp_… → field_nv_tbp_…), so both always match.
+ */
+add_action( 'acf/init', 'nirvana_register_therapist_popup_fields' );
+function nirvana_register_therapist_popup_fields(): void {
+	$json = (string) file_get_contents( get_template_directory() . '/acf-json/group_nirvana_booking_popup.json' );
+	$site = json_decode( str_replace( 'field_nv_bp_', 'field_nv_tbp_', $json ), true );
+	if ( ! function_exists( 'acf_add_local_field_group' ) || empty( $site['fields'] ) ) {
+		return;
+	}
+
+	$fields                    = $site['fields'];
+	$fields[0]['instructions'] = __( "This therapist's own popup, opened by their Book buttons when their Booking action (or Site Settings') is \"Script: Booking Popup\". Empty: the steps in Site Settings → Booking Popup. Links left empty use this therapist's Booking URL.", 'nirvana-therapy' );
+
+	acf_add_local_field_group(
+		array(
+			'key'                   => 'group_nirvana_therapist_popup',
+			'title'                 => __( 'Booking popup', 'nirvana-therapy' ),
+			'fields'                => $fields,
+			'location'              => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'therapist' ) ) ),
+			'position'              => 'normal',
+			'menu_order'            => 2,
+			'label_placement'       => 'top',
+			'instruction_placement' => 'label',
+		)
+	);
+}
+
+/**
  * "When clicked" dropdowns: steps (choices only), Link, and the scripts.
  */
 add_filter( 'acf/load_field/key=field_nv_bp_option_then', 'nirvana_booking_popup_then_choices' );
 add_filter( 'acf/load_field/key=field_nv_bp_step_footer_then', 'nirvana_booking_popup_then_choices' );
+add_filter( 'acf/load_field/key=field_nv_tbp_option_then', 'nirvana_booking_popup_then_choices' );
+add_filter( 'acf/load_field/key=field_nv_tbp_step_footer_then', 'nirvana_booking_popup_then_choices' );
 function nirvana_booking_popup_then_choices( array $field ): array {
 	$choices = array();
-	if ( 'field_nv_bp_option_then' === $field['key'] ) {
+	if ( str_ends_with( (string) $field['key'], '_option_then' ) ) {
 		$choices = array(
 			'next' => __( 'Go to the next step', 'nirvana-therapy' ),
 			'step' => __( 'Go to a step…', 'nirvana-therapy' ),
@@ -57,13 +93,67 @@ function nirvana_booking_popup_then_choices( array $field ): array {
 }
 
 /**
- * The saved steps, cleaned up. Steps without a question, and choices
- * without a label, are left out.
+ * The steps a therapist's Book buttons open: their own, else Site Settings'.
+ * Without a therapist, Site Settings'. Cleaned up: steps without a question,
+ * and choices without a label, are left out.
  *
  * @return array[]
  */
-function nirvana_booking_popup_steps(): array {
-	$rows    = (array) nirvana_setting( 'booking_steps', array() );
+function nirvana_booking_popup_steps( ?WP_Post $therapist = null ): array {
+	$steps = $therapist ? nirvana_booking_popup_clean( get_field( 'booking_steps', $therapist->ID ) ) : array();
+
+	return $steps ?: nirvana_booking_popup_clean( nirvana_setting( 'booking_steps', array() ) );
+}
+
+/**
+ * Which popup a Book button opens: "booking-popup" (Site Settings' steps)
+ * or "booking-popup-<id>" (a therapist with their own steps).
+ */
+function nirvana_booking_popup_id( ?WP_Post $therapist = null ): string {
+	if ( $therapist && nirvana_booking_popup_clean( get_field( 'booking_steps', $therapist->ID ) ) ) {
+		return 'booking-popup-' . $therapist->ID;
+	}
+
+	return 'booking-popup';
+}
+
+/**
+ * Remembers the popups this page's Book buttons open, so the footer prints
+ * them, and tells each button which one is its own (context.popup).
+ */
+add_filter( 'nirvana_booking_args', 'nirvana_booking_popup_args', 10, 2 );
+function nirvana_booking_popup_args( array $args, ?WP_Post $therapist ): array {
+	if ( 'booking-popup' !== $args['action'] ) {
+		return $args;
+	}
+
+	$id                       = nirvana_booking_popup_id( $therapist );
+	$args['context']['popup'] = $id;
+	nirvana_booking_popups_used( $id, $therapist );
+
+	return $args;
+}
+
+/**
+ * The popups to print: [ 'booking-popup' => null, 'booking-popup-78' => WP_Post ].
+ */
+function nirvana_booking_popups_used( string $id = '', ?WP_Post $therapist = null ): array {
+	static $used = array();
+	if ( '' !== $id && ! array_key_exists( $id, $used ) ) {
+		$used[ $id ] = 'booking-popup' === $id ? null : $therapist;
+	}
+
+	return $used;
+}
+
+/**
+ * Saved repeater rows → the steps the popup prints.
+ *
+ * @param mixed $rows get_field() of a "booking_steps" repeater.
+ * @return array[]
+ */
+function nirvana_booking_popup_clean( $rows ): array {
+	$rows    = is_array( $rows ) ? $rows : array();
 	$scripts = nirvana_action_scripts();
 	$then    = static function ( string $value, array $allowed, string $default ) use ( $scripts ): string {
 		return in_array( $value, $allowed, true ) || ( isset( $scripts[ $value ] ) && 'booking-popup' !== $value ) ? $value : $default;
@@ -120,18 +210,20 @@ function nirvana_booking_popup_render(): void {
 		return;
 	}
 
-	$steps = nirvana_booking_popup_steps();
-	if ( ! $steps ) {
-		return; // The script then lets Book buttons work as plain links.
-	}
-
-	foreach ( $steps as $step ) {
-		foreach ( array_merge( array_column( $step['options'], 'then' ), array( $step['footer_then'] ) ) as $then ) {
-			nirvana_enqueue_action( $then ); // Ignores next / step / link.
+	foreach ( nirvana_booking_popups_used() as $id => $therapist ) {
+		$steps = nirvana_booking_popup_steps( $therapist );
+		if ( ! $steps ) {
+			continue; // The script then lets these Book buttons work as plain links.
 		}
-	}
 
-	get_template_part( 'parts/booking-popup', null, array( 'steps' => $steps ) );
+		foreach ( $steps as $step ) {
+			foreach ( array_merge( array_column( $step['options'], 'then' ), array( $step['footer_then'] ) ) as $then ) {
+				nirvana_enqueue_action( $then ); // Ignores next / step / link.
+			}
+		}
+
+		get_template_part( 'parts/booking-popup', null, array( 'id' => $id, 'steps' => $steps ) );
+	}
 }
 
 /**

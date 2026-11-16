@@ -472,7 +472,7 @@ section h3 {
 }
 
 .faq-answer {
-  @apply text-base sm:text-lg leading-[150%];
+  @apply text-[1.0625rem] sm:text-lg leading-[1.65] sm:leading-[150%];
   overflow: hidden;
   max-height: 0;
   transition: max-height 400ms ease;
@@ -553,13 +553,42 @@ main.therapist-profile {
    sections after the first are divided by a line. Paragraphs run on without
    a blank line, as in the design. Its own rules, not .entry-content's,
    whose :is() selector would outrank these. */
+/* Profile bio: set for long reading. ~65 characters a line, airy line
+   height, space between paragraphs, slightly softened text colour. */
 .therapist-bio {
+  @apply text-[1.0625rem] sm:text-lg;
+  line-height: 1.75;
+  color: color-mix(in oklab, var(--color-text) 88%, transparent);
+
+  & > * {
+    max-width: 40rem;
+  }
+
   & > * + * {
     margin-top: 1.25rem;
   }
 
+  & :is(p, li, span, em, strong, b, i, a) {
+    color: inherit;
+  }
+
+  & p,
+  & li {
+    text-wrap: pretty;
+  }
+
+  & li + li {
+    margin-top: 0.5rem;
+  }
+
   & a {
-    @apply underline;
+    @apply underline underline-offset-2;
+    color: var(--color-primary);
+  }
+
+  & strong,
+  & b {
+    color: var(--color-text);
   }
 
   & ul {
@@ -570,30 +599,32 @@ main.therapist-profile {
     @apply list-decimal pl-6;
   }
 
+  & h2,
   & h3 {
-    @apply font-serif font-semibold text-lg sm:text-xl;
+    color: var(--color-text);
+    text-wrap: balance;
+  }
+
+  & h3 {
+    @apply font-serif font-semibold text-lg sm:text-xl leading-[1.35];
+  }
+
+  & > h3 {
+    margin-top: 2rem;
   }
 
   & > h2 {
-    @apply font-serif font-semibold text-xl sm:text-2xl leading-[1.3] mt-0;
+    @apply font-serif font-semibold text-[1.375rem] sm:text-[1.625rem] leading-[1.3] mt-0;
   }
 
   & > h2:not(:first-child) {
-    margin-top: 2.25rem;
-    padding-top: 2.25rem;
-    border-top: 1px solid color-mix(in srgb, var(--color-text) 25%, transparent);
+    margin-top: 2.75rem;
+    padding-top: 2.75rem;
+    border-top: 1px solid color-mix(in srgb, var(--color-text) 15%, transparent);
   }
 
-  & > h2 + * {
+  & > :is(h2, h3) + * {
     margin-top: 1rem;
-  }
-
-  & > p + p {
-    margin-top: 0;
-  }
-
-  & p {
-    @apply leading-[1.5];
   }
 }
 
@@ -908,4 +939,56 @@ html:has(.booking-popup[open]) {
 .booking-tile:hover [stroke="#77A4FD"],
 .booking-tile:focus-visible [stroke="#77A4FD"] {
   stroke: currentColor;
+}
+
+/* Floating "Back to top" on therapist profiles (assets/js/back-to-top.js).
+   Hidden (and out of the tab order) until the Book button is scrolled past. */
+.back-to-top {
+  @apply font-sans font-medium text-base transition-[opacity,translate,visibility] duration-200 ease-out;
+  position: fixed;
+  left: 50%;
+  bottom: calc(1.25rem + env(safe-area-inset-bottom));
+  z-index: 90; /* Below the header (99) and the booking popup. */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 3rem;
+  padding-inline: 1.25rem;
+  cursor: pointer;
+  background: var(--color-primary);
+  color: var(--color-foreground);
+  box-shadow: var(--shadow-card);
+  opacity: 0;
+  visibility: hidden;
+  translate: -50% 1rem;
+}
+
+.back-to-top > span {
+  color: inherit;
+}
+
+.back-to-top > svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.back-to-top[data-visible] {
+  opacity: 1;
+  visibility: visible;
+  translate: -50% 0;
+}
+
+.back-to-top:hover {
+  @apply bg-primary/90;
+}
+
+.back-to-top:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top {
+    transition: none;
+  }
 }

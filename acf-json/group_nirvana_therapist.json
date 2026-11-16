@@ -27,6 +27,45 @@
                     }
                 ]
             ]
+        },
+        {
+            "name": "waitlist_url",
+            "label": "Waitlist link",
+            "type": "url",
+            "key": "field_nv_therapist_waitlist_url",
+            "instructions": "Shows \"No slots available? Join the waitlist\" under the Book button on the profile. Empty: hidden."
+        },
+        {
+            "name": "waitlist_text",
+            "label": "Waitlist text",
+            "type": "text",
+            "key": "field_nv_therapist_waitlist_text",
+            "placeholder": "No slots available?",
+            "instructions": "Empty: \"No slots available?\"",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_nv_therapist_waitlist_url",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "name": "waitlist_label",
+            "label": "Waitlist link text",
+            "type": "text",
+            "key": "field_nv_therapist_waitlist_label",
+            "placeholder": "Join the waitlist",
+            "instructions": "Empty: \"Join the waitlist\"",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_nv_therapist_waitlist_url",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
         }
     ],
     "location": [
@@ -45,5 +84,5 @@
     "instruction_placement": "label",
     "active": true,
     "show_in_rest": 0,
-    "modified": 1763683200
+    "modified": 1763300000
 }

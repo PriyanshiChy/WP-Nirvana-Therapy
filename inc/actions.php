@@ -107,13 +107,19 @@ function nirvana_booking_args( ?WP_Post $therapist = null ): array {
 		);
 	}
 
-	return array(
+	$args = array(
 		'label'   => nirvana_setting( 'booking_label', __( 'Book a Session', 'nirvana-therapy' ) ),
 		'href'    => $url,
 		'target'  => '_blank',
 		'action'  => 'link' === $action ? '' : $action,
 		'context' => $context,
 	);
+
+	/**
+	 * Lets an action add to a Book button, e.g. the booking popup says which
+	 * popup this button opens.
+	 */
+	return apply_filters( 'nirvana_booking_args', $args, $therapist );
 }
 
 /**
