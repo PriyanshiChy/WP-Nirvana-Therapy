@@ -4,6 +4,11 @@
  * Add lightweight interactivity here (e.g., FAQ accordion toggles).
  */
 
+const prefersReducedMotion = () =>
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const scrollBehavior = () => (prefersReducedMotion() ? "auto" : "smooth");
+
 const handled = (fn) => {
   try {
     fn();
@@ -14,12 +19,15 @@ const handled = (fn) => {
 
 const closeAnswer = (trigger) => {
   trigger.setAttribute("aria-expanded", "false");
-  trigger.nextElementSibling.style.maxHeight = "0";
+  const answer = trigger.nextElementSibling;
+  answer.style.maxHeight = "0";
+  answer.inert = true;
 };
 
 const openAnswer = (trigger) => {
   trigger.setAttribute("aria-expanded", "true");
   const answer = trigger.nextElementSibling;
+  answer.inert = false;
   answer.style.maxHeight = answer.scrollHeight + "px";
 };
 
@@ -41,16 +49,16 @@ const registerFAQ = () => {
 
 const registerCarousel = () => {
   const carousel = document.querySelector(".testimonial-carousel");
+  if (!carousel) return; // Not every page has testimonials.
+
   const prevButtons = document.querySelectorAll(".testimonial-carousel-previous");
   const nextButtons = document.querySelectorAll(".testimonial-carousel-next");
   const cards = Array.from(carousel.querySelectorAll(":scope > div"));
 
   if (!cards.length) return;
 
-  let currentIndex = 0;
   let scrolling = false;
 
-  // Calculate step once after layout settles.
   const getStep = () => {
     const cardWidth = cards[0].getBoundingClientRect().width;
     const gap = cards.length > 1
@@ -59,12 +67,23 @@ const registerCarousel = () => {
     return cardWidth + gap;
   };
 
+  // Bounds come from the real scroll position, so the arrows stay in sync
+  // when the last cards are already in view or the viewport is resized.
+  const atStart = () => carousel.scrollLeft <= 1;
+  const atEnd = () =>
+    carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 1;
+
+  const updateButtons = () => {
+    prevButtons.forEach((b) => b.setAttribute("aria-disabled", String(atStart())));
+    nextButtons.forEach((b) => b.setAttribute("aria-disabled", String(atEnd())));
+  };
+
   const centerCard = (card) => {
     const carouselRect = carousel.getBoundingClientRect();
     const cardRect = card.getBoundingClientRect();
     const targetLeft = carousel.scrollLeft + cardRect.left - carouselRect.left
       - (carousel.clientWidth - card.clientWidth) / 2;
-    carousel.scrollTo({ left: Math.max(0, targetLeft), behavior: "smooth" });
+    carousel.scrollTo({ left: Math.max(0, targetLeft), behavior: scrollBehavior() });
   };
 
   const lock = () => {
@@ -77,21 +96,23 @@ const registerCarousel = () => {
 
   prevButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      if (scrolling || currentIndex === 0) return;
-      currentIndex--;
-      carousel.scrollBy({ left: -getStep(), behavior: "smooth" });
+      if (scrolling || atStart()) return;
+      carousel.scrollBy({ left: -getStep(), behavior: scrollBehavior() });
       lock();
     });
   });
 
   nextButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      if (scrolling || currentIndex === cards.length - 1) return;
-      currentIndex++;
-      carousel.scrollBy({ left: getStep(), behavior: "smooth" });
+      if (scrolling || atEnd()) return;
+      carousel.scrollBy({ left: getStep(), behavior: scrollBehavior() });
       lock();
     });
   });
+
+  carousel.addEventListener("scroll", updateButtons, { passive: true });
+  window.addEventListener("resize", updateButtons);
+  updateButtons();
 };
 
 const scrollToHash = (hash) => {
@@ -103,7 +124,15 @@ const scrollToHash = (hash) => {
   const offset = headerBar ? headerBar.getBoundingClientRect().height : 120;
   const top = target.getBoundingClientRect().top + window.scrollY - offset;
 
-  window.scrollTo({ top, behavior: "smooth" });
+  window.scrollTo({ top, behavior: scrollBehavior() });
+};
+
+// Move focus to the jump target so keyboard / screen-reader users continue
+// from there (e.g. the "Skip to content" link). tabindex="-1" makes any
+// element focusable without adding it to the Tab order.
+const focusTarget = (target) => {
+  if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
+  target.focus({ preventScroll: true });
 };
 
 const registerSmoothScroll = () => {
@@ -125,6 +154,7 @@ const registerSmoothScroll = () => {
         e.preventDefault();
         history.pushState(null, "", url.hash);
         scrollToHash(url.hash);
+        focusTarget(target);
       }
       // Cross-page: let the browser navigate; the load handler above will correct the offset
     });
@@ -133,6 +163,7 @@ const registerSmoothScroll = () => {
 
 const registerCountUp = () => {
   const elements = document.querySelectorAll(".stat-count");
+  if (!elements.length || prefersReducedMotion()) return;
 
   const animate = (el) => {
     const target = parseInt(el.dataset.target, 10);
@@ -171,20 +202,31 @@ const registerMobileMenu = () => {
 
   if (!menu || !hamburger) return;
 
+  const openLabel = hamburger.getAttribute("aria-label") || "Open menu";
+  const closeLabel = hamburger.dataset.closeLabel || "Close menu";
+  const isOpen = () => hamburger.getAttribute("aria-expanded") === "true";
+
   const open = () => {
     hamburger.setAttribute("aria-expanded", "true");
+    hamburger.setAttribute("aria-label", closeLabel);
     menu.removeAttribute("aria-hidden");
     document.body.style.overflow = "hidden";
   };
 
-  const dismiss = () => {
+  const dismiss = ({ returnFocus = false } = {}) => {
     hamburger.setAttribute("aria-expanded", "false");
+    hamburger.setAttribute("aria-label", openLabel);
     menu.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+    if (returnFocus) hamburger.focus();
   };
 
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && isOpen()) dismiss({ returnFocus: true });
+  });
+
   const toggle = () => {
-    hamburger.getAttribute("aria-expanded") === "true" ? dismiss() : open();
+    isOpen() ? dismiss() : open();
   };
 
   hamburger.addEventListener("click", toggle);
@@ -197,6 +239,12 @@ const registerMobileMenu = () => {
 };
 
 const registerSectionFadeIn = () => {
+  const sections = document.querySelectorAll("section");
+  if (!("IntersectionObserver" in window)) {
+    sections.forEach((section) => section.classList.add("visible"));
+    return;
+  }
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -209,9 +257,7 @@ const registerSectionFadeIn = () => {
     { threshold: 0.1 },
   );
 
-  document.querySelectorAll("section").forEach((section) => {
-    observer.observe(section);
-  });
+  sections.forEach((section) => observer.observe(section));
 };
 
 const showWatermark = () => {
@@ -219,6 +265,8 @@ const showWatermark = () => {
     `---- Watermark ----\nNirvana Painted Theme\nDesigned by ✨ Pchy Designs ✨ \n(Priyanshi Choudhury)\nhttps://pchy.design\nReach out for custom Websites, design work, or just to say hi at priyanshichoudhury.work@gmail.com\n-------------------`,
   );
 };
+
+window.nirvanaReady = true; // Tells the <head> fail-safe that main.js loaded.
 
 showWatermark();
 

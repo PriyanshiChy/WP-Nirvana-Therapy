@@ -1,0 +1,23 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "nirvana/hero",
+    "title": "Hero",
+    "description": "The opening section with the main headline and the booking button.",
+    "category": "nirvana",
+    "icon": "cover-image",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "render.php"
+    },
+    "supports": {
+        "multiple": false,
+        "html": false,
+        "align": false,
+        "anchor": false,
+        "customClassName": false,
+        "className": false,
+        "reusable": false,
+        "mode": false
+    }
+}

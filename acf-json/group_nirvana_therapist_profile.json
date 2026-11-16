@@ -1,0 +1,81 @@
+{
+    "key": "group_nirvana_therapist_profile",
+    "title": "Profile",
+    "fields": [
+        {
+            "name": "role",
+            "label": "Role",
+            "type": "text",
+            "instructions": "Under the name, on the card and the profile, e.g. \"Counselling Psychologist\".",
+            "key": "field_nv_therapist_role"
+        },
+        {
+            "name": "experience",
+            "label": "Experience",
+            "type": "text",
+            "instructions": "Profile only, after \"Exp:\".",
+            "placeholder": "e.g. 5+ years",
+            "key": "field_nv_therapist_experience"
+        },
+        {
+            "name": "education",
+            "label": "Education",
+            "type": "textarea",
+            "rows": 3,
+            "new_lines": "br",
+            "instructions": "Profile only.",
+            "placeholder": "e.g. MSc in Psychological Counselling; Certification courses in CBT, ACT…",
+            "key": "field_nv_therapist_education"
+        },
+        {
+            "name": "timings",
+            "label": "Days & timing",
+            "type": "textarea",
+            "rows": 2,
+            "new_lines": "br",
+            "placeholder": "e.g. Tuesday, Thursday and Saturday (12-5pm)",
+            "key": "field_nv_therapist_timings"
+        },
+        {
+            "name": "mode_of_work",
+            "label": "Mode of work",
+            "type": "text",
+            "placeholder": "e.g. Online",
+            "key": "field_nv_therapist_mode"
+        },
+        {
+            "name": "booking_prompt",
+            "label": "Line above the Book button",
+            "type": "text",
+            "instructions": "Empty: \"Book a session with [first name]!\"",
+            "key": "field_nv_therapist_booking_prompt"
+        },
+        {
+            "name": "banner",
+            "label": "Banner image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "instructions": "Across the top of this therapist's profile page, fading to white below the header. About 1800px wide. Empty: the default banner in Site Settings → Therapists.",
+            "key": "field_nv_therapist_banner"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "therapist"
+            }
+        ]
+    ],
+    "position": "side",
+    "menu_order": 0,
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1763769600
+}

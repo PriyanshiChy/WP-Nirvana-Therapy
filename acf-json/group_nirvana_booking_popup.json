@@ -1,0 +1,234 @@
+{
+    "key": "group_nirvana_booking_popup",
+    "title": "Booking Popup",
+    "fields": [
+        {
+            "key": "field_nv_bp_steps",
+            "name": "booking_steps",
+            "label": "Steps",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add step",
+            "collapsed": "field_nv_bp_step_title",
+            "min": 0,
+            "instructions": "The popup opens on the first step. The bar at the top shows how far along the visitor is.",
+            "sub_fields": [
+                {
+                    "key": "field_nv_bp_step_id",
+                    "name": "id",
+                    "label": "Step ID",
+                    "type": "text",
+                    "required": 1,
+                    "placeholder": "e.g. who",
+                    "instructions": "A short name, used by \"Go to a step\".",
+                    "wrapper": {
+                        "width": "30"
+                    },
+                    "parent_repeater": "field_nv_bp_steps"
+                },
+                {
+                    "key": "field_nv_bp_step_title",
+                    "name": "title",
+                    "label": "Question",
+                    "type": "text",
+                    "required": 1,
+                    "placeholder": "e.g. Who is the session for?",
+                    "wrapper": {
+                        "width": "70"
+                    },
+                    "parent_repeater": "field_nv_bp_steps"
+                },
+                {
+                    "key": "field_nv_bp_step_description",
+                    "name": "description",
+                    "label": "Text under the question",
+                    "type": "textarea",
+                    "rows": 2,
+                    "new_lines": "",
+                    "instructions": "Optional.",
+                    "parent_repeater": "field_nv_bp_steps"
+                },
+                {
+                    "key": "field_nv_bp_step_style",
+                    "name": "style",
+                    "label": "Choices look like",
+                    "type": "select",
+                    "choices": {
+                        "list": "A list of buttons",
+                        "tiles": "Tiles with icons"
+                    },
+                    "default_value": "list",
+                    "return_format": "value",
+                    "parent_repeater": "field_nv_bp_steps"
+                },
+                {
+                    "key": "field_nv_bp_options",
+                    "name": "options",
+                    "label": "Choices",
+                    "type": "repeater",
+                    "layout": "block",
+                    "button_label": "Add choice",
+                    "collapsed": "field_nv_bp_option_label",
+                    "min": 0,
+                    "sub_fields": [
+                        {
+                            "key": "field_nv_bp_option_label",
+                            "name": "label",
+                            "label": "Label",
+                            "type": "text",
+                            "required": 1,
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "parent_repeater": "field_nv_bp_options"
+                        },
+                        {
+                            "key": "field_nv_bp_option_icon",
+                            "name": "icon",
+                            "label": "Icon",
+                            "type": "select",
+                            "choices": {},
+                            "ui": 1,
+                            "return_format": "value",
+                            "instructions": "Tiles only.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "parent_repeater": "field_nv_bp_options"
+                        },
+                        {
+                            "key": "field_nv_bp_option_caption",
+                            "name": "caption",
+                            "label": "Small text under it",
+                            "type": "text",
+                            "instructions": "Optional. Lists only.",
+                            "parent_repeater": "field_nv_bp_options"
+                        },
+                        {
+                            "key": "field_nv_bp_option_then",
+                            "name": "then",
+                            "label": "When clicked",
+                            "type": "select",
+                            "choices": {},
+                            "default_value": "next",
+                            "return_format": "value",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "parent_repeater": "field_nv_bp_options"
+                        },
+                        {
+                            "key": "field_nv_bp_option_step",
+                            "name": "step",
+                            "label": "Step ID to go to",
+                            "type": "text",
+                            "placeholder": "e.g. plan",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_nv_bp_option_then",
+                                        "operator": "==",
+                                        "value": "step"
+                                    }
+                                ]
+                            ],
+                            "parent_repeater": "field_nv_bp_options"
+                        },
+                        {
+                            "key": "field_nv_bp_option_url",
+                            "name": "url",
+                            "label": "Link",
+                            "type": "url",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "instructions": "Empty: the Book button's own link (the therapist's, else Site Settings → Booking URL). For a script, the link used if it fails.",
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_nv_bp_option_then",
+                                        "operator": "!=",
+                                        "value": "next"
+                                    },
+                                    {
+                                        "field": "field_nv_bp_option_then",
+                                        "operator": "!=",
+                                        "value": "step"
+                                    }
+                                ]
+                            ],
+                            "parent_repeater": "field_nv_bp_options"
+                        }
+                    ],
+                    "parent_repeater": "field_nv_bp_steps"
+                },
+                {
+                    "key": "field_nv_bp_step_footer_text",
+                    "name": "footer_text",
+                    "label": "Line above the bottom button",
+                    "type": "text",
+                    "placeholder": "e.g. Prefer to book a single session?",
+                    "instructions": "Optional.",
+                    "parent_repeater": "field_nv_bp_steps"
+                },
+                {
+                    "key": "field_nv_bp_step_footer_label",
+                    "name": "footer_label",
+                    "label": "Bottom button",
+                    "type": "text",
+                    "placeholder": "e.g. Book a Session",
+                    "instructions": "Optional. Empty: no bottom button.",
+                    "wrapper": {
+                        "width": "34"
+                    },
+                    "parent_repeater": "field_nv_bp_steps"
+                },
+                {
+                    "key": "field_nv_bp_step_footer_then",
+                    "name": "footer_then",
+                    "label": "When clicked",
+                    "type": "select",
+                    "choices": {},
+                    "default_value": "link",
+                    "return_format": "value",
+                    "wrapper": {
+                        "width": "33"
+                    },
+                    "parent_repeater": "field_nv_bp_steps"
+                },
+                {
+                    "key": "field_nv_bp_step_footer_url",
+                    "name": "footer_url",
+                    "label": "Link",
+                    "type": "url",
+                    "instructions": "Empty: the Book button's own link.",
+                    "wrapper": {
+                        "width": "33"
+                    },
+                    "parent_repeater": "field_nv_bp_steps"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "nirvana-booking-popup"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "description": "Steps of the popup that opens from Book buttons when Site Settings → Action is \"Script: Booking Popup\".",
+    "modified": 1763280000
+}

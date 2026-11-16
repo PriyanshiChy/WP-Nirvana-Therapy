@@ -1,0 +1,121 @@
+{
+    "key": "group_nirvana_block_how_it_works",
+    "title": "Block: How It Works",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Title",
+            "type": "text",
+            "key": "field_nvb_how-it-works_title"
+        },
+        {
+            "name": "modes",
+            "label": "Session types",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add session type",
+            "sub_fields": [
+                {
+                    "name": "icon",
+                    "label": "Icon",
+                    "type": "select",
+                    "choices": {},
+                    "ui": 1,
+                    "return_format": "value",
+                    "key": "field_nvb_how-it-works_modes_icon",
+                    "parent_repeater": "field_nvb_how-it-works_modes"
+                },
+                {
+                    "name": "title",
+                    "label": "Title",
+                    "type": "text",
+                    "key": "field_nvb_how-it-works_modes_title",
+                    "parent_repeater": "field_nvb_how-it-works_modes"
+                },
+                {
+                    "name": "text",
+                    "label": "Text",
+                    "type": "text",
+                    "key": "field_nvb_how-it-works_modes_text",
+                    "parent_repeater": "field_nvb_how-it-works_modes"
+                }
+            ],
+            "min": 0,
+            "key": "field_nvb_how-it-works_modes"
+        },
+        {
+            "name": "opening_hours",
+            "label": "Opening hours",
+            "type": "text",
+            "key": "field_nvb_how-it-works_opening_hours"
+        },
+        {
+            "name": "steps_heading",
+            "label": "Steps heading",
+            "type": "text",
+            "key": "field_nvb_how-it-works_steps_heading"
+        },
+        {
+            "name": "steps",
+            "label": "Steps",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add step",
+            "sub_fields": [
+                {
+                    "name": "icon",
+                    "label": "Icon",
+                    "type": "select",
+                    "choices": {},
+                    "ui": 1,
+                    "return_format": "value",
+                    "key": "field_nvb_how-it-works_steps_icon",
+                    "parent_repeater": "field_nvb_how-it-works_steps"
+                },
+                {
+                    "name": "title",
+                    "label": "Title",
+                    "type": "text",
+                    "instructions": "Inline formatting allowed: <semibold>, <i>, <u>, <br>, <a href=\"…\">.",
+                    "key": "field_nvb_how-it-works_steps_title",
+                    "parent_repeater": "field_nvb_how-it-works_steps"
+                },
+                {
+                    "name": "text",
+                    "label": "Text",
+                    "type": "textarea",
+                    "rows": 2,
+                    "new_lines": "",
+                    "key": "field_nvb_how-it-works_steps_text",
+                    "parent_repeater": "field_nvb_how-it-works_steps"
+                }
+            ],
+            "min": 0,
+            "collapsed": "field_nvb_how-it-works_steps_title",
+            "key": "field_nvb_how-it-works_steps"
+        },
+        {
+            "name": "closing",
+            "label": "Closing line",
+            "type": "text",
+            "key": "field_nvb_how-it-works_closing"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "nirvana/how-it-works"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1763222400
+}

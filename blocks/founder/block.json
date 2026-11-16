@@ -1,0 +1,23 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "nirvana/founder",
+    "title": "Meet the Founder",
+    "description": "Founder profile, photo, handwritten card and stats.",
+    "category": "nirvana",
+    "icon": "id",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "render.php"
+    },
+    "supports": {
+        "multiple": false,
+        "html": false,
+        "align": false,
+        "anchor": false,
+        "customClassName": false,
+        "className": false,
+        "reusable": false,
+        "mode": false
+    }
+}

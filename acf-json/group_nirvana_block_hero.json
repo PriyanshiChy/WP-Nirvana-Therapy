@@ -1,0 +1,49 @@
+{
+    "key": "group_nirvana_block_hero",
+    "title": "Block: Hero",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Headline",
+            "type": "text",
+            "instructions": "Inline formatting allowed: <semibold>, <i>, <u>, <br>, <a href=\"…\">.",
+            "key": "field_nvb_hero_title"
+        },
+        {
+            "name": "subtitle",
+            "label": "Subtitle",
+            "type": "textarea",
+            "rows": 2,
+            "new_lines": "",
+            "key": "field_nvb_hero_subtitle"
+        },
+        {
+            "name": "background",
+            "label": "Background image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp",
+            "instructions": "Optional. Leave empty to use the theme's default background.",
+            "key": "field_nvb_hero_background"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "nirvana/hero"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1763222400
+}

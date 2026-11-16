@@ -1,0 +1,242 @@
+{
+    "key": "group_nirvana_site_settings",
+    "title": "Site Settings",
+    "fields": [
+        {
+            "key": "field_nv_tab_buttons",
+            "label": "Buttons",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_nv_booking_label",
+            "label": "Booking button label",
+            "name": "booking_label",
+            "type": "text",
+            "placeholder": "Book a Session"
+        },
+        {
+            "key": "field_nv_booking_url",
+            "label": "Booking form link",
+            "name": "booking_url",
+            "type": "url",
+            "instructions": "Where Book buttons go. With a script action, the fallback if the script can't run."
+        },
+        {
+            "name": "booking_action",
+            "label": "Booking action",
+            "type": "select",
+            "instructions": "What Book buttons do: open the Booking URL, or run a custom script from the theme's assets/js/actions/ folder. Each therapist can override this.",
+            "choices": {
+                "link": "Link"
+            },
+            "default_value": "link",
+            "key": "field_nv_booking_action"
+        },
+        {
+            "key": "field_nv_whatsapp_label",
+            "label": "WhatsApp button label",
+            "name": "whatsapp_label",
+            "type": "text",
+            "placeholder": "Contact Us"
+        },
+        {
+            "key": "field_nv_whatsapp_url",
+            "label": "WhatsApp link",
+            "name": "whatsapp_url",
+            "type": "url",
+            "instructions": "Used by every \"Contact Us\" button and the WhatsApp icon in the header, e.g. https://wa.me/…"
+        },
+        {
+            "key": "field_nv_reviews_label",
+            "label": "Reviews link label",
+            "name": "reviews_label",
+            "type": "text",
+            "placeholder": "Read more Reviews"
+        },
+        {
+            "key": "field_nv_reviews_url",
+            "label": "Reviews link",
+            "name": "reviews_url",
+            "type": "url",
+            "instructions": "Shown under the testimonials, e.g. the Google reviews page."
+        },
+        {
+            "key": "field_nv_tab_contact",
+            "label": "Contact",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_nv_phone",
+            "label": "Phone",
+            "name": "phone",
+            "type": "text",
+            "instructions": "Shown as typed. The call link is built from the digits.",
+            "placeholder": "+91 62919 57761"
+        },
+        {
+            "key": "field_nv_email",
+            "label": "Email",
+            "name": "email",
+            "type": "email"
+        },
+        {
+            "key": "field_nv_address",
+            "label": "Address",
+            "name": "address",
+            "type": "textarea",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_nv_maps_label",
+            "label": "Map link label",
+            "name": "maps_label",
+            "type": "text",
+            "placeholder": "Find us on Maps"
+        },
+        {
+            "key": "field_nv_maps_url",
+            "label": "Map link",
+            "name": "maps_url",
+            "type": "url",
+            "instructions": "Google Maps share link."
+        },
+        {
+            "key": "field_nv_tab_social",
+            "label": "Social",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_nv_socials",
+            "label": "Social links",
+            "name": "socials",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add social link",
+            "sub_fields": [
+                {
+                    "key": "field_nv_social_network",
+                    "label": "Network",
+                    "name": "network",
+                    "type": "select",
+                    "choices": {
+                        "instagram": "Instagram",
+                        "linkedin": "LinkedIn"
+                    },
+                    "return_format": "value",
+                    "parent_repeater": "field_nv_socials"
+                },
+                {
+                    "key": "field_nv_social_url",
+                    "label": "Link",
+                    "name": "url",
+                    "type": "url",
+                    "parent_repeater": "field_nv_socials"
+                }
+            ]
+        },
+        {
+            "key": "field_nv_tab_footer",
+            "label": "Footer",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "name": "footer_heading_explore",
+            "label": "\"Explore\" heading",
+            "type": "text",
+            "instructions": "Shown in capitals.",
+            "placeholder": "EXPLORE",
+            "default_value": "EXPLORE",
+            "key": "field_nv_footer_heading_explore"
+        },
+        {
+            "name": "footer_heading_legal",
+            "label": "\"Legal\" heading",
+            "type": "text",
+            "placeholder": "LEGAL",
+            "default_value": "LEGAL",
+            "key": "field_nv_footer_heading_legal"
+        },
+        {
+            "name": "footer_heading_address",
+            "label": "\"Address\" heading",
+            "type": "text",
+            "placeholder": "ADDRESS",
+            "default_value": "ADDRESS",
+            "key": "field_nv_footer_heading_address"
+        },
+        {
+            "name": "footer_heading_find_us",
+            "label": "\"Find us\" heading",
+            "type": "text",
+            "placeholder": "FIND US",
+            "default_value": "FIND US",
+            "key": "field_nv_footer_heading_find_us"
+        },
+        {
+            "name": "footer_heading_contact",
+            "label": "\"Contact information\" heading",
+            "type": "text",
+            "placeholder": "CONTACT INFORMATION",
+            "default_value": "CONTACT INFORMATION",
+            "key": "field_nv_footer_heading_contact"
+        },
+        {
+            "key": "field_nv_footer_closing",
+            "label": "Closing line",
+            "name": "footer_closing",
+            "type": "text",
+            "placeholder": "Start your healing journey with us"
+        },
+        {
+            "key": "field_nv_copyright",
+            "label": "Copyright",
+            "name": "copyright",
+            "type": "text",
+            "instructions": "{year} is replaced with the current year.",
+            "placeholder": "© {year} Nirvana Therapy — All rights reserved."
+        },
+        {
+            "key": "field_nv_tab_therapists",
+            "label": "Therapists",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "name": "therapist_background",
+            "label": "Default profile banner",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "instructions": "Used on a therapist's profile when they have no Banner image of their own. Empty: the theme's default background.",
+            "key": "field_nv_therapist_background"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "nirvana-site-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1763596800
+}

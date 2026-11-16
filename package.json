@@ -1,17 +1,19 @@
 {
   "name": "nirvana-painted",
   "version": "1.0.0",
-  "description": "",
+  "description": "WordPress theme for Nirvana Therapy",
   "main": "index.js",
   "scripts": {
-    "dev": "npx @tailwindcss/cli -i ./entry.css -o ./style.css --watch"
+    "dev": "tailwindcss -i ./entry.css -o ./style.css --watch",
+    "build": "tailwindcss -i ./entry.css -o ./style.css",
+    "zip": "bash tools/build-zip.sh"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.26.1",
-  "dependencies": {
+  "devDependencies": {
     "@tailwindcss/cli": "^4.2.1",
     "tailwindcss": "^4.2.1"
-  }
+  },
+  "private": true
 }

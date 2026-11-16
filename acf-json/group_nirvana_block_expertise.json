@@ -1,0 +1,77 @@
+{
+    "key": "group_nirvana_block_expertise",
+    "title": "Block: Areas of Expertise",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Title",
+            "type": "text",
+            "key": "field_nvb_expertise_title"
+        },
+        {
+            "name": "items",
+            "label": "Areas",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add area",
+            "sub_fields": [
+                {
+                    "name": "icon",
+                    "label": "Icon",
+                    "type": "select",
+                    "choices": {},
+                    "ui": 1,
+                    "return_format": "value",
+                    "key": "field_nvb_expertise_items_icon",
+                    "parent_repeater": "field_nvb_expertise_items"
+                },
+                {
+                    "name": "title",
+                    "label": "Title",
+                    "type": "text",
+                    "key": "field_nvb_expertise_items_title",
+                    "parent_repeater": "field_nvb_expertise_items"
+                },
+                {
+                    "name": "body",
+                    "label": "Text",
+                    "type": "textarea",
+                    "rows": 3,
+                    "new_lines": "",
+                    "instructions": "One sentence per line.",
+                    "key": "field_nvb_expertise_items_body",
+                    "parent_repeater": "field_nvb_expertise_items"
+                }
+            ],
+            "min": 0,
+            "collapsed": "field_nvb_expertise_items_title",
+            "instructions": "Shown in rows of 3 on desktop.",
+            "key": "field_nvb_expertise_items"
+        },
+        {
+            "name": "cta_label",
+            "label": "Button label",
+            "type": "text",
+            "placeholder": "Start a Conversation",
+            "instructions": "WhatsApp button under the list. The link comes from Site Settings.",
+            "key": "field_nvb_expertise_cta_label"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "nirvana/expertise"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1763222400
+}

@@ -1,0 +1,49 @@
+{
+    "key": "group_nirvana_therapist",
+    "title": "Booking",
+    "fields": [
+        {
+            "name": "booking_action",
+            "label": "Booking action",
+            "type": "select",
+            "instructions": "What this therapist's Book button does.",
+            "choices": {
+                "": "Same as Site Settings"
+            },
+            "default_value": "",
+            "key": "field_nv_therapist_booking_action"
+        },
+        {
+            "name": "booking_url",
+            "label": "Booking URL",
+            "type": "url",
+            "instructions": "This therapist's booking link. Empty: the site Booking URL. With a script action, the fallback if the script can't run.",
+            "key": "field_nv_therapist_booking_url",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_nv_therapist_booking_action",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "therapist"
+            }
+        ]
+    ],
+    "position": "side",
+    "menu_order": 1,
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1763683200
+}

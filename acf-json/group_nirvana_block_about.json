@@ -1,0 +1,39 @@
+{
+    "key": "group_nirvana_block_about",
+    "title": "Block: About",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Title",
+            "type": "text",
+            "key": "field_nvb_about_title"
+        },
+        {
+            "name": "body",
+            "label": "Text",
+            "type": "wysiwyg",
+            "toolbar": "nirvana",
+            "media_upload": 0,
+            "tabs": "all",
+            "delay": 0,
+            "key": "field_nvb_about_body"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "nirvana/about"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1763222400
+}

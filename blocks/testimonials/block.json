@@ -1,0 +1,23 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "nirvana/testimonials",
+    "title": "Testimonials",
+    "description": "Client quotes in a carousel, plus the reviews link from Site Settings.",
+    "category": "nirvana",
+    "icon": "format-quote",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "render.php"
+    },
+    "supports": {
+        "multiple": false,
+        "html": false,
+        "align": false,
+        "anchor": false,
+        "customClassName": false,
+        "className": false,
+        "reusable": false,
+        "mode": false
+    }
+}

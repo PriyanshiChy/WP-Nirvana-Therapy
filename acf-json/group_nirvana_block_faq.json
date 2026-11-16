@@ -1,0 +1,70 @@
+{
+    "key": "group_nirvana_block_faq",
+    "title": "Block: FAQ",
+    "fields": [
+        {
+            "name": "heading",
+            "label": "Heading",
+            "type": "text",
+            "instructions": "Inline formatting allowed: <semibold>, <i>, <u>, <br>, <a href=\"…\">.",
+            "key": "field_nvb_faq_heading"
+        },
+        {
+            "name": "subheading",
+            "label": "Subheading",
+            "type": "text",
+            "key": "field_nvb_faq_subheading"
+        },
+        {
+            "name": "items",
+            "label": "Questions",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add question",
+            "sub_fields": [
+                {
+                    "name": "question",
+                    "label": "Question",
+                    "type": "text",
+                    "key": "field_nvb_faq_items_question",
+                    "parent_repeater": "field_nvb_faq_items"
+                },
+                {
+                    "name": "answer",
+                    "label": "Answer",
+                    "type": "textarea",
+                    "rows": 4,
+                    "new_lines": "br",
+                    "key": "field_nvb_faq_items_answer",
+                    "parent_repeater": "field_nvb_faq_items"
+                }
+            ],
+            "min": 0,
+            "collapsed": "field_nvb_faq_items_question",
+            "key": "field_nvb_faq_items"
+        },
+        {
+            "name": "closing",
+            "label": "Closing line",
+            "type": "text",
+            "key": "field_nvb_faq_closing"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "nirvana/faq"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1763222400
+}

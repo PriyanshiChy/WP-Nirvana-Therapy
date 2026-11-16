@@ -1,0 +1,35 @@
+{
+    "key": "group_nirvana_page",
+    "title": "Page details",
+    "fields": [
+        {
+            "name": "subtitle",
+            "label": "Subtitle",
+            "type": "text",
+            "instructions": "Optional line under the page title, e.g. \"Last Updated- 12 March 2026\".",
+            "key": "field_nv_page_subtitle"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1763251200
+}

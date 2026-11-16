@@ -1,68 +1,74 @@
 <?php
-// Require once so render_tag() is available everywhere.
-require_once get_template_directory() . "/inc/component.php";
-require_once get_template_directory() . "/inc/json.php";
-// require_once get_template_directory() . "/inc/license.php";
+defined( 'ABSPATH' ) || exit;
 
-function nirvana_create_core_pages() {
-    // LANDING PAGE
-    $landing_title = 'Nirvana Therapy';
-    $landing_slug  = 'nirvana-therapy'; // <-- proper slug, no slash
+require_once get_template_directory() . '/inc/assets.php';
+require_once get_template_directory() . '/inc/setup.php';
+require_once get_template_directory() . '/inc/settings.php';
+require_once get_template_directory() . '/inc/ui.php';
+require_once get_template_directory() . '/inc/actions.php';
+require_once get_template_directory() . '/inc/booking-popup.php';
+require_once get_template_directory() . '/inc/therapists.php';
+require_once get_template_directory() . '/inc/rich-text.php';
+require_once get_template_directory() . '/inc/blocks.php';
 
-    // Try to find existing page by slug
-    $existing_landing = get_page_by_path( $landing_slug );
+/**
+ * On theme activation, creates the Landing, Terms and Therapists pages if
+ * they don't exist yet and makes the landing page the front page.
+ *
+ * The landing page starts empty, so the block editor opens it with all eight
+ * sections ready to fill in (see nirvana_landing_template()). To import the
+ * original content instead, run tools/seed-content.php (see that file).
+ */
+function nirvana_create_core_pages(): void {
+	$landing = get_page_by_path( 'nirvana-therapy' );
+	if ( ! $landing ) {
+		$landing_id = wp_insert_post(
+			array(
+				'post_title'    => 'Nirvana Therapy',
+				'post_name'     => 'nirvana-therapy',
+				'post_content'  => '',
+				'post_status'   => 'publish',
+				'post_type'     => 'page',
+				'page_template' => 'page-landing.php',
+			)
+		);
+	} else {
+		$landing_id = $landing->ID;
+	}
 
-    if ( ! $existing_landing ) {
-        $landing_content = '
-            <h2>Welcome to Nirvana Therapy</h2>
-            <p>Replace this with your real landing content.</p>
-        ';
+	if ( ! get_page_by_path( 'terms-and-conditions' ) ) {
+		wp_insert_post(
+			array(
+				'post_title'   => 'Terms and Conditions',
+				'post_name'    => 'terms-and-conditions',
+				'post_content' => "<!-- wp:paragraph -->\n<p>Write your terms and conditions here.</p>\n<!-- /wp:paragraph -->",
+				'post_status'  => 'publish',
+				'post_type'    => 'page',
+			)
+		);
+	}
 
-        $landing_id = wp_insert_post( array(
-            'post_title'   => $landing_title,
-            'post_name'    => $landing_slug,   // <-- valid slug
-            'post_content' => $landing_content,
-            'post_status'  => 'publish',
-            'post_type'    => 'page',
-        ) );
+	if ( ! get_page_by_path( 'therapists' ) ) {
+		wp_insert_post(
+			array(
+				'post_title'    => 'Therapists',
+				'post_name'     => 'therapists',
+				'post_content'  => "<!-- wp:paragraph -->\n<p>Introduce the team here.</p>\n<!-- /wp:paragraph -->",
+				'post_status'   => 'publish',
+				'post_type'     => 'page',
+				'page_template' => 'page-therapists.php',
+			)
+		);
+	}
 
-        if ( $landing_id && ! is_wp_error( $landing_id ) ) {
-            // Assign custom template if it exists in your theme root
-            update_post_meta( $landing_id, '_wp_page_template', 'page-landing.php' );
-        }
-    } else {
-        $landing_id = $existing_landing->ID;
-    }
-
-    // TERMS PAGE
-    $terms_title = 'Terms and Conditions';
-    $terms_slug  = 'terms-and-conditions';
-
-    $existing_terms = get_page_by_path( $terms_slug );
-
-    if ( ! $existing_terms ) {
-        $terms_content = '
-            <h2>Terms and Conditions</h2>
-            <p>Replace this with your legal terms.</p>
-        ';
-
-        $terms_id = wp_insert_post( array(
-            'post_title'   => $terms_title,
-            'post_name'    => $terms_slug,
-            'post_content' => $terms_content,
-            'post_status'  => 'publish',
-            'post_type'    => 'page',
-        ) );
-
-        if ( $terms_id && ! is_wp_error( $terms_id ) ) {
-            update_post_meta( $terms_id, '_wp_page_template', 'page-terms.php' );
-        }
-    }
-
-    // Set front page to landing
-    if ( isset( $landing_id ) && $landing_id ) {
-        update_option( 'show_on_front', 'page' );
-        update_option( 'page_on_front', $landing_id );
-    }
+	if ( $landing_id && ! is_wp_error( $landing_id ) ) {
+		update_option( 'show_on_front', 'page' );
+		update_option( 'page_on_front', $landing_id );
+	}
 }
 add_action( 'after_switch_theme', 'nirvana_create_core_pages' );
+
+/**
+ * Makes /therapists/<name>/ work right after activation.
+ */
+add_action( 'after_switch_theme', 'flush_rewrite_rules', 20 );

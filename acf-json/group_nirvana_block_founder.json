@@ -1,0 +1,115 @@
+{
+    "key": "group_nirvana_block_founder",
+    "title": "Block: Meet the Founder",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Section title",
+            "type": "text",
+            "key": "field_nvb_founder_title"
+        },
+        {
+            "name": "name",
+            "label": "Name",
+            "type": "text",
+            "key": "field_nvb_founder_name"
+        },
+        {
+            "name": "role",
+            "label": "Role",
+            "type": "text",
+            "key": "field_nvb_founder_role"
+        },
+        {
+            "name": "qualification",
+            "label": "Qualification",
+            "type": "text",
+            "key": "field_nvb_founder_qualification"
+        },
+        {
+            "name": "bio",
+            "label": "Bio",
+            "type": "wysiwyg",
+            "toolbar": "nirvana",
+            "media_upload": 0,
+            "tabs": "all",
+            "delay": 0,
+            "key": "field_nvb_founder_bio"
+        },
+        {
+            "name": "photo",
+            "label": "Photo",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp",
+            "instructions": "Leave empty to use the theme's photo.",
+            "key": "field_nvb_founder_photo"
+        },
+        {
+            "name": "card",
+            "label": "Handwritten card text",
+            "type": "textarea",
+            "rows": 4,
+            "new_lines": "",
+            "key": "field_nvb_founder_card"
+        },
+        {
+            "name": "stats",
+            "label": "Stats",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add stat",
+            "sub_fields": [
+                {
+                    "name": "number",
+                    "label": "Number",
+                    "type": "number",
+                    "min": 0,
+                    "instructions": "Counts up from 0, e.g. 1000",
+                    "key": "field_nvb_founder_stats_number",
+                    "parent_repeater": "field_nvb_founder_stats"
+                },
+                {
+                    "name": "suffix",
+                    "label": "Suffix",
+                    "type": "text",
+                    "placeholder": "+",
+                    "instructions": "Shown after the number, e.g. +",
+                    "key": "field_nvb_founder_stats_suffix",
+                    "parent_repeater": "field_nvb_founder_stats"
+                },
+                {
+                    "name": "label",
+                    "label": "Label",
+                    "type": "text",
+                    "placeholder": "Hours of Therapy",
+                    "key": "field_nvb_founder_stats_label",
+                    "parent_repeater": "field_nvb_founder_stats"
+                }
+            ],
+            "min": 0,
+            "max": 3,
+            "instructions": "Up to 3, shown side by side.",
+            "key": "field_nvb_founder_stats"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "nirvana/founder"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1763222400
+}

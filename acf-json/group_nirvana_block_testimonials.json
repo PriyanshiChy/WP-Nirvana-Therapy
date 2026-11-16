@@ -1,0 +1,50 @@
+{
+    "key": "group_nirvana_block_testimonials",
+    "title": "Block: Testimonials",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Title",
+            "type": "text",
+            "key": "field_nvb_testimonials_title"
+        },
+        {
+            "name": "testimonials",
+            "label": "Testimonials",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add testimonial",
+            "sub_fields": [
+                {
+                    "name": "quote",
+                    "label": "Quote",
+                    "type": "textarea",
+                    "rows": 4,
+                    "new_lines": "",
+                    "key": "field_nvb_testimonials_testimonials_quote",
+                    "parent_repeater": "field_nvb_testimonials_testimonials"
+                }
+            ],
+            "min": 0,
+            "collapsed": "field_nvb_testimonials_testimonials_quote",
+            "key": "field_nvb_testimonials_testimonials"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "nirvana/testimonials"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1763222400
+}

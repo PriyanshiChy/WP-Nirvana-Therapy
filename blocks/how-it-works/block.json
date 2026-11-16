@@ -1,0 +1,23 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "nirvana/how-it-works",
+    "title": "How It Works",
+    "description": "Session types, opening hours and booking steps.",
+    "category": "nirvana",
+    "icon": "list-view",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "render.php"
+    },
+    "supports": {
+        "multiple": false,
+        "html": false,
+        "align": false,
+        "anchor": false,
+        "customClassName": false,
+        "className": false,
+        "reusable": false,
+        "mode": false
+    }
+}

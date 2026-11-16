@@ -1,0 +1,36 @@
+{
+    "key": "group_nirvana_therapists_page",
+    "title": "Therapists page",
+    "fields": [
+        {
+            "name": "heading",
+            "label": "Heading",
+            "type": "text",
+            "instructions": "Shown instead of the page title. Inline formatting allowed: <i>, <semibold>, <u>, <br>. Empty: the page title.",
+            "placeholder": "Find the right therapist <i>for you.</i>",
+            "key": "field_nv_therapists_heading"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-therapists.php"
+            }
+        ]
+    ],
+    "position": "side",
+    "menu_order": 0,
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1763337600
+}

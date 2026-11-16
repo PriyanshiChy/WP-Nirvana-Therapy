@@ -1,0 +1,69 @@
+{
+    "key": "group_nirvana_block_why_choose_us",
+    "title": "Block: Why Choose Us",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Title",
+            "type": "text",
+            "key": "field_nvb_why-choose-us_title"
+        },
+        {
+            "name": "items",
+            "label": "Reasons",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add reason",
+            "sub_fields": [
+                {
+                    "name": "icon",
+                    "label": "Icon",
+                    "type": "select",
+                    "choices": {},
+                    "ui": 1,
+                    "return_format": "value",
+                    "key": "field_nvb_why-choose-us_items_icon",
+                    "parent_repeater": "field_nvb_why-choose-us_items"
+                },
+                {
+                    "name": "title",
+                    "label": "Title",
+                    "type": "text",
+                    "key": "field_nvb_why-choose-us_items_title",
+                    "parent_repeater": "field_nvb_why-choose-us_items"
+                },
+                {
+                    "name": "body",
+                    "label": "Text",
+                    "type": "wysiwyg",
+                    "toolbar": "nirvana",
+                    "media_upload": 0,
+                    "tabs": "all",
+                    "delay": 0,
+                    "key": "field_nvb_why-choose-us_items_body",
+                    "parent_repeater": "field_nvb_why-choose-us_items"
+                }
+            ],
+            "min": 0,
+            "collapsed": "field_nvb_why-choose-us_items_title",
+            "key": "field_nvb_why-choose-us_items"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "nirvana/why-choose-us"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1763222400
+}
