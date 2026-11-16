@@ -464,7 +464,7 @@
         "closing": "For any clarification connect with us on <a href=\"mailto:nirvanatherapy23@gmail.com\"><u>nirvanatherapy23@gmail.com</u></a>"
     },
     "wordpress": {
-        "exported": "2026-11-16T06:34:17+00:00",
+        "exported": "2026-11-16T06:44:37+00:00",
         "site_url": "http://nirvana-therapy.local/",
         "note": "Backup of the content edited in wp-admin (tools/export-content.php). Field values are raw: image fields are IDs from \"media\".",
         "site": {
@@ -490,6 +490,7 @@
                             "field_nv_bp_option_label": "Individual",
                             "field_nv_bp_option_icon": "therapy/individual.svg",
                             "field_nv_bp_option_caption": "",
+                            "field_nv_bp_option_hide_for": "",
                             "field_nv_bp_option_then": "next",
                             "field_nv_bp_option_step": "",
                             "field_nv_bp_option_url": ""
@@ -498,6 +499,7 @@
                             "field_nv_bp_option_label": "Couple",
                             "field_nv_bp_option_icon": "therapy/couple.svg",
                             "field_nv_bp_option_caption": "",
+                            "field_nv_bp_option_hide_for": "",
                             "field_nv_bp_option_then": "next",
                             "field_nv_bp_option_step": "",
                             "field_nv_bp_option_url": ""
@@ -518,6 +520,7 @@
                             "field_nv_bp_option_label": "I am new here",
                             "field_nv_bp_option_icon": "",
                             "field_nv_bp_option_caption": "",
+                            "field_nv_bp_option_hide_for": "",
                             "field_nv_bp_option_then": "next",
                             "field_nv_bp_option_step": "",
                             "field_nv_bp_option_url": ""
@@ -526,6 +529,7 @@
                             "field_nv_bp_option_label": "I am a returning client",
                             "field_nv_bp_option_icon": "",
                             "field_nv_bp_option_caption": "",
+                            "field_nv_bp_option_hide_for": "",
                             "field_nv_bp_option_then": "next",
                             "field_nv_bp_option_step": "",
                             "field_nv_bp_option_url": ""
@@ -546,6 +550,7 @@
                             "field_nv_bp_option_label": "Book three sessions",
                             "field_nv_bp_option_icon": "",
                             "field_nv_bp_option_caption": "",
+                            "field_nv_bp_option_hide_for": "Couple",
                             "field_nv_bp_option_then": "link",
                             "field_nv_bp_option_step": "",
                             "field_nv_bp_option_url": ""
@@ -554,6 +559,7 @@
                             "field_nv_bp_option_label": "Book six sessions",
                             "field_nv_bp_option_icon": "",
                             "field_nv_bp_option_caption": "",
+                            "field_nv_bp_option_hide_for": "Couple",
                             "field_nv_bp_option_then": "link",
                             "field_nv_bp_option_step": "",
                             "field_nv_bp_option_url": ""
@@ -562,6 +568,7 @@
                             "field_nv_bp_option_label": "Couple + Individual sessions",
                             "field_nv_bp_option_icon": "",
                             "field_nv_bp_option_caption": "A combination of couple and 2 individual sessions",
+                            "field_nv_bp_option_hide_for": "",
                             "field_nv_bp_option_then": "link",
                             "field_nv_bp_option_step": "",
                             "field_nv_bp_option_url": ""

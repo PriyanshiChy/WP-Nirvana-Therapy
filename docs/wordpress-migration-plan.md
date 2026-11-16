@@ -301,6 +301,7 @@ The step-wise popup from the Figma "Booking" frames is the first custom script: 
 
 - **Content:** wp-admin → Site Settings → **Booking Popup** (`acf-json/group_nirvana_booking_popup.json`). Steps in order, each with an ID, a question, optional text under it, a look (tiles with icons, or a list of buttons), its choices, and an optional bottom line + button.
 - **Each choice, "When clicked":** go to the next step · go to a step (by ID, for branches, e.g. separate plan steps for Individual and Couple) · open a link · run a script from `assets/js/actions/`. A link left empty uses the Book button's own link (the therapist's, else Site Settings → Booking URL). A script gets the Book button's context plus `answers` (`{ "who": "Couple", … }`); if it fails, its link (or the booking link) opens.
+- **Hiding choices:** "Hide when the visitor picked" (earlier answers, comma-separated, e.g. `Couple`) hides a choice. On Local the 3 and 6 session packages are hidden for couples.
 - **Markup:** `parts/booking-popup.php`, printed in the footer only on pages with a button that opens it (`inc/booking-popup.php`). A `<dialog>`: Esc, the X and a click on the blurred area close it; the header stays visible above the blur; focus moves to each step's question.
 - **Progress bar:** steps passed ÷ steps on the longest way through (0, ⅓, ⅔ for the design's three steps).
 - **No steps saved:** Book buttons work as plain links.

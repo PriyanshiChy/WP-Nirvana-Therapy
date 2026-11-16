@@ -9,6 +9,9 @@
  *                context is the Book button's plus `answers`
  *                ({ "who": "Couple", … }); falls back to data-url
  *
+ * A choice's <li data-hide-for="couple|…"> is hidden when one of those
+ * answers was picked in an earlier step.
+ *
  * Every final choice fires a bubbling "nirvana:booking" event with
  * { choice, answers, context }, e.g. for analytics.
  */
@@ -49,7 +52,16 @@
   };
   const total = length(steps[0]);
 
+  // Choices with data-hide-for="couple|…" hide when one of those was picked earlier.
+  const filterChoices = (step) => {
+    const picked = new Set(Object.values(answers).map((answer) => answer.trim().toLowerCase()));
+    step.querySelectorAll("[data-hide-for]").forEach((item) => {
+      item.hidden = item.dataset.hideFor.split("|").some((answer) => picked.has(answer));
+    });
+  };
+
   const show = (step, focus = true) => {
+    filterChoices(step);
     steps.forEach((each) => (each.hidden = each !== step));
     back.hidden = history.length === 0;
     bar.style.width = `${(history.length / Math.max(total, 1)) * 100}%`;

@@ -105,6 +105,15 @@
                             "parent_repeater": "field_nv_bp_options"
                         },
                         {
+                            "key": "field_nv_bp_option_hide_for",
+                            "name": "hide_for",
+                            "label": "Hide when the visitor picked",
+                            "type": "text",
+                            "placeholder": "e.g. Couple",
+                            "instructions": "Optional. Answers from earlier steps, separated by commas. The choice is hidden if any of them was picked.",
+                            "parent_repeater": "field_nv_bp_options"
+                        },
+                        {
                             "key": "field_nv_bp_option_then",
                             "name": "then",
                             "label": "When clicked",
@@ -230,5 +239,5 @@
     "active": true,
     "show_in_rest": 0,
     "description": "Steps of the popup that opens from Book buttons when Site Settings → Action is \"Script: Booking Popup\".",
-    "modified": 1763280000
+    "modified": 1763290000
 }

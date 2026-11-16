@@ -8,7 +8,8 @@
  * Site Settings → Booking Popup (acf-json/group_nirvana_booking_popup.json).
  *
  * Each choice either goes to another step, opens a link, or runs a script
- * from assets/js/actions/. Scripts get the Book button's context plus
+ * from assets/js/actions/. A choice can be hidden when the visitor picked
+ * certain answers earlier ("Hide when the visitor picked": e.g. Couple). Scripts get the Book button's context plus
  * `answers`: { <step ID>: <chosen label>, … }.
  */
 
@@ -85,6 +86,8 @@ function nirvana_booking_popup_steps(): array {
 				'label'   => $label,
 				'icon'    => (string) ( $option['icon'] ?? '' ),
 				'caption' => trim( (string) ( $option['caption'] ?? '' ) ),
+				// "Couple, Returning" → [ 'couple', 'returning' ]: hidden when one was picked.
+				'hide_for' => array_values( array_filter( array_map( static fn( $a ) => mb_strtolower( trim( $a ) ), explode( ',', (string) ( $option['hide_for'] ?? '' ) ) ) ) ),
 				'then'    => $then( (string) ( $option['then'] ?? '' ), array( 'next', 'step', 'link' ), 'next' ),
 				'step'    => sanitize_title( (string) ( $option['step'] ?? '' ) ),
 				'url'     => (string) ( $option['url'] ?? '' ),

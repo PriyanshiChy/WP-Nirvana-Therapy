@@ -39,7 +39,7 @@ $steps = $args['steps'] ?? array();
       <ul class="<?php echo $tiles ? 'booking-tiles' : 'booking-list ' . ( $captions || $footer ? 'gap-2' : 'gap-4' ); ?>">
         <?php foreach ( $step['options'] as $option ) : ?>
           <?php $target = nirvana_booking_popup_target( $option['then'], $option['step'], $option['url'] ); ?>
-        <li>
+        <li<?php echo $option['hide_for'] ? ' data-hide-for="' . esc_attr( implode( '|', $option['hide_for'] ) ) . '"' : ''; ?>>
           <?php if ( $tiles ) : ?>
           <<?php echo $target['tag']; ?> class="booking-tile"<?php echo $target['attrs']; // Escaped inside. ?> data-answer="<?php echo esc_attr( $option['label'] ); ?>">
             <?php echo nirvana_icon( $option['icon'] ); // Theme file. ?>

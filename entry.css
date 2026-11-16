@@ -833,6 +833,11 @@ html:has(.booking-popup[open]) {
   gap: 0.25rem;
 }
 
+.booking-list > li[hidden],
+.booking-tiles > li[hidden] {
+  display: none;
+}
+
 .booking-popup .link {
   width: 100%;
 }
